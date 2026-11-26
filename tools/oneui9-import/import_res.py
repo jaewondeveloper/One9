@@ -145,7 +145,7 @@ for (t, n), quals in app_files.items():
         cand[(t, n)] = 'new'
 
 # ---------- reference checking (iterate to fixed point)
-REF = re.compile(r'@(?!android:)(?:\+)?(\w+)/([\w.]+)')
+REF = re.compile(r'@(?!android:)(?:\+)?(\w+)/([\w.$]+)')
 ATTR = re.compile(r'(?<=["\'])\?(?!android:)(?:attr/)?([A-Za-z_][\w.]*)')
 TAGS = re.compile(r'<([A-Za-z_][\w.]*\.[\w.$]+)')
 def read(path): return open(path, encoding='utf-8', errors='ignore').read()
@@ -181,6 +181,9 @@ def check(text, imported_files):
         if a not in s8_attrs and not a.startswith('android'):
             if a not in ('attr',): problems.append('attr ' + a)
     for t, n in rs:
+        if n.startswith('$'):
+            if (t, n) not in app_files: problems.append(f'{t}/{n}')
+            continue
         if t in ('id', 'string', 'plurals', 'array', 'layout', 'menu', 'raw', 'font', 'navigation', 'mipmap'):
             if t == 'id' or known(t, n, set()): continue
             continue
@@ -323,6 +326,28 @@ while changed_styles:
             style_out[nm] = (parent, keep); changed_styles = True
 
 # ---------- write
+AAPT_NS = 'http://schemas.android.com/aapt'
+for _pfx, _uri in (('android', 'http://schemas.android.com/apk/res/android'),
+                   ('app', 'http://schemas.android.com/apk/res-auto'),
+                   ('aapt', AAPT_NS), ('tools', 'http://schemas.android.com/tools')):
+    ET.register_namespace(_pfx, _uri)
+def write_file(src, dst):
+    text = read(src)
+    if '@drawable/$' not in text:
+        shutil.copyfile(src, dst); return
+    root = ET.fromstring(text)
+    for el in list(root.iter()):
+        for k, v in list(el.attrib.items()):
+            m = re.fullmatch(r'@drawable/(\$[\w]+)', v)
+            if not m: continue
+            quals = app_files[('drawable', m.group(1))]
+            sub = ET.parse(quals.get('') or next(iter(quals.values()))).getroot()
+            del el.attrib[k]
+            wrap = ET.SubElement(el, '{%s}attr' % AAPT_NS)
+            wrap.set('name', 'android:' + k.split('}')[1])
+            wrap.append(sub)
+    ET.ElementTree(root).write(dst, encoding='utf-8', xml_declaration=True)
+
 def wipe_generated():
     for p in glob.glob(LIB + '/*/oui_des_oneui9_import*.xml'): os.remove(p)
 wipe_generated()
@@ -344,7 +369,7 @@ for (t, n) in sorted(cand):
     for q, src in targets.items():
         d = os.path.join(LIB, t + (f'-{q}' if q else ''))
         os.makedirs(d, exist_ok=True)
-        shutil.copyfile(src, os.path.join(d, n + '.xml'))
+        write_file(src, os.path.join(d, n + '.xml'))
         manifest.append(os.path.join(t + (f'-{q}' if q else ''), n + '.xml'))
     written['files'].append(f'{t}/{n} [{cand[(t, n)]}]')
 def render_value(tag, nm, e):
