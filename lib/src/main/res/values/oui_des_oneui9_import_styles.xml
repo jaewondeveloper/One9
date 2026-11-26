@@ -1887,7 +1887,6 @@
         <item name="seslTabStyle">Main</item>
         <item name="tabBackground">@drawable/sesl_tabview_maintab_ripple_background_light</item>
         <item name="tabGravity">center</item>
-        <item name="tabMode">sesl_main</item>
     </style>
     <style name="Widget.Design.TabLayout.Light.Main.IconText" parent="@style/Widget.Design.TabLayout.Light.Main">
         <item name="tabMinWidth">@dimen/sesl_tablayout_text_and_icon_width</item>
@@ -1898,7 +1897,6 @@
         <item name="seslTabStyle">Main</item>
         <item name="tabBackground">@drawable/sesl_tabview_maintab_ripple_background_dark</item>
         <item name="tabGravity">center</item>
-        <item name="tabMode">sesl_main</item>
     </style>
     <style name="Widget.Design.TabLayout.Main.IconText" parent="@style/Widget.Design.TabLayout.Main">
         <item name="tabMinWidth">@dimen/sesl_tablayout_text_and_icon_width</item>
