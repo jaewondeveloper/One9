@@ -9,6 +9,9 @@ on:
       - 'tools/oneui9-compare/**'
       - '.github/workflows/compare-oneui9.yml'
 
+permissions:
+  contents: write
+
 jobs:
   compare:
     runs-on: ubuntu-latest
@@ -67,3 +70,13 @@ jobs:
           path: |
             compare.txt
             compare-report.json
+
+      - name: Commit report
+        run: |
+          mkdir -p docs/oneui9/compare
+          cp compare.txt compare-report.json docs/oneui9/compare/
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/oneui9/compare
+          git commit -m "docs: add SESL 8 vs One UI 9 resource comparison" || echo "nothing to commit"
+          git push
