@@ -125,7 +125,7 @@ for (t, n), quals in app_files.items():
 
 # ---------- reference checking (iterate to fixed point)
 REF = re.compile(r'@(?!android:)(?:\+)?(\w+)/([\w.]+)')
-ATTR = re.compile(r'\?(?!android:)(?:attr/)?([\w.]+)')
+ATTR = re.compile(r'(?<=["\'])\?(?!android:)(?:attr/)?([A-Za-z_][\w.]*)')
 TAGS = re.compile(r'<([A-Za-z_][\w.]*\.[\w.$]+)')
 def read(path): return open(path, encoding='utf-8', errors='ignore').read()
 def known(t, n, imported):
@@ -133,6 +133,7 @@ def known(t, n, imported):
 imported_vals = {}  # (tag,name) -> element
 dropped = {}
 def refs_of(text):
+    text = re.sub(r'<\?xml[^>]*\?>', '', text)
     return REF.findall(text), ATTR.findall(text), TAGS.findall(text)
 
 def check(text, imported_files):
@@ -220,6 +221,14 @@ for key in list(cand):
             dropped[key] = ['value ' + '/'.join(bad[0])]; cand.pop(key, None); break
 
 # ---------- styles
+def style_canon(e):
+    p = (e.get('parent') or '').replace('@style/', '').replace('@android:style/', 'android:')
+    if not p and '.' in (e.get('name') or ''): p = e.get('name').rsplit('.', 1)[0]
+    its = []
+    for it in e:
+        v = norm((it.text or '').strip())
+        its.append((it.get('name'), v))
+    return (p, tuple(sorted(its)))
 style_out = {}
 def style_items(e):
     out = []
@@ -240,7 +249,8 @@ for (tag, nm, q), e in app_elems.items():
         if pn not in s8_names.get('style', set()) and pn not in lib_names.get('style', set()) and ('style', pn, '') not in app_elems: continue
     items = style_items(e)
     old = s8_values.get(('style', nm, ''))
-    if in8 and old is not None and norm(old) == norm(elem_text(e)): continue
+    if in8 and old is not None and style_canon(ET.fromstring(old)) == style_canon(e): continue
+    if in8 and old is None: continue
     style_out[nm] = (parent, items)
 
 # ---------- write
