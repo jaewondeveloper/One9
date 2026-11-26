@@ -53,6 +53,13 @@ go misc 80
 adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
 adb exec-out screencap -p > $OUT/page_misc_scrolled.png || true
 go about 89
+adb shell input keyevent KEYCODE_BACK; sleep 1
+# preferences (gear icon in the drawer header)
+open_drawer
+adb shell input tap $((W*73/100)) $((H*9/100)); sleep 2
+adb exec-out screencap -p > $OUT/page_settings.png || true
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/page_settings_scrolled.png || true
 adb shell wm size > $OUT/info.txt; adb shell getprop ro.build.version.sdk >> $OUT/info.txt
 adb logcat -d -b crash > crash.txt || true
 echo "=== PROCESS"; adb shell pidof $PKG || echo "PROCESS NOT RUNNING"
