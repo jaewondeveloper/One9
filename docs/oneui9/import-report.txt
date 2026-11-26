@@ -1,4 +1,4 @@
-imported files: 387, values: 454, styles: 255
+imported files: 369, values: 450, styles: 246
 
 ## FILES
 anim/design_bottom_sheet_slide_in [changed]
@@ -22,15 +22,6 @@ anim/sesl_menu_popup_exit [changed]
 anim/sesl_menu_popup_exit_bottom_left [new]
 anim/sesl_menu_popup_exit_bottom_right [new]
 anim/sesl_menu_popup_exit_top_left [new]
-anim/sesl_progress_indeterminate_circle_anim1 [changed]
-anim/sesl_progress_indeterminate_circle_anim2 [changed]
-anim/sesl_progress_indeterminate_circle_anim3 [changed]
-anim/sesl_progress_indeterminate_circle_anim4 [changed]
-anim/sesl_progress_indeterminate_circle_anim5 [changed]
-anim/sesl_progress_indeterminate_circle_anim6 [changed]
-anim/sesl_progress_indeterminate_circle_anim7 [changed]
-anim/sesl_progress_indeterminate_circle_anim8 [changed]
-anim/sesl_progress_indeterminate_circle_anim9 [changed]
 anim/sesl_recoil_pressed [changed]
 anim/sesl_recoil_released [changed]
 anim/sesl_shrink_fade_out_from_bottom [changed]
@@ -312,7 +303,6 @@ drawable/sesl_ic_search_api [changed]
 drawable/sesl_ic_search_back [changed]
 drawable/sesl_ic_search_bottom_clear [new]
 drawable/sesl_ic_voice_search_api [changed]
-drawable/sesl_level_seekbar_progress [changed]
 drawable/sesl_list_choice_btn_check [changed]
 drawable/sesl_list_choice_btn_radio [changed]
 drawable/sesl_list_choice_check_to_on_000 [changed]
@@ -332,11 +322,6 @@ drawable/sesl_list_item_recoil_mask [changed]
 drawable/sesl_menu_popup_background [changed]
 drawable/sesl_menu_popup_background_dark [changed]
 drawable/sesl_noti_badge [changed]
-drawable/sesl_progress_bar_indeterminate_large [changed]
-drawable/sesl_progress_bar_indeterminate_medium [changed]
-drawable/sesl_progress_bar_indeterminate_small [changed]
-drawable/sesl_progress_bar_indeterminate_xlarge [changed]
-drawable/sesl_progress_bar_indeterminate_xsmall [changed]
 drawable/sesl_scroll_thumb [changed]
 drawable/sesl_scroll_thumb_dark [changed]
 drawable/sesl_search_view_bottom_background_light [new]
@@ -350,7 +335,6 @@ drawable/sesl_snackbar_suggest_action_frame_mtrl [changed]
 drawable/sesl_spinner_background_dark [changed]
 drawable/sesl_spinner_background_light [changed]
 drawable/sesl_spinner_background_mask [changed]
-drawable/sesl_split_seekbar_primary_progress [changed]
 drawable/sesl_tablayout_maintab_background_dark_for_theme [new]
 drawable/sesl_tablayout_maintab_background_for_theme [new]
 drawable/sesl_tablayout_maintab_item_background_dark [new]
@@ -375,8 +359,6 @@ drawable/sesl_transparent_borderless_compound_button_recoil_background_dark [new
 drawable/sesl_transparent_borderless_compound_button_recoil_background_light [new]
 drawable/sesl_transparent_borderless_recoil_background_dark [changed]
 drawable/sesl_transparent_borderless_recoil_background_light [changed]
-drawable/sesl_vector_drawable_progress [changed]
-drawable/sesl_vector_drawable_progress_mono [new]
 drawable/sesl_viewpager_background [changed]
 drawable/sesl_viewpager_indicator_on_off [changed]
 drawable/sesl_viewpager_item_background [changed]
@@ -392,10 +374,6 @@ interpolator/sine_out_80 [changed]
 ## DROPPED (reason)
 animator/sesl_fragment_close_exit_pop_over: interpolator/sine_out_33, interpolator/sine_out_33
 animator/sesl_fragment_open_enter_pop_over: interpolator/interpolator_04_06_0_1, interpolator/interpolator_04_06_0_1
-drawable/sesl_progress_horizontal: drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
-drawable/sesl_progress_mono: anim/progress_dotparentlink_rotation_0, anim/progress_dotparentlink_progress_dot_scaley_1, anim/progress_dot_progress_dot_cir_0_translatey_2, anim/progress_dot_cir_0_path1custom3_gradientfill1_c2s4pg1p2
-drawable/sesl_scrubber_progress_horizontal: drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
-drawable/sesl_scrubber_progress_vertical: drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
 
 ## STYLES
 Base.Animation.AppCompat.MenuPopup.BottomLeft
@@ -460,10 +438,6 @@ Base.Widget.AppCompat.ImageButton
 Base.Widget.AppCompat.Light.ActionBar.Solid
 Base.Widget.AppCompat.Light.EditText
 Base.Widget.AppCompat.Light.TextView.SeslListCaption
-Base.Widget.AppCompat.ProgressBar.Horizontal
-Base.Widget.AppCompat.ProgressBar.Mono
-Base.Widget.AppCompat.ProgressBar.Mono.Large
-Base.Widget.AppCompat.ProgressBar.Mono.Small
 Base.Widget.AppCompat.SearchView.Bottom
 Base.Widget.AppCompat.SeekBar
 Base.Widget.AppCompat.TextView
@@ -564,9 +538,6 @@ Widget.AppCompat.Light.Spinner
 Widget.AppCompat.Light.TextView.SeslListCaption
 Widget.AppCompat.ListMenuView
 Widget.AppCompat.ListView.DropDown
-Widget.AppCompat.ProgressBar.Mono
-Widget.AppCompat.ProgressBar.Mono.Large
-Widget.AppCompat.ProgressBar.Mono.Small
 Widget.AppCompat.Spinner
 Widget.AppCompat.TextView.SeslListCaption
 Widget.AppCompat.Toolbar.Button.Navigation
@@ -607,7 +578,6 @@ Widget.MaterialComponents.BottomSheet
 Widget.MaterialComponents.Button
 Widget.MaterialComponents.Button.TextButton.Snackbar
 Widget.MaterialComponents.CheckedTextView
-Widget.MaterialComponents.CircularProgressIndicator
 Widget.MaterialComponents.CompoundButton.CheckBox
 Widget.MaterialComponents.CompoundButton.RadioButton
 Widget.MaterialComponents.ExtendedFloatingActionButton.Icon
@@ -632,7 +602,6 @@ Widget.MaterialComponents.PopupMenu
 Widget.MaterialComponents.PopupMenu.ContextMenu
 Widget.MaterialComponents.PopupMenu.ListPopupWindow
 Widget.MaterialComponents.PopupMenu.Overflow
-Widget.MaterialComponents.ProgressIndicator
 Widget.MaterialComponents.Snackbar.TextView
 Widget.MaterialComponents.TabLayout.Colored
 Widget.MaterialComponents.TabLayout.Light

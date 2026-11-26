@@ -1246,27 +1246,6 @@
     <style name="Base.Widget.AppCompat.Light.TextView.SeslListCaption" parent="@style/Base.Widget.AppCompat.TextView.SeslListCaption">
         <item name="android:textColor">@color/sesl_list_subheader_text_color</item>
     </style>
-    <style name="Base.Widget.AppCompat.ProgressBar.Horizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
-        <item name="android:maxHeight">32.0dp</item>
-        <item name="android:indeterminateDrawable">@drawable/sesl_progress_bar_indeterminate_xlarge_transition</item>
-        <item name="android:progressDrawable">@drawable/sesl_progress_horizontal</item>
-        <item name="android:minHeight">32.0dp</item>
-        <item name="useHorizontalProgress">true</item>
-    </style>
-    <style name="Base.Widget.AppCompat.ProgressBar.Mono" parent="@android:style/Widget.ProgressBar">
-    </style>
-    <style name="Base.Widget.AppCompat.ProgressBar.Mono.Large" parent="@style/Base.Widget.AppCompat.ProgressBar.Mono">
-        <item name="android:maxWidth">@dimen/sesl_progress_bar_size_large</item>
-        <item name="android:maxHeight">@dimen/sesl_progress_bar_size_large</item>
-        <item name="android:minWidth">@dimen/sesl_progress_bar_size_large</item>
-        <item name="android:minHeight">@dimen/sesl_progress_bar_size_large</item>
-    </style>
-    <style name="Base.Widget.AppCompat.ProgressBar.Mono.Small" parent="@style/Base.Widget.AppCompat.ProgressBar.Mono">
-        <item name="android:maxWidth">@dimen/sesl_progress_bar_size_small</item>
-        <item name="android:maxHeight">@dimen/sesl_progress_bar_size_small</item>
-        <item name="android:minWidth">@dimen/sesl_progress_bar_size_small</item>
-        <item name="android:minHeight">@dimen/sesl_progress_bar_size_small</item>
-    </style>
     <style name="Base.Widget.AppCompat.SearchView.Bottom" parent="@style/Base.Widget.AppCompat.SearchView">
         <item name="closeIcon">@drawable/sesl_ic_search_bottom_clear</item>
     </style>
@@ -1786,12 +1765,6 @@
     </style>
     <style name="Widget.AppCompat.ListView.DropDown" parent="@style/Base.V29.Widget.AppCompat.ListView.DropDown">
     </style>
-    <style name="Widget.AppCompat.ProgressBar.Mono" parent="@style/Base.Widget.AppCompat.ProgressBar.Mono">
-    </style>
-    <style name="Widget.AppCompat.ProgressBar.Mono.Large" parent="@style/Base.Widget.AppCompat.ProgressBar.Mono.Large">
-    </style>
-    <style name="Widget.AppCompat.ProgressBar.Mono.Small" parent="@style/Base.Widget.AppCompat.ProgressBar.Mono.Small">
-    </style>
     <style name="Widget.AppCompat.Spinner" parent="@style/Base.V29.Widget.AppCompat.Spinner">
     </style>
     <style name="Widget.AppCompat.TextView.SeslListCaption" parent="@style/Base.Widget.AppCompat.TextView.SeslListCaption">
@@ -2065,13 +2038,6 @@
         <item name="android:textAppearance">?textAppearanceBody1</item>
         <item name="android:textColor">@color/material_on_surface_emphasis_medium</item>
     </style>
-    <style name="Widget.MaterialComponents.CircularProgressIndicator" parent="@style/Widget.MaterialComponents.ProgressIndicator">
-        <item name="indicatorDirectionCircular">clockwise</item>
-        <item name="indicatorInset">@dimen/mtrl_progress_circular_inset_medium</item>
-        <item name="indicatorSize">@dimen/mtrl_progress_circular_size_medium</item>
-        <item name="trackColor">@android:color/transparent</item>
-        <item name="trackThickness">@dimen/mtrl_progress_circular_track_thickness_medium</item>
-    </style>
     <style name="Widget.MaterialComponents.CompoundButton.CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:minWidth">?minTouchTargetSize</item>
         <item name="android:minHeight">?minTouchTargetSize</item>
@@ -2248,11 +2214,6 @@
     <style name="Widget.MaterialComponents.PopupMenu.Overflow" parent="@style/Base.Widget.MaterialComponents.PopupMenu.Overflow">
         <item name="android:popupBackground">?popupMenuBackground</item>
         <item name="android:popupElevation">8.0dp</item>
-    </style>
-    <style name="Widget.MaterialComponents.ProgressIndicator" parent="@android:style/Widget">
-        <item name="android:indeterminateOnly">false</item>
-        <item name="indicatorColor">?colorPrimary</item>
-        <item name="trackThickness">@dimen/mtrl_progress_track_thickness</item>
     </style>
     <style name="Widget.MaterialComponents.Snackbar.TextView" parent="@style/Widget.AppCompat.TextView">
         <item name="android:textAppearance">?textAppearanceBody2</item>

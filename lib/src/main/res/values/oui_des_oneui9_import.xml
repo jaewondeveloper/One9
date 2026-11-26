@@ -186,10 +186,6 @@
     <color name="sesl_preference_dot_badge_background_color">@color/basic_token_orange_50</color>
     <color name="sesl_primary_text_color_dark">@color/basic_token_sys_on_surface_container_highest_dark</color>
     <color name="sesl_primary_text_color_light">@color/basic_token_sys_on_surface_container_highest_light</color>
-    <color name="sesl_progress_control_color_background_dark">@color/basic_token_sys_tone_on_tone_high_dark</color>
-    <color name="sesl_progress_control_color_background_light">@color/basic_token_sys_tone_on_tone_high_light</color>
-    <color name="sesl_progress_control_color_normal_dark">@color/basic_token_sys_tone_on_tone_high_dark</color>
-    <color name="sesl_progress_control_color_normal_light">@color/basic_token_sys_tone_on_tone_high_light</color>
     <color name="sesl_ripple_color">@color/sesl_ripple_color_light</color>
     <color name="sesl_scrollbar_handle_tint_color_dark">#3dfcfcff</color>
     <color name="sesl_scrollbar_handle_tint_color_light">#3d010102</color>
