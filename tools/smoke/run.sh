@@ -24,8 +24,14 @@ adb shell input swipe $X $Y2 $X $Y1 400; sleep 1
 adb shell input swipe $X $Y2 $X $Y1 400; sleep 1
 adb shell input swipe $X $Y2 $X $Y1 400; sleep 1
 adb exec-out screencap -p > $OUT/4_back_to_top.png || true
+# collapse by scrolling, then look at the collapsed bar, then open the drawer
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/5_collapsed_after_scroll.png || true
 adb shell input tap $((W*9/100)) $((H*8/100)); sleep 2
-adb exec-out screencap -p > $OUT/5_drawer.png || true
+adb exec-out screencap -p > $OUT/6_drawer.png || true
+adb shell input swipe $((W*3/10)) $((H*3/4)) $((W*3/10)) $((H/4)) 300; sleep 1
+adb exec-out screencap -p > $OUT/7_drawer_scrolled.png || true
 adb shell wm size > $OUT/info.txt; adb shell getprop ro.build.version.sdk >> $OUT/info.txt
 adb logcat -d -b crash > crash.txt || true
 echo "=== PROCESS"; adb shell pidof $PKG || echo "PROCESS NOT RUNNING"
