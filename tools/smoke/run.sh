@@ -32,6 +32,27 @@ adb shell input tap $((W*9/100)) $((H*8/100)); sleep 2
 adb exec-out screencap -p > $OUT/6_drawer.png || true
 adb shell input swipe $((W*3/10)) $((H*3/4)) $((W*3/10)) $((H/4)) 300; sleep 1
 adb exec-out screencap -p > $OUT/7_drawer_scrolled.png || true
+
+# visit every screen through the drawer (edge swipe opens it regardless of the app bar state)
+open_drawer() { adb shell input swipe 2 $((H/2)) $((W*7/10)) $((H/2)) 250; sleep 1; }
+go() {  # name, y fraction of the drawer item (percent of height)
+  open_drawer
+  adb shell input tap $((W*30/100)) $((H*$2/100)); sleep 2
+  adb exec-out screencap -p > $OUT/page_$1.png || true
+}
+go seekbar 40
+go pickers 48
+go navigation 64
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/page_navigation_scrolled.png || true
+go recyclerviews 72
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/page_recyclerviews_scrolled.png || true
+go misc 80
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/page_misc_scrolled.png || true
+go about 89
 adb shell wm size > $OUT/info.txt; adb shell getprop ro.build.version.sdk >> $OUT/info.txt
 adb logcat -d -b crash > crash.txt || true
 echo "=== PROCESS"; adb shell pidof $PKG || echo "PROCESS NOT RUNNING"
