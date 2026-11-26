@@ -110,9 +110,13 @@ def canon_file(path):
     try: return norm(ET.tostring(ET.parse(path).getroot(), encoding='unicode'))
     except ET.ParseError: return None
 
+# Switch / toggle widgets draw with SESL 8 geometry; mixing in SESL 9 drawables clips them.
+EXCLUDE = re.compile(r'(^sesl_(switch|toggle))|Switch|Toggle')
+
 # ---------- candidate files
 cand = {}  # (type,name) -> path of base content
 for (t, n), quals in app_files.items():
+    if EXCLUDE.search(n): continue
     base = quals.get('') or next(iter(quals.values()))
     in8 = (t, n) in s8_files
     if in8:
@@ -190,7 +194,7 @@ want = {}
 for (tag, nm, q), e in app_elems.items():
     if q not in ('', 'night'): continue
     if tag == 'style': continue
-    if nm in lib_names.get(tag, set()): continue
+    if nm in lib_names.get(tag, set()) or EXCLUDE.search(nm): continue
     in8 = (tag, nm, q) in s8_values or nm in s8_names.get(tag, set())
     sesl_like = nm.startswith(('sesl_', 'basic_token_'))
     if (tag, nm) in needed and not in8:
@@ -242,7 +246,7 @@ def style_items(e):
     return out
 for (tag, nm, q), e in app_elems.items():
     if tag != 'style' or q != '': continue
-    if nm in lib_names.get('style', set()): continue
+    if nm in lib_names.get('style', set()) or EXCLUDE.search(nm): continue
     in8 = nm in s8_names.get('style', set())
     if not (nm.startswith(('Widget.', 'TextAppearance.', 'Base.', 'Theme', 'ThemeOverlay.', 'Sesl', 'sesl')) or in8): continue
     parent = e.get('parent')

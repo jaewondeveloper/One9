@@ -35,10 +35,7 @@
     <dimen name="sesl_recyclerview_overlay_feature_hidden_height" tools:override="true">280dp</dimen>
     <dimen name="sesl_search_plate_height" tools:override="true">52dp</dimen>
     <dimen name="sesl_search_plate_radius_size" tools:override="true">26dp</dimen>
-    <dimen name="sesl_switch_width" tools:override="true">32dp</dimen>
-    <dimen name="sesl_switchbar_height" tools:override="true">52dp</dimen>
     <dimen name="sesl_tab_sub_text_size" tools:override="true">10sp</dimen>
-    <dimen name="sesl_toggle_button_ripple_radius" tools:override="true">24dp</dimen>
     <dimen name="sesl_toolbar_menu_text_size" tools:override="true">17sp</dimen>
     <dimen name="sesl_toolbar_title_text_size" tools:override="true">19sp</dimen>
     <dimen name="sesl_toolbar_title_text_size_with_subtitle" tools:override="true">18dp</dimen>
