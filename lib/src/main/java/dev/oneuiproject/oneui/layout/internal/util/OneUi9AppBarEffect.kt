@@ -39,6 +39,9 @@ internal class OneUi9AppBarEffect(
     private val density = res.displayMetrics.density
     private val vignette = View(ctx)
     private var progress = -1f
+    // The effect only applies after the bar has been seen expanded: a screen that starts collapsed
+    // (short content) must look like it always did.
+    private var sawExpanded = false
     private val floatingElevation = res.getDimension(R.dimen.oui_des_floating_navigate_up_elevation)
 
     private val navBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_navigate_up_bg)
@@ -76,7 +79,8 @@ internal class OneUi9AppBarEffect(
         val range = layout.totalScrollRange
         // Not an expandable app bar: never collapses, so the effect must stay off.
         val collapsedFraction = if (range <= 0 || !layout.isEnabled) 0f else abs(verticalOffset).toFloat() / range
-        val p = ((collapsedFraction - 0.9f) / 0.1f).coerceIn(0f, 1f)
+        if (collapsedFraction < 0.9f && range > 0) sawExpanded = true
+        val p = if (!sawExpanded) 0f else ((collapsedFraction - 0.9f) / 0.1f).coerceIn(0f, 1f)
         if (p == progress) return
         progress = p
 

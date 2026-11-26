@@ -24,6 +24,8 @@ adb shell input swipe $X $Y2 $X $Y1 400; sleep 1
 adb shell input swipe $X $Y2 $X $Y1 400; sleep 1
 adb shell input swipe $X $Y2 $X $Y1 400; sleep 1
 adb exec-out screencap -p > $OUT/4_back_to_top.png || true
+adb shell input tap $((W*9/100)) $((H*8/100)); sleep 2
+adb exec-out screencap -p > $OUT/5_drawer.png || true
 adb shell wm size > $OUT/info.txt; adb shell getprop ro.build.version.sdk >> $OUT/info.txt
 adb logcat -d -b crash > crash.txt || true
 echo "=== PROCESS"; adb shell pidof $PKG || echo "PROCESS NOT RUNNING"
