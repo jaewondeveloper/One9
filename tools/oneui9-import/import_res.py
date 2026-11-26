@@ -8,7 +8,7 @@ import glob, os, re, sys, zipfile, shutil, json
 import xml.etree.ElementTree as ET
 
 AARS, APP, LIB, REPORT = sys.argv[1:5]
-FILE_TYPES = ('drawable', 'anim', 'animator', 'interpolator', 'color')
+FILE_TYPES = ('drawable', 'anim', 'animator', 'interpolator', 'color', 'layout')
 QUAL_OK = re.compile(r'^(night-)?(v\d+)?$|^night$')
 
 def split_dir(d):
@@ -131,7 +131,11 @@ EXCLUDE = re.compile(r'(^sesl_(switch|toggle))|Switch|Toggle|[Pp]rogress')
 # ---------- candidate files
 cand = {}  # (type,name) -> path of base content
 for (t, n), quals in app_files.items():
-    if t not in ('anim', 'interpolator'): continue   # widget drawables/selectors from SESL 9 break SESL 8 widgets (buttons, seekbars)
+    # widget drawables/selectors from SESL 9 break SESL 8 widgets (buttons, seekbars): only pure animations,
+    # and the preference row layouts (they only change spacing / icon frame sizes)
+    if t in ('anim', 'interpolator'): pass
+    elif t == 'layout' and re.match(r'sesl_preference', n): pass
+    else: continue
     if EXCLUDE.search(n) or not n.startswith('sesl_'): continue   # library-version noise (mtrl_/abc_/design_...) is not One UI design
     base = quals.get('') or next(iter(quals.values()))
     in8 = (t, n) in s8_files
@@ -226,7 +230,7 @@ for key in cand:
 want = {}
 for (tag, nm, q), e in app_elems.items():
     if q not in ('', 'night'): continue
-    if tag != 'color': continue   # dimens/ints change widget geometry; only the palette is taken
+    if tag != 'color' and (tag, nm) not in needed: continue   # palette + the dimens an imported layout needs
     if nm in lib_names.get(tag, set()) or EXCLUDE.search(nm): continue
     in8 = (tag, nm, q) in s8_values or nm in s8_names.get(tag, set())
     sesl_like = nm.startswith(('sesl_', 'basic_token_'))

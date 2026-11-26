@@ -42,7 +42,7 @@
             tools:text="Version 1.0.0"
             android:textAlignment="center"
             android:textAppearance="@style/RobotoRegular"
-            android:textSize="13sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/app_info_update_notice"
@@ -52,7 +52,7 @@
             android:text="@string/oui_des_latest_version"
             android:textAlignment="center"
             android:textAppearance="@style/RobotoRegular"
-            android:textSize="13sp"
+            android:textSize="14sp"
             android:layout_marginTop="2dp"/>
 
 
