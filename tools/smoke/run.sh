@@ -47,6 +47,7 @@ m = re.search(r'text="%s"[^>]*bounds="\[(\d+),(\d+)\]\[(\d+),(\d+)\]"' % re.esca
 print('%d %d' % ((int(m.group(1)) + int(m.group(3))) // 2, (int(m.group(2)) + int(m.group(4))) // 2) if m else '')
 PY
 )
+  grep -o 'content-desc="[^"]\+"\|resource-id="[^"]\+"' ui.xml | sort -u | head -40 | sed 's/^/UI: /'
   echo "tap '$1' -> '$XY'"
   if [ -n "$XY" ]; then adb shell input tap $XY; return 0; fi
   return 1
