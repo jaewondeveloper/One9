@@ -849,8 +849,9 @@ class BottomTabLayout(
         val startL = oui9Left
         val startR = oui9Right
         oui9IndicatorAnimator = ValueAnimator.ofFloat(0f, 1f).apply {
-            duration = 350
-            interpolator = PathInterpolator(0.22f, 0.25f, 0f, 1f)
+            // SESL 9 TabLayout: tabIndicatorAnimationDuration = 300, FastOutSlowInInterpolator
+            duration = 300
+            interpolator = androidx.interpolator.view.animation.FastOutSlowInInterpolator()
             addUpdateListener {
                 // re-read the target each frame so the capsule lands exactly on the selected tab
                 val (tl, tr) = oui9TargetBounds() ?: (l to r)
