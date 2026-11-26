@@ -74,6 +74,18 @@ adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
 adb exec-out screencap -p > $OUT/page_misc_scrolled.png || true
 visit "Custom About" about
 adb shell input keyevent KEYCODE_BACK; sleep 1
+# dark mode (the real device uses it)
+adb shell cmd uimode night yes; sleep 3
+adb shell am force-stop $PKG; sleep 1
+adb shell monkey -p $PKG -c android.intent.category.LAUNCHER 1; sleep 10
+adb exec-out screencap -p > $OUT/dark_launch.png || true
+visit "SeekBar" dark_seekbar
+visit "RecyclerViews" dark_recyclerviews
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/dark_recyclerviews_scrolled.png || true
+visit "Navigation" dark_navigation
+adb shell cmd uimode night no
 adb shell wm size > $OUT/info.txt; adb shell getprop ro.build.version.sdk >> $OUT/info.txt
 adb logcat -d -b crash > crash.txt || true
 echo "=== PROCESS"; adb shell pidof $PKG || echo "PROCESS NOT RUNNING"
