@@ -28,6 +28,7 @@ def qual_ok(q):
 # ---------- load SESL8
 s8_tmp = '/tmp/s8'
 shutil.rmtree(s8_tmp, ignore_errors=True)
+attr_enums = {}
 classes = set(); s8_files = {}; s8_values = {}; s8_attrs = set(); s8_names = {}
 for aar in glob.glob(AARS + '/*.aar'):
     z = zipfile.ZipFile(aar); mod = os.path.basename(aar)[:-4]
@@ -54,9 +55,15 @@ for aar in glob.glob(AARS + '/*.aar'):
                     if not nm: continue
                     tag = e.tag
                     if tag == 'item': tag = e.get('type', 'item')
-                    if tag == 'attr': s8_attrs.add(nm)
+                    if tag == 'attr':
+                        s8_attrs.add(nm)
+                        for c in e:
+                            if c.tag in ('enum', 'flag'): attr_enums.setdefault(nm, set()).add(c.get('name'))
                     if tag == 'declare-styleable':
-                        for a in e: s8_attrs.add(a.get('name'))
+                        for a in e:
+                            s8_attrs.add(a.get('name'))
+                            for c in a:
+                                if c.tag in ('enum', 'flag'): attr_enums.setdefault(a.get('name'), set()).add(c.get('name'))
                     s8_names.setdefault(tag, set()).add(nm)
                     s8_values[(tag, nm, q)] = ET.tostring(e, encoding='unicode')
 print('SESL8: classes', len(classes), 'file groups', len(s8_files), 'value entries', len(s8_values), 'attrs', len(s8_attrs))
@@ -261,6 +268,12 @@ def style_items(e):
         nm = it.get('name') or ''
         if not nm.startswith('android:') and nm not in s8_attrs: continue
         if not item_ok(it): continue
+        enums = attr_enums.get(nm)
+        if enums:
+            val = (it.text or '').strip()
+            if val and not val.startswith(('@', '?')):
+                toks = [x.strip() for x in val.split('|')]
+                if any(x not in enums and not re.fullmatch(r'-?\d+|0x[0-9a-fA-F]+', x) for x in toks): continue
         out.append(it)
     return out
 for (tag, nm, q), e in app_elems.items():
