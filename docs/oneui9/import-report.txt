@@ -1,1244 +1,420 @@
-imported files: 0, values: 470, styles: 824
+imported files: 406, values: 0, styles: 0
 
 ## FILES
-
+anim/design_bottom_sheet_slide_in [changed]
+anim/design_bottom_sheet_slide_out [changed]
+anim/mtrl_bottom_sheet_slide_in [changed]
+anim/mtrl_bottom_sheet_slide_out [changed]
+anim/sesl_bottom_menu_popup_enter [changed]
+anim/sesl_bottom_menu_popup_exit [changed]
+anim/sesl_date_picker_fade_in [changed]
+anim/sesl_date_picker_fade_out [changed]
+anim/sesl_fragment_close_exit [changed]
+anim/sesl_fragment_open_enter [changed]
+anim/sesl_grow_fade_in_from_bottom [changed]
+anim/sesl_list_popup_enter [changed]
+anim/sesl_list_popup_exit [changed]
+anim/sesl_menu_popup_enter [changed]
+anim/sesl_menu_popup_enter_bottom_left [new]
+anim/sesl_menu_popup_enter_bottom_right [new]
+anim/sesl_menu_popup_enter_top_left [new]
+anim/sesl_menu_popup_exit [changed]
+anim/sesl_menu_popup_exit_bottom_left [new]
+anim/sesl_menu_popup_exit_bottom_right [new]
+anim/sesl_menu_popup_exit_top_left [new]
+anim/sesl_progress_indeterminate_circle_anim1 [changed]
+anim/sesl_progress_indeterminate_circle_anim2 [changed]
+anim/sesl_progress_indeterminate_circle_anim3 [changed]
+anim/sesl_progress_indeterminate_circle_anim4 [changed]
+anim/sesl_progress_indeterminate_circle_anim5 [changed]
+anim/sesl_progress_indeterminate_circle_anim6 [changed]
+anim/sesl_progress_indeterminate_circle_anim7 [changed]
+anim/sesl_progress_indeterminate_circle_anim8 [changed]
+anim/sesl_progress_indeterminate_circle_anim9 [changed]
+anim/sesl_recoil_pressed [changed]
+anim/sesl_recoil_released [changed]
+anim/sesl_shrink_fade_out_from_bottom [changed]
+animator/design_fab_hide_motion_spec [changed]
+animator/design_fab_show_motion_spec [changed]
+animator/fragment_close_enter [changed]
+animator/fragment_close_exit [changed]
+animator/fragment_fade_enter [changed]
+animator/fragment_fade_exit [changed]
+animator/fragment_open_enter [changed]
+animator/fragment_open_exit [changed]
+animator/mtrl_btn_state_list_anim [changed]
+animator/mtrl_card_state_list_anim [changed]
+animator/mtrl_chip_state_list_anim [changed]
+animator/mtrl_extended_fab_hide_motion_spec [changed]
+animator/mtrl_extended_fab_show_motion_spec [changed]
+animator/mtrl_extended_fab_state_list_animator [changed]
+animator/mtrl_fab_hide_motion_spec [changed]
+animator/mtrl_fab_show_motion_spec [changed]
+animator/mtrl_fab_transformation_sheet_collapse_spec [changed]
+animator/mtrl_fab_transformation_sheet_expand_spec [changed]
+animator/sesl_appbar_state_list_animator [changed]
+animator/sesl_fragment_close_enter [new]
+animator/sesl_fragment_close_enter_pop_over [new]
+animator/sesl_fragment_close_enter_rtl [new]
+animator/sesl_fragment_close_exit [new]
+animator/sesl_fragment_close_exit_rtl [new]
+animator/sesl_fragment_open_enter [new]
+animator/sesl_fragment_open_enter_rtl [new]
+animator/sesl_fragment_open_exit [new]
+animator/sesl_fragment_open_exit_pop_over [new]
+animator/sesl_fragment_open_exit_rtl [new]
+animator/sesl_recoil_button_selector [changed]
+animator/sesl_recoil_card_selector [changed]
+animator/sesl_recoil_dialog_button_selector [changed]
+animator/sesl_recoil_list_selector [changed]
+color/abc_tint_btn_checkable [changed]
+color/design_box_stroke_color [changed]
+color/design_error [changed]
+color/design_icon_tint [changed]
+color/material_on_background_disabled [changed]
+color/material_on_background_emphasis_high_type [changed]
+color/material_on_background_emphasis_medium [changed]
+color/material_on_primary_disabled [changed]
+color/material_on_primary_emphasis_high_type [changed]
+color/material_on_primary_emphasis_medium [changed]
+color/material_on_surface_disabled [changed]
+color/material_on_surface_emphasis_high_type [changed]
+color/material_on_surface_emphasis_medium [changed]
+color/material_on_surface_stroke [changed]
+color/material_slider_active_tick_marks_color [changed]
+color/material_slider_active_track_color [changed]
+color/material_slider_halo_color [changed]
+color/material_slider_inactive_tick_marks_color [changed]
+color/material_slider_inactive_track_color [changed]
+color/material_slider_thumb_color [changed]
+color/material_timepicker_button_background [changed]
+color/material_timepicker_button_stroke [changed]
+color/material_timepicker_clock_text_color [changed]
+color/material_timepicker_clockface [changed]
+color/material_timepicker_modebutton_tint [changed]
+color/mtrl_btn_bg_color_selector [changed]
+color/mtrl_btn_ripple_color [changed]
+color/mtrl_btn_stroke_color_selector [changed]
+color/mtrl_btn_text_btn_bg_color_selector [changed]
+color/mtrl_btn_text_btn_ripple_color [changed]
+color/mtrl_btn_text_color_selector [changed]
+color/mtrl_calendar_item_stroke_color [changed]
+color/mtrl_calendar_selected_range [changed]
+color/mtrl_card_view_foreground [changed]
+color/mtrl_card_view_ripple [changed]
+color/mtrl_chip_background_color [changed]
+color/mtrl_chip_close_icon_tint [changed]
+color/mtrl_chip_surface_color [changed]
+color/mtrl_chip_text_color [changed]
+color/mtrl_choice_chip_background_color [changed]
+color/mtrl_choice_chip_ripple_color [changed]
+color/mtrl_choice_chip_text_color [changed]
+color/mtrl_error [changed]
+color/mtrl_fab_bg_color_selector [changed]
+color/mtrl_fab_icon_text_color_selector [changed]
+color/mtrl_fab_ripple_color [changed]
+color/mtrl_filled_background_color [changed]
+color/mtrl_filled_icon_tint [changed]
+color/mtrl_filled_stroke_color [changed]
+color/mtrl_indicator_text_color [changed]
+color/mtrl_navigation_bar_item_tint [changed]
+color/mtrl_navigation_bar_ripple_color [changed]
+color/mtrl_navigation_item_background_color [changed]
+color/mtrl_navigation_item_icon_tint [changed]
+color/mtrl_navigation_item_text_color [changed]
+color/mtrl_on_primary_text_btn_text_color_selector [changed]
+color/mtrl_on_surface_ripple_color [changed]
+color/mtrl_outlined_icon_tint [changed]
+color/mtrl_outlined_stroke_color [changed]
+color/mtrl_popupmenu_overlay_color [changed]
+color/mtrl_text_btn_text_color_selector [changed]
+color/sesl_bottom_nav_colored_item_tint [changed]
+color/sesl_bottom_nav_colored_ripple_color [changed]
+color/sesl_bottom_nav_floating_icon_text_color_dark [new]
+color/sesl_bottom_nav_floating_icon_text_color_light [new]
+color/sesl_bottom_nav_ripple_color [changed]
+color/sesl_divider_button_layout_background_selector_dark [new]
+color/sesl_divider_button_layout_background_selector_light [new]
+color/sesl_divider_button_layout_button_text_dark [new]
+color/sesl_divider_button_layout_button_text_light [new]
+color/sesl_divider_button_layout_divider_dark [new]
+color/sesl_divider_button_layout_divider_for_theme [new]
+color/sesl_divider_button_layout_divider_light [new]
+color/sesl_edit_text_dark [changed]
+color/sesl_edit_text_light [changed]
+color/sesl_floating_toolbar_background_selector_dark [new]
+color/sesl_floating_toolbar_background_selector_dark_for_theme [new]
+color/sesl_floating_toolbar_background_selector_for_theme [new]
+color/sesl_floating_toolbar_background_selector_light [new]
+color/sesl_number_picker_text_color_scroll [changed]
+color/sesl_preference_dot_color [changed]
+color/sesl_seekbar_ripple_color [changed]
+color/sesl_spinner_dropdown_text_color_dark [changed]
+color/sesl_spinner_dropdown_text_color_light [changed]
+color/sesl_spinner_item_text_dark [changed]
+color/sesl_spinner_item_text_light [changed]
+color/sesl_switch_thumb_on_disabled_stroke_color [changed]
+color/sesl_switch_thumb_on_disabled_stroke_color_dark [changed]
+color/sesl_switch_thumb_on_stroke_color_light [changed]
+color/sesl_switch_track_on_color_light [changed]
+color/sesl_switch_track_on_disabled_color [changed]
+color/sesl_switchbar_on_text_color_light [changed]
+color/sesl_tablayout_main_background_color_selector_dark_for_theme [new]
+color/sesl_tablayout_main_background_color_selector_for_theme [new]
+color/sesl_tablayout_main_tab_selected_background_color_selector_dark [new]
+color/sesl_tablayout_main_tab_selected_background_color_selector_dark_for_theme [new]
+color/sesl_tablayout_main_tab_selected_background_color_selector_for_theme [new]
+color/sesl_tablayout_main_tab_selected_background_color_selector_light [new]
+color/sesl_tablayout_subtab_date_picker_text_color_dark_for_theme [new]
+color/sesl_tablayout_subtab_date_picker_text_color_light_for_theme [new]
+color/sesl_tablayout_subtab_sub_text_color_dark [changed]
+color/sesl_tablayout_subtab_sub_text_color_light [changed]
+color/sesl_tablayout_text_color_default_selector_dark_for_theme [new]
+color/sesl_tablayout_text_color_default_selector_for_theme [new]
+color/sesl_tabs_colored_ripple_color [changed]
+color/sesl_tabs_icon_color_selector [changed]
+color/sesl_tabs_icon_color_selector_colored [changed]
+color/sesl_tabs_ripple_color [changed]
+drawable/abc_btn_radio_material_anim [changed]
+drawable/abc_ic_menu_copy_mtrl_am_alpha [changed]
+drawable/abc_ic_menu_cut_mtrl_alpha [changed]
+drawable/abc_ic_menu_paste_mtrl_am_alpha [changed]
+drawable/abc_ic_menu_selectall_mtrl_alpha [changed]
+drawable/abc_ic_menu_share_mtrl_alpha [changed]
+drawable/abc_ic_star_black_16dp [changed]
+drawable/abc_list_divider_material [changed]
+drawable/avd_hide_password [changed]
+drawable/avd_show_password [changed]
+drawable/design_ic_visibility [changed]
+drawable/design_ic_visibility_off [changed]
+drawable/design_password_eye [changed]
+drawable/ic_arrow_down_24dp [changed]
+drawable/ic_mtrl_checked_circle [changed]
+drawable/ic_mtrl_chip_checked_black [changed]
+drawable/ic_mtrl_chip_checked_circle [changed]
+drawable/ic_mtrl_chip_close_circle [changed]
+drawable/material_ic_calendar_black_24dp [changed]
+drawable/material_ic_clear_black_24dp [changed]
+drawable/material_ic_edit_black_24dp [changed]
+drawable/material_ic_keyboard_arrow_left_black_24dp [changed]
+drawable/material_ic_keyboard_arrow_right_black_24dp [changed]
+drawable/material_ic_menu_arrow_down_black_24dp [changed]
+drawable/material_ic_menu_arrow_up_black_24dp [changed]
+drawable/mtrl_checkbox_button [changed]
+drawable/mtrl_checkbox_button_checked_unchecked [changed]
+drawable/mtrl_checkbox_button_icon [changed]
+drawable/mtrl_checkbox_button_icon_checked_indeterminate [changed]
+drawable/mtrl_checkbox_button_icon_checked_unchecked [changed]
+drawable/mtrl_checkbox_button_icon_indeterminate_checked [changed]
+drawable/mtrl_checkbox_button_icon_indeterminate_unchecked [changed]
+drawable/mtrl_checkbox_button_icon_unchecked_checked [changed]
+drawable/mtrl_checkbox_button_icon_unchecked_indeterminate [changed]
+drawable/mtrl_checkbox_button_unchecked_checked [changed]
+drawable/mtrl_dialog_background [changed]
+drawable/mtrl_dropdown_arrow [changed]
+drawable/mtrl_ic_arrow_drop_down [changed]
+drawable/mtrl_ic_arrow_drop_up [changed]
+drawable/mtrl_ic_cancel [changed]
+drawable/mtrl_ic_check_mark [changed]
+drawable/mtrl_ic_checkbox_checked [changed]
+drawable/mtrl_ic_checkbox_unchecked [changed]
+drawable/mtrl_ic_error [changed]
+drawable/mtrl_ic_indeterminate [changed]
+drawable/mtrl_navigation_bar_item_background [changed]
+drawable/mtrl_popupmenu_background [changed]
+drawable/mtrl_popupmenu_background_overlay [changed]
+drawable/notification_action_background [changed]
+drawable/notification_tile_bg [changed]
+drawable/sem_snackbar_action_button_background [changed]
+drawable/sem_snackbar_action_frame_mtrl [changed]
+drawable/sem_snackbar_frame_mtrl [changed]
+drawable/sesl_action_bar_item_background [changed]
+drawable/sesl_action_bar_item_text_background_dark [changed]
+drawable/sesl_action_bar_item_text_background_light [changed]
+drawable/sesl_bottom_nav_show_button_shapes_background [changed]
+drawable/sesl_bottom_nav_show_button_shapes_shape [changed]
+drawable/sesl_bottom_navigation_item_background_dark [new]
+drawable/sesl_bottom_navigation_item_background_icon_dark [new]
+drawable/sesl_bottom_navigation_item_background_icon_dark_small_screen [new]
+drawable/sesl_bottom_navigation_item_background_icon_light [new]
+drawable/sesl_bottom_navigation_item_background_icon_light_small_screen [new]
+drawable/sesl_bottom_navigation_item_background_light [new]
+drawable/sesl_bottom_navigation_recoil_background_text_dark [new]
+drawable/sesl_bottom_navigation_recoil_background_text_light [new]
+drawable/sesl_bottom_navigation_ripple_mask [new]
+drawable/sesl_bottom_navigation_ripple_mask_icon [new]
+drawable/sesl_bottom_navigation_ripple_mask_icon_small_screen [new]
+drawable/sesl_bottom_navigation_ripple_mask_text_dark [changed]
+drawable/sesl_bottom_navigation_ripple_mask_text_light [changed]
+drawable/sesl_btn_check_to_on_000 [changed]
+drawable/sesl_btn_check_to_on_001 [changed]
+drawable/sesl_btn_check_to_on_025 [changed]
+drawable/sesl_btn_check_to_on_026 [changed]
+drawable/sesl_btn_colored [changed]
+drawable/sesl_btn_default [changed]
+drawable/sesl_btn_default_background [changed]
+drawable/sesl_btn_default_mask [changed]
+drawable/sesl_btn_radio_to_on_000 [changed]
+drawable/sesl_btn_radio_to_on_001 [changed]
+drawable/sesl_btn_radio_to_on_025 [changed]
+drawable/sesl_btn_radio_to_on_026 [changed]
+drawable/sesl_btn_small_default [changed]
+drawable/sesl_btn_small_default_background [changed]
+drawable/sesl_btn_small_default_mask [changed]
+drawable/sesl_close_button_recoil_background [changed]
+drawable/sesl_close_button_recoil_background_dark [changed]
+drawable/sesl_close_button_recoil_background_dark_for_theme [changed]
+drawable/sesl_close_button_recoil_background_for_theme [changed]
+drawable/sesl_close_button_recoil_background_with_white_case [changed]
+drawable/sesl_close_button_recoil_background_with_white_case_for_theme [changed]
+drawable/sesl_control_background [changed]
+drawable/sesl_custom_toast_background [changed]
+drawable/sesl_date_picker_header_background [changed]
+drawable/sesl_default_button_recoil_background_dark [changed]
+drawable/sesl_default_button_recoil_background_light [changed]
+drawable/sesl_default_button_small_recoil_background_dark [changed]
+drawable/sesl_default_button_small_recoil_background_light [changed]
+drawable/sesl_default_transparent_recoil_background_dark [changed]
+drawable/sesl_default_transparent_recoil_background_light [changed]
+drawable/sesl_dialog_background [changed]
+drawable/sesl_dialog_btn_default_borderless [changed]
+drawable/sesl_dialog_btn_default_borderless_recoil_background_dark [changed]
+drawable/sesl_dialog_btn_default_borderless_recoil_background_light [changed]
+drawable/sesl_dialog_btn_default_ripple_shape_mask [changed]
+drawable/sesl_dialog_inset_background [changed]
+drawable/sesl_dialog_middle_panel_background [changed]
+drawable/sesl_dialog_scroll_thumb [changed]
+drawable/sesl_dialog_scroll_thumb_dark [changed]
+drawable/sesl_divider_button_layout_background_dark [new]
+drawable/sesl_divider_button_layout_background_light [new]
+drawable/sesl_divider_button_layout_button_background [new]
+drawable/sesl_divider_button_layout_button_background_dark [new]
+drawable/sesl_divider_button_layout_divider_background_dark [new]
+drawable/sesl_divider_button_layout_divider_background_for_theme [new]
+drawable/sesl_divider_button_layout_divider_background_light [new]
+drawable/sesl_floating_appbar_round_background_dark [new]
+drawable/sesl_floating_appbar_round_background_dark_for_theme [new]
+drawable/sesl_floating_appbar_round_background_for_theme [new]
+drawable/sesl_floating_appbar_round_background_light [new]
+drawable/sesl_go_to_top_background_blur [new]
+drawable/sesl_go_to_top_background_dark [changed]
+drawable/sesl_go_to_top_background_light [changed]
+drawable/sesl_go_to_top_dark [changed]
+drawable/sesl_go_to_top_light [changed]
+drawable/sesl_ic_ab_back_dark [changed]
+drawable/sesl_ic_ab_back_light [changed]
+drawable/sesl_ic_cab_done [changed]
+drawable/sesl_ic_clear [changed]
+drawable/sesl_ic_close [changed]
+drawable/sesl_ic_close_dark [changed]
+drawable/sesl_ic_close_dark_for_theme [changed]
+drawable/sesl_ic_close_for_theme [changed]
+drawable/sesl_ic_close_with_white_case [changed]
+drawable/sesl_ic_close_with_white_case_for_theme [changed]
+drawable/sesl_ic_go_search_api [changed]
+drawable/sesl_ic_menu_overflow_dark [changed]
+drawable/sesl_ic_menu_overflow_light [changed]
+drawable/sesl_ic_search_api [changed]
+drawable/sesl_ic_search_back [changed]
+drawable/sesl_ic_search_bottom_clear [new]
+drawable/sesl_ic_voice_search_api [changed]
+drawable/sesl_level_seekbar_progress [changed]
+drawable/sesl_list_choice_btn_check [changed]
+drawable/sesl_list_choice_btn_radio [changed]
+drawable/sesl_list_choice_check_to_on_000 [changed]
+drawable/sesl_list_choice_check_to_on_001 [changed]
+drawable/sesl_list_choice_check_to_on_025 [changed]
+drawable/sesl_list_choice_check_to_on_026 [changed]
+drawable/sesl_list_choice_radio_to_on_000 [changed]
+drawable/sesl_list_choice_radio_to_on_001 [changed]
+drawable/sesl_list_choice_radio_to_on_025 [changed]
+drawable/sesl_list_choice_radio_to_on_026 [changed]
+drawable/sesl_list_go_to_top_dark [changed]
+drawable/sesl_list_go_to_top_light [changed]
+drawable/sesl_list_go_to_top_mask [changed]
+drawable/sesl_list_item_recoil_background_dark [changed]
+drawable/sesl_list_item_recoil_background_light [changed]
+drawable/sesl_list_item_recoil_mask [changed]
+drawable/sesl_menu_popup_background [changed]
+drawable/sesl_menu_popup_background_dark [changed]
+drawable/sesl_noti_badge [changed]
+drawable/sesl_progress_bar_indeterminate_large [changed]
+drawable/sesl_progress_bar_indeterminate_medium [changed]
+drawable/sesl_progress_bar_indeterminate_small [changed]
+drawable/sesl_progress_bar_indeterminate_xlarge [changed]
+drawable/sesl_progress_bar_indeterminate_xsmall [changed]
+drawable/sesl_scroll_thumb [changed]
+drawable/sesl_scroll_thumb_dark [changed]
+drawable/sesl_search_view_bottom_background_light [new]
+drawable/sesl_search_view_bottom_background_light_for_theme [new]
+drawable/sesl_search_view_bottom_background_night [new]
+drawable/sesl_search_view_bottom_background_night_for_theme [new]
+drawable/sesl_search_view_bottom_stroke_overlay [new]
+drawable/sesl_seek_bar_background_borderless [changed]
+drawable/sesl_snackbar_suggest_action_button_background [changed]
+drawable/sesl_snackbar_suggest_action_frame_mtrl [changed]
+drawable/sesl_spinner_background_dark [changed]
+drawable/sesl_spinner_background_light [changed]
+drawable/sesl_spinner_background_mask [changed]
+drawable/sesl_split_seekbar_primary_progress [changed]
+drawable/sesl_switch_recoil_background_dark [changed]
+drawable/sesl_switch_recoil_background_light [changed]
+drawable/sesl_switch_thumb_disabled_off [changed]
+drawable/sesl_switch_thumb_off [changed]
+drawable/sesl_switch_track_dark_disabled_off [changed]
+drawable/sesl_switch_track_dark_off [changed]
+drawable/sesl_switch_track_disabled_off [changed]
+drawable/sesl_switch_track_disabled_on [changed]
+drawable/sesl_switch_track_off [changed]
+drawable/sesl_switch_track_on [changed]
+drawable/sesl_switchbar_background [changed]
+drawable/sesl_switchthumb_off [changed]
+drawable/sesl_switchthumb_off_pressed [changed]
+drawable/sesl_tablayout_maintab_background_dark_for_theme [new]
+drawable/sesl_tablayout_maintab_background_for_theme [new]
+drawable/sesl_tablayout_maintab_item_background_dark [new]
+drawable/sesl_tablayout_maintab_item_background_dark_for_theme [new]
+drawable/sesl_tablayout_maintab_item_background_for_theme [new]
+drawable/sesl_tablayout_maintab_item_background_light [new]
+drawable/sesl_tablayout_maintab_touch_background_light [changed]
+drawable/sesl_tablayout_subtab_indicator_shape_dark [changed]
+drawable/sesl_tablayout_subtab_indicator_shape_light [changed]
+drawable/sesl_tablayout_subtab_subtext_indicator_background_dark [changed]
+drawable/sesl_tabview_maintab_ripple_background_dark [new]
+drawable/sesl_tabview_maintab_ripple_background_dark_for_theme [new]
+drawable/sesl_tabview_maintab_ripple_background_for_theme [new]
+drawable/sesl_tabview_maintab_ripple_background_light [new]
+drawable/sesl_tabview_transparent_recoil_background_dark [changed]
+drawable/sesl_tabview_transparent_recoil_background_light [changed]
+drawable/sesl_text_cursor [changed]
+drawable/sesl_tooltip_background [changed]
+drawable/sesl_transparent_borderless_action_item_recoil_background_dark [new]
+drawable/sesl_transparent_borderless_action_item_recoil_background_light [new]
+drawable/sesl_transparent_borderless_compound_button_recoil_background_dark [new]
+drawable/sesl_transparent_borderless_compound_button_recoil_background_light [new]
+drawable/sesl_transparent_borderless_recoil_background_dark [changed]
+drawable/sesl_transparent_borderless_recoil_background_light [changed]
+drawable/sesl_vector_drawable_progress [changed]
+drawable/sesl_vector_drawable_progress_mono [new]
+drawable/sesl_viewpager_background [changed]
+drawable/sesl_viewpager_indicator_on_off [changed]
+drawable/sesl_viewpager_item_background [changed]
+interpolator/mtrl_fast_out_linear_in [changed]
+interpolator/mtrl_fast_out_slow_in [changed]
+interpolator/mtrl_linear_out_slow_in [changed]
+interpolator/sesl_elastic_50_menu_popup [changed]
+interpolator/sine_in_out_33 [changed]
+interpolator/sine_in_out_70 [changed]
+interpolator/sine_in_out_80 [changed]
+interpolator/sine_out_80 [changed]
 
 ## DROPPED (reason)
-anim/design_bottom_sheet_slide_in: attr xml
-anim/design_bottom_sheet_slide_out: attr xml
-anim/mtrl_bottom_sheet_slide_in: attr xml
-anim/mtrl_bottom_sheet_slide_out: attr xml
-anim/sesl_bottom_menu_popup_enter: attr xml
-anim/sesl_bottom_menu_popup_exit: attr xml
-anim/sesl_date_picker_fade_in: attr xml
-anim/sesl_date_picker_fade_out: attr xml
-anim/sesl_fragment_close_exit: attr xml
-anim/sesl_fragment_open_enter: attr xml
-anim/sesl_grow_fade_in_from_bottom: attr xml
-anim/sesl_list_popup_enter: attr xml
-anim/sesl_list_popup_exit: attr xml
-anim/sesl_menu_popup_enter: attr xml
-anim/sesl_menu_popup_enter_bottom_left: attr xml
-anim/sesl_menu_popup_enter_bottom_right: attr xml
-anim/sesl_menu_popup_enter_top_left: attr xml
-anim/sesl_menu_popup_exit: attr xml
-anim/sesl_menu_popup_exit_bottom_left: attr xml
-anim/sesl_menu_popup_exit_bottom_right: attr xml
-anim/sesl_menu_popup_exit_top_left: attr xml
-anim/sesl_progress_indeterminate_circle_anim1: attr xml
-anim/sesl_progress_indeterminate_circle_anim2: attr xml
-anim/sesl_progress_indeterminate_circle_anim3: attr xml
-anim/sesl_progress_indeterminate_circle_anim4: attr xml
-anim/sesl_progress_indeterminate_circle_anim5: attr xml
-anim/sesl_progress_indeterminate_circle_anim6: attr xml
-anim/sesl_progress_indeterminate_circle_anim7: attr xml
-anim/sesl_progress_indeterminate_circle_anim8: attr xml
-anim/sesl_progress_indeterminate_circle_anim9: attr xml
-anim/sesl_recoil_pressed: attr xml
-anim/sesl_recoil_released: attr xml
-anim/sesl_shrink_fade_out_from_bottom: attr xml
-animator/design_fab_hide_motion_spec: attr xml
-animator/design_fab_show_motion_spec: attr xml
-animator/fragment_close_enter: attr xml
-animator/fragment_close_exit: attr xml
-animator/fragment_fade_enter: attr xml
-animator/fragment_fade_exit: attr xml
-animator/fragment_open_enter: attr xml
-animator/fragment_open_exit: attr xml
-animator/mtrl_btn_state_list_anim: attr xml
-animator/mtrl_card_state_list_anim: attr xml
-animator/mtrl_chip_state_list_anim: attr xml
-animator/mtrl_extended_fab_hide_motion_spec: attr xml
-animator/mtrl_extended_fab_show_motion_spec: attr xml
-animator/mtrl_extended_fab_state_list_animator: attr xml
-animator/mtrl_fab_hide_motion_spec: attr xml
-animator/mtrl_fab_show_motion_spec: attr xml
-animator/mtrl_fab_transformation_sheet_collapse_spec: attr xml
-animator/mtrl_fab_transformation_sheet_expand_spec: attr xml
-animator/sesl_appbar_state_list_animator: attr xml
-animator/sesl_fragment_close_enter: attr xml
-animator/sesl_fragment_close_enter_pop_over: attr xml
-animator/sesl_fragment_close_enter_rtl: attr xml
-animator/sesl_fragment_close_exit: attr xml
-animator/sesl_fragment_close_exit_pop_over: attr xml, interpolator/sine_out_33, interpolator/sine_out_33
-animator/sesl_fragment_close_exit_rtl: attr xml
-animator/sesl_fragment_open_enter: attr xml
-animator/sesl_fragment_open_enter_pop_over: attr xml, interpolator/interpolator_04_06_0_1, interpolator/interpolator_04_06_0_1
-animator/sesl_fragment_open_enter_rtl: attr xml
-animator/sesl_fragment_open_exit: attr xml
-animator/sesl_fragment_open_exit_pop_over: attr xml
-animator/sesl_fragment_open_exit_rtl: attr xml
-animator/sesl_recoil_button_selector: attr xml
-animator/sesl_recoil_card_selector: attr xml
-animator/sesl_recoil_dialog_button_selector: attr xml
-animator/sesl_recoil_list_selector: attr xml
-color/abc_tint_btn_checkable: attr xml
-color/design_box_stroke_color: attr xml
-color/design_error: attr xml
-color/design_icon_tint: attr xml
-color/material_on_background_disabled: attr xml
-color/material_on_background_emphasis_high_type: attr xml
-color/material_on_background_emphasis_medium: attr xml
-color/material_on_primary_disabled: attr xml
-color/material_on_primary_emphasis_high_type: attr xml
-color/material_on_primary_emphasis_medium: attr xml
-color/material_on_surface_disabled: attr xml
-color/material_on_surface_emphasis_high_type: attr xml
-color/material_on_surface_emphasis_medium: attr xml
-color/material_on_surface_stroke: attr xml
-color/material_slider_active_tick_marks_color: attr xml
-color/material_slider_active_track_color: attr xml
-color/material_slider_halo_color: attr xml
-color/material_slider_inactive_tick_marks_color: attr xml
-color/material_slider_inactive_track_color: attr xml
-color/material_slider_thumb_color: attr xml
-color/material_timepicker_button_background: attr xml
-color/material_timepicker_button_stroke: attr xml, attr xml
-color/material_timepicker_clock_text_color: attr xml
-color/material_timepicker_clockface: attr xml, attr xml
-color/material_timepicker_modebutton_tint: attr xml, attr xml
-color/mtrl_btn_bg_color_selector: attr xml
-color/mtrl_btn_ripple_color: attr xml
-color/mtrl_btn_stroke_color_selector: attr xml
-color/mtrl_btn_text_btn_bg_color_selector: attr xml
-color/mtrl_btn_text_btn_ripple_color: attr xml
-color/mtrl_btn_text_color_selector: attr xml
-color/mtrl_calendar_item_stroke_color: attr xml
-color/mtrl_calendar_selected_range: attr xml
-color/mtrl_card_view_foreground: attr xml
-color/mtrl_card_view_ripple: attr xml
-color/mtrl_chip_background_color: attr xml
-color/mtrl_chip_close_icon_tint: attr xml
-color/mtrl_chip_surface_color: attr xml
-color/mtrl_chip_text_color: attr xml
-color/mtrl_choice_chip_background_color: attr xml
-color/mtrl_choice_chip_ripple_color: attr xml
-color/mtrl_choice_chip_text_color: attr xml
-color/mtrl_error: attr xml
-color/mtrl_fab_bg_color_selector: attr xml
-color/mtrl_fab_icon_text_color_selector: attr xml
-color/mtrl_fab_ripple_color: attr xml
-color/mtrl_filled_background_color: attr xml
-color/mtrl_filled_icon_tint: attr xml
-color/mtrl_filled_stroke_color: attr xml
-color/mtrl_indicator_text_color: attr xml
-color/mtrl_navigation_bar_item_tint: attr xml
-color/mtrl_navigation_bar_ripple_color: attr xml
-color/mtrl_navigation_item_background_color: attr xml
-color/mtrl_navigation_item_icon_tint: attr xml
-color/mtrl_navigation_item_text_color: attr xml
-color/mtrl_on_primary_text_btn_text_color_selector: attr xml
-color/mtrl_on_surface_ripple_color: attr xml
-color/mtrl_outlined_icon_tint: attr xml
-color/mtrl_outlined_stroke_color: attr xml
-color/mtrl_popupmenu_overlay_color: attr xml
-color/mtrl_text_btn_text_color_selector: attr xml
-color/sesl_bottom_nav_colored_item_tint: attr xml
-color/sesl_bottom_nav_colored_ripple_color: attr xml
-color/sesl_bottom_nav_floating_icon_text_color_dark: attr xml
-color/sesl_bottom_nav_floating_icon_text_color_light: attr xml
-color/sesl_bottom_nav_ripple_color: attr xml
-color/sesl_divider_button_layout_background_selector_dark: attr xml
-color/sesl_divider_button_layout_background_selector_light: attr xml
-color/sesl_divider_button_layout_button_text_dark: attr xml
-color/sesl_divider_button_layout_button_text_light: attr xml
-color/sesl_divider_button_layout_divider_dark: attr xml
-color/sesl_divider_button_layout_divider_for_theme: attr xml
-color/sesl_divider_button_layout_divider_light: attr xml
-color/sesl_edit_text_dark: attr xml
-color/sesl_edit_text_light: attr xml
-color/sesl_floating_toolbar_background_selector_dark: attr xml
-color/sesl_floating_toolbar_background_selector_dark_for_theme: attr xml
-color/sesl_floating_toolbar_background_selector_for_theme: attr xml
-color/sesl_floating_toolbar_background_selector_light: attr xml
-color/sesl_number_picker_text_color_scroll: attr xml
-color/sesl_preference_dot_color: attr xml
-color/sesl_seekbar_ripple_color: attr xml
-color/sesl_spinner_dropdown_text_color_dark: attr xml
-color/sesl_spinner_dropdown_text_color_light: attr xml
-color/sesl_spinner_item_text_dark: attr xml
-color/sesl_spinner_item_text_light: attr xml
-color/sesl_switch_thumb_on_disabled_stroke_color: attr xml
-color/sesl_switch_thumb_on_disabled_stroke_color_dark: attr xml
-color/sesl_switch_thumb_on_stroke_color_light: attr xml
-color/sesl_switch_track_on_color_light: attr xml
-color/sesl_switch_track_on_disabled_color: attr xml
-color/sesl_switchbar_on_text_color_light: attr xml
-color/sesl_tablayout_main_background_color_selector_dark_for_theme: attr xml
-color/sesl_tablayout_main_background_color_selector_for_theme: attr xml
-color/sesl_tablayout_main_tab_selected_background_color_selector_dark: attr xml
-color/sesl_tablayout_main_tab_selected_background_color_selector_dark_for_theme: attr xml
-color/sesl_tablayout_main_tab_selected_background_color_selector_for_theme: attr xml
-color/sesl_tablayout_main_tab_selected_background_color_selector_light: attr xml
-color/sesl_tablayout_subtab_date_picker_text_color_dark_for_theme: attr xml
-color/sesl_tablayout_subtab_date_picker_text_color_light_for_theme: attr xml
-color/sesl_tablayout_subtab_sub_text_color_dark: attr xml
-color/sesl_tablayout_subtab_sub_text_color_light: attr xml
-color/sesl_tablayout_text_color_default_selector_dark_for_theme: attr xml
-color/sesl_tablayout_text_color_default_selector_for_theme: attr xml
-color/sesl_tabs_colored_ripple_color: attr xml
-color/sesl_tabs_icon_color_selector: attr xml
-color/sesl_tabs_icon_color_selector_colored: attr xml
-color/sesl_tabs_ripple_color: attr xml
-drawable/abc_btn_radio_material_anim: attr xml
-drawable/abc_ic_menu_copy_mtrl_am_alpha: attr xml
-drawable/abc_ic_menu_cut_mtrl_alpha: attr xml
-drawable/abc_ic_menu_paste_mtrl_am_alpha: attr xml
-drawable/abc_ic_menu_selectall_mtrl_alpha: attr xml
-drawable/abc_ic_menu_share_mtrl_alpha: attr xml
-drawable/abc_ic_star_black_16dp: attr xml
-drawable/abc_list_divider_material: attr xml
-drawable/avd_hide_password: attr xml
-drawable/avd_show_password: attr xml
-drawable/design_ic_visibility: attr xml
-drawable/design_ic_visibility_off: attr xml
-drawable/design_password_eye: attr xml
-drawable/ic_arrow_down_24dp: attr xml
-drawable/ic_mtrl_checked_circle: attr xml
-drawable/ic_mtrl_chip_checked_black: attr xml
-drawable/ic_mtrl_chip_checked_circle: attr xml
-drawable/ic_mtrl_chip_close_circle: attr xml
-drawable/material_ic_calendar_black_24dp: attr xml
-drawable/material_ic_clear_black_24dp: attr xml
-drawable/material_ic_edit_black_24dp: attr xml
-drawable/material_ic_keyboard_arrow_left_black_24dp: attr xml
-drawable/material_ic_keyboard_arrow_right_black_24dp: attr xml
-drawable/material_ic_menu_arrow_down_black_24dp: attr xml
-drawable/material_ic_menu_arrow_up_black_24dp: attr xml
-drawable/mtrl_checkbox_button: attr xml
-drawable/mtrl_checkbox_button_checked_unchecked: attr xml
-drawable/mtrl_checkbox_button_icon: attr xml
-drawable/mtrl_checkbox_button_icon_checked_indeterminate: attr xml
-drawable/mtrl_checkbox_button_icon_checked_unchecked: attr xml
-drawable/mtrl_checkbox_button_icon_indeterminate_checked: attr xml
-drawable/mtrl_checkbox_button_icon_indeterminate_unchecked: attr xml
-drawable/mtrl_checkbox_button_icon_unchecked_checked: attr xml
-drawable/mtrl_checkbox_button_icon_unchecked_indeterminate: attr xml
-drawable/mtrl_checkbox_button_unchecked_checked: attr xml
-drawable/mtrl_dialog_background: attr xml
-drawable/mtrl_dropdown_arrow: attr xml
-drawable/mtrl_ic_arrow_drop_down: attr xml
-drawable/mtrl_ic_arrow_drop_up: attr xml
-drawable/mtrl_ic_cancel: attr xml
-drawable/mtrl_ic_check_mark: attr xml
-drawable/mtrl_ic_checkbox_checked: attr xml
-drawable/mtrl_ic_checkbox_unchecked: attr xml
-drawable/mtrl_ic_error: attr xml
-drawable/mtrl_ic_indeterminate: attr xml
-drawable/mtrl_navigation_bar_item_background: attr xml
-drawable/mtrl_popupmenu_background: attr xml
-drawable/mtrl_popupmenu_background_overlay: attr xml
-drawable/notification_action_background: attr xml
-drawable/notification_tile_bg: attr xml
-drawable/sem_snackbar_action_button_background: attr xml
-drawable/sem_snackbar_action_frame_mtrl: attr xml
-drawable/sem_snackbar_frame_mtrl: attr xml
-drawable/sesl_action_bar_item_background: attr xml
-drawable/sesl_action_bar_item_text_background_dark: attr xml
-drawable/sesl_action_bar_item_text_background_light: attr xml
-drawable/sesl_bottom_nav_show_button_shapes_background: attr xml
-drawable/sesl_bottom_nav_show_button_shapes_shape: attr xml
-drawable/sesl_bottom_navigation_item_background_dark: attr xml, drawable/sesl_bottom_navigation_ripple_mask
-drawable/sesl_bottom_navigation_item_background_icon_dark: attr xml, drawable/sesl_bottom_navigation_ripple_mask_icon
-drawable/sesl_bottom_navigation_item_background_icon_dark_small_screen: attr xml
-drawable/sesl_bottom_navigation_item_background_icon_light: attr xml, drawable/sesl_bottom_navigation_ripple_mask_icon
-drawable/sesl_bottom_navigation_item_background_icon_light_small_screen: attr xml
-drawable/sesl_bottom_navigation_item_background_light: attr xml, drawable/sesl_bottom_navigation_ripple_mask
-drawable/sesl_bottom_navigation_recoil_background_text_dark: attr xml
-drawable/sesl_bottom_navigation_recoil_background_text_light: attr xml
-drawable/sesl_bottom_navigation_ripple_mask: attr xml
-drawable/sesl_bottom_navigation_ripple_mask_icon: attr xml
-drawable/sesl_bottom_navigation_ripple_mask_icon_small_screen: attr xml
-drawable/sesl_bottom_navigation_ripple_mask_text_dark: attr xml
-drawable/sesl_bottom_navigation_ripple_mask_text_light: attr xml
-drawable/sesl_btn_check_to_on_000: attr xml
-drawable/sesl_btn_check_to_on_001: attr xml
-drawable/sesl_btn_check_to_on_025: attr xml
-drawable/sesl_btn_check_to_on_026: attr xml
-drawable/sesl_btn_colored: attr xml
-drawable/sesl_btn_default: attr xml
-drawable/sesl_btn_default_background: attr xml
-drawable/sesl_btn_default_mask: attr xml
-drawable/sesl_btn_radio_to_on_000: attr xml
-drawable/sesl_btn_radio_to_on_001: attr xml
-drawable/sesl_btn_radio_to_on_025: attr xml
-drawable/sesl_btn_radio_to_on_026: attr xml
-drawable/sesl_btn_small_default: attr xml
-drawable/sesl_btn_small_default_background: attr xml
-drawable/sesl_btn_small_default_mask: attr xml
-drawable/sesl_close_button_recoil_background: attr xml
-drawable/sesl_close_button_recoil_background_dark: attr xml
-drawable/sesl_close_button_recoil_background_dark_for_theme: attr xml
-drawable/sesl_close_button_recoil_background_for_theme: attr xml
-drawable/sesl_close_button_recoil_background_with_white_case: attr xml
-drawable/sesl_close_button_recoil_background_with_white_case_for_theme: attr xml
-drawable/sesl_control_background: attr xml
-drawable/sesl_custom_toast_background: attr xml
-drawable/sesl_date_picker_header_background: attr xml
-drawable/sesl_default_button_recoil_background_dark: attr xml
-drawable/sesl_default_button_recoil_background_light: attr xml
-drawable/sesl_default_button_small_recoil_background_dark: attr xml
-drawable/sesl_default_button_small_recoil_background_light: attr xml
-drawable/sesl_default_transparent_recoil_background_dark: attr xml
-drawable/sesl_default_transparent_recoil_background_light: attr xml
-drawable/sesl_dialog_background: attr xml
-drawable/sesl_dialog_btn_default_borderless: attr xml
-drawable/sesl_dialog_btn_default_borderless_recoil_background_dark: attr xml
-drawable/sesl_dialog_btn_default_borderless_recoil_background_light: attr xml
-drawable/sesl_dialog_btn_default_ripple_shape_mask: attr xml
-drawable/sesl_dialog_inset_background: attr xml
-drawable/sesl_dialog_middle_panel_background: attr xml
-drawable/sesl_dialog_scroll_thumb: attr xml
-drawable/sesl_dialog_scroll_thumb_dark: attr xml
-drawable/sesl_divider_button_layout_background_dark: attr xml, color/sesl_divider_button_layout_background_selector_dark
-drawable/sesl_divider_button_layout_background_light: attr xml, color/sesl_divider_button_layout_background_selector_light
-drawable/sesl_divider_button_layout_button_background: attr xml
-drawable/sesl_divider_button_layout_button_background_dark: attr xml
-drawable/sesl_divider_button_layout_divider_background_dark: attr xml, color/sesl_divider_button_layout_divider_dark
-drawable/sesl_divider_button_layout_divider_background_for_theme: attr xml, color/sesl_divider_button_layout_divider_for_theme
-drawable/sesl_divider_button_layout_divider_background_light: attr xml, color/sesl_divider_button_layout_divider_light
-drawable/sesl_floating_appbar_round_background_dark: attr xml, color/sesl_floating_toolbar_background_selector_dark
-drawable/sesl_floating_appbar_round_background_dark_for_theme: attr xml, color/sesl_floating_toolbar_background_selector_dark_for_theme
-drawable/sesl_floating_appbar_round_background_for_theme: attr xml, color/sesl_floating_toolbar_background_selector_for_theme
-drawable/sesl_floating_appbar_round_background_light: attr xml, color/sesl_floating_toolbar_background_selector_light
-drawable/sesl_go_to_top_background_blur: attr xml
-drawable/sesl_go_to_top_background_dark: attr xml
-drawable/sesl_go_to_top_background_light: attr xml
-drawable/sesl_go_to_top_dark: attr xml, attr xml
-drawable/sesl_go_to_top_light: attr xml, attr xml
-drawable/sesl_ic_ab_back_dark: attr xml
-drawable/sesl_ic_ab_back_light: attr xml
-drawable/sesl_ic_cab_done: attr xml
-drawable/sesl_ic_clear: attr xml
-drawable/sesl_ic_close: attr xml
-drawable/sesl_ic_close_dark: attr xml
-drawable/sesl_ic_close_dark_for_theme: attr xml
-drawable/sesl_ic_close_for_theme: attr xml
-drawable/sesl_ic_close_with_white_case: attr xml
-drawable/sesl_ic_close_with_white_case_for_theme: attr xml
-drawable/sesl_ic_go_search_api: attr xml
-drawable/sesl_ic_menu_overflow_dark: attr xml
-drawable/sesl_ic_menu_overflow_light: attr xml
-drawable/sesl_ic_search_api: attr xml
-drawable/sesl_ic_search_back: attr xml
-drawable/sesl_ic_search_bottom_clear: attr xml
-drawable/sesl_ic_voice_search_api: attr xml
-drawable/sesl_level_seekbar_progress: attr xml
-drawable/sesl_list_choice_btn_check: attr xml
-drawable/sesl_list_choice_btn_radio: attr xml
-drawable/sesl_list_choice_check_to_on_000: attr xml
-drawable/sesl_list_choice_check_to_on_001: attr xml
-drawable/sesl_list_choice_check_to_on_025: attr xml
-drawable/sesl_list_choice_check_to_on_026: attr xml
-drawable/sesl_list_choice_radio_to_on_000: attr xml
-drawable/sesl_list_choice_radio_to_on_001: attr xml
-drawable/sesl_list_choice_radio_to_on_025: attr xml
-drawable/sesl_list_choice_radio_to_on_026: attr xml
-drawable/sesl_list_go_to_top_dark: attr xml
-drawable/sesl_list_go_to_top_light: attr xml
-drawable/sesl_list_go_to_top_mask: attr xml
-drawable/sesl_list_item_recoil_background_dark: attr xml
-drawable/sesl_list_item_recoil_background_light: attr xml
-drawable/sesl_list_item_recoil_mask: attr xml
-drawable/sesl_menu_popup_background: attr xml
-drawable/sesl_menu_popup_background_dark: attr xml
-drawable/sesl_noti_badge: attr xml
-drawable/sesl_progress_bar_indeterminate_large: attr xml, attr xml
-drawable/sesl_progress_bar_indeterminate_medium: attr xml, attr xml
-drawable/sesl_progress_bar_indeterminate_small: attr xml, attr xml
-drawable/sesl_progress_bar_indeterminate_xlarge: attr xml, attr xml
-drawable/sesl_progress_bar_indeterminate_xsmall: attr xml, attr xml
-drawable/sesl_progress_horizontal: attr xml, drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
-drawable/sesl_progress_mono: attr xml, drawable/sesl_vector_drawable_progress_mono, anim/progress_dotparentlink_rotation_0, anim/progress_dotparentlink_progress_dot_scaley_1
-drawable/sesl_scroll_thumb: attr xml
-drawable/sesl_scroll_thumb_dark: attr xml
-drawable/sesl_scrubber_progress_horizontal: attr xml, drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
-drawable/sesl_scrubber_progress_vertical: attr xml, drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
-drawable/sesl_search_view_bottom_background_light: attr xml
-drawable/sesl_search_view_bottom_background_light_for_theme: attr xml
-drawable/sesl_search_view_bottom_background_night: attr xml
-drawable/sesl_search_view_bottom_background_night_for_theme: attr xml
-drawable/sesl_search_view_bottom_stroke_overlay: attr xml
-drawable/sesl_seek_bar_background_borderless: attr xml
-drawable/sesl_snackbar_suggest_action_button_background: attr xml
-drawable/sesl_snackbar_suggest_action_frame_mtrl: attr xml
-drawable/sesl_spinner_background_dark: attr xml
-drawable/sesl_spinner_background_light: attr xml
-drawable/sesl_spinner_background_mask: attr xml
-drawable/sesl_split_seekbar_primary_progress: attr xml
-drawable/sesl_switch_recoil_background_dark: attr xml
-drawable/sesl_switch_recoil_background_light: attr xml
-drawable/sesl_switch_thumb_disabled_off: attr xml
-drawable/sesl_switch_thumb_off: attr xml
-drawable/sesl_switch_track_dark_disabled_off: attr xml
-drawable/sesl_switch_track_dark_off: attr xml
-drawable/sesl_switch_track_disabled_off: attr xml
-drawable/sesl_switch_track_disabled_on: attr xml
-drawable/sesl_switch_track_off: attr xml
-drawable/sesl_switch_track_on: attr xml
-drawable/sesl_switchbar_background: attr xml
-drawable/sesl_switchthumb_off: attr xml
-drawable/sesl_switchthumb_off_pressed: attr xml
-drawable/sesl_tablayout_maintab_background_dark_for_theme: attr xml, color/sesl_tablayout_main_background_color_selector_dark_for_theme
-drawable/sesl_tablayout_maintab_background_for_theme: attr xml, color/sesl_tablayout_main_background_color_selector_for_theme
-drawable/sesl_tablayout_maintab_item_background_dark: attr xml, color/sesl_tablayout_main_tab_selected_background_color_selector_dark
-drawable/sesl_tablayout_maintab_item_background_dark_for_theme: attr xml, color/sesl_tablayout_main_tab_selected_background_color_selector_dark_for_theme
-drawable/sesl_tablayout_maintab_item_background_for_theme: attr xml, color/sesl_tablayout_main_tab_selected_background_color_selector_for_theme
-drawable/sesl_tablayout_maintab_item_background_light: attr xml, color/sesl_tablayout_main_tab_selected_background_color_selector_light
-drawable/sesl_tablayout_maintab_touch_background_light: attr xml
-drawable/sesl_tablayout_subtab_indicator_shape_dark: attr xml
-drawable/sesl_tablayout_subtab_indicator_shape_light: attr xml
-drawable/sesl_tablayout_subtab_subtext_indicator_background_dark: attr xml
-drawable/sesl_tabview_maintab_ripple_background_dark: attr xml
-drawable/sesl_tabview_maintab_ripple_background_dark_for_theme: attr xml
-drawable/sesl_tabview_maintab_ripple_background_for_theme: attr xml, drawable/sesl_tablayout_maintab_item_background_for_theme
-drawable/sesl_tabview_maintab_ripple_background_light: attr xml, drawable/sesl_tablayout_maintab_item_background_light
-drawable/sesl_tabview_transparent_recoil_background_dark: attr xml
-drawable/sesl_tabview_transparent_recoil_background_light: attr xml
-drawable/sesl_text_cursor: attr xml
-drawable/sesl_tooltip_background: attr xml
-drawable/sesl_transparent_borderless_action_item_recoil_background_dark: attr xml
-drawable/sesl_transparent_borderless_action_item_recoil_background_light: attr xml
-drawable/sesl_transparent_borderless_compound_button_recoil_background_dark: attr xml
-drawable/sesl_transparent_borderless_compound_button_recoil_background_light: attr xml
-drawable/sesl_transparent_borderless_recoil_background_dark: attr xml
-drawable/sesl_transparent_borderless_recoil_background_light: attr xml
-drawable/sesl_vector_drawable_progress: attr xml, attr xml
-drawable/sesl_vector_drawable_progress_mono: attr xml
-drawable/sesl_viewpager_background: attr xml
-drawable/sesl_viewpager_indicator_on_off: attr xml
-drawable/sesl_viewpager_item_background: attr xml
-interpolator/mtrl_fast_out_linear_in: attr xml
-interpolator/mtrl_fast_out_slow_in: attr xml
-interpolator/mtrl_linear_out_slow_in: attr xml
-interpolator/sesl_elastic_50_menu_popup: attr xml
-interpolator/sine_in_out_33: attr xml
-interpolator/sine_in_out_70: attr xml
-interpolator/sine_in_out_80: attr xml
-interpolator/sine_out_80: attr xml
+animator/sesl_fragment_close_exit_pop_over: interpolator/sine_out_33, interpolator/sine_out_33
+animator/sesl_fragment_open_enter_pop_over: interpolator/interpolator_04_06_0_1, interpolator/interpolator_04_06_0_1
+drawable/sesl_progress_horizontal: drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
+drawable/sesl_progress_mono: anim/progress_dotparentlink_rotation_0, anim/progress_dotparentlink_progress_dot_scaley_1, anim/progress_dot_progress_dot_cir_0_translatey_2, anim/progress_dot_cir_0_path1custom3_gradientfill1_c2s4pg1p2
+drawable/sesl_scrubber_progress_horizontal: drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
+drawable/sesl_scrubber_progress_vertical: drawable/sesl_progress_bar, drawable/sesl_progress_bar, drawable/sesl_progress_bar
 
 ## STYLES
-AlertDialog.AppCompat
-AlertDialog.AppCompat.Light
-Animation.AppCompat.Dialog
-Animation.AppCompat.DropDownUp
-Animation.AppCompat.Tooltip
-Animation.Design.BottomSheetDialog
-Animation.MaterialComponents.BottomSheetDialog
-Base.AlertDialog.AppCompat
-Base.Animation.AppCompat.MenuPopup.BottomLeft
-Base.Animation.AppCompat.MenuPopup.BottomRight
-Base.Animation.AppCompat.MenuPopup.TopLeft
-Base.Animation.AppCompat.MenuPopup.TopRight
-Base.CardView
-Base.DialogWindowTitleBackground.AppCompat
-Base.MaterialAlertDialog.MaterialComponents.Title.Icon
-Base.MaterialAlertDialog.MaterialComponents.Title.Panel
-Base.MaterialAlertDialog.MaterialComponents.Title.Text
-Base.TextAppearance.AppCompat
-Base.TextAppearance.AppCompat.Body1
-Base.TextAppearance.AppCompat.Body2
-Base.TextAppearance.AppCompat.Button
-Base.TextAppearance.AppCompat.Caption
-Base.TextAppearance.AppCompat.Dialog
-Base.TextAppearance.AppCompat.Dialog.List
-Base.TextAppearance.AppCompat.Dialog.List.Secondary
-Base.TextAppearance.AppCompat.DialogWindowTitle
-Base.TextAppearance.AppCompat.Display1
-Base.TextAppearance.AppCompat.Display2
-Base.TextAppearance.AppCompat.Display3
-Base.TextAppearance.AppCompat.Display4
-Base.TextAppearance.AppCompat.Headline
-Base.TextAppearance.AppCompat.Inverse
-Base.TextAppearance.AppCompat.Large
-Base.TextAppearance.AppCompat.Large.Inverse
-Base.TextAppearance.AppCompat.Light.Dialog
-Base.TextAppearance.AppCompat.Light.Dialog.List
-Base.TextAppearance.AppCompat.Light.Dialog.List.Secondary
-Base.TextAppearance.AppCompat.Light.DialogWindowTitle
-Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Header
-Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large
-Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Small
-Base.TextAppearance.AppCompat.Light.Widget.TextView.SpinnerItem
-Base.TextAppearance.AppCompat.Medium
-Base.TextAppearance.AppCompat.Medium.Inverse
-Base.TextAppearance.AppCompat.SearchResult.Subtitle
-Base.TextAppearance.AppCompat.SearchResult.Title
-Base.TextAppearance.AppCompat.SeslFontRegular
-Base.TextAppearance.AppCompat.SeslFontSemiBold
-Base.TextAppearance.AppCompat.Small
-Base.TextAppearance.AppCompat.Small.Inverse
-Base.TextAppearance.AppCompat.Subhead
-Base.TextAppearance.AppCompat.Subhead.Inverse
-Base.TextAppearance.AppCompat.Title
-Base.TextAppearance.AppCompat.Title.Inverse
-Base.TextAppearance.AppCompat.Tooltip
-Base.TextAppearance.AppCompat.Widget.ActionBar.Menu
-Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle
-Base.TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse
-Base.TextAppearance.AppCompat.Widget.ActionBar.Title
-Base.TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse
-Base.TextAppearance.AppCompat.Widget.ActionMode.Subtitle
-Base.TextAppearance.AppCompat.Widget.ActionMode.Subtitle.Inverse
-Base.TextAppearance.AppCompat.Widget.ActionMode.Title
-Base.TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse
-Base.TextAppearance.AppCompat.Widget.Button
-Base.TextAppearance.AppCompat.Widget.Button.Borderless.Colored
-Base.TextAppearance.AppCompat.Widget.Button.Colored
-Base.TextAppearance.AppCompat.Widget.Button.Inverse
-Base.TextAppearance.AppCompat.Widget.DropDownItem
-Base.TextAppearance.AppCompat.Widget.Light.Button
-Base.TextAppearance.AppCompat.Widget.PopupMenu.Header
-Base.TextAppearance.AppCompat.Widget.PopupMenu.Large
-Base.TextAppearance.AppCompat.Widget.PopupMenu.Small
-Base.TextAppearance.AppCompat.Widget.SeslSwitchBar
-Base.TextAppearance.AppCompat.Widget.Switch
-Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem
-Base.TextAppearance.MaterialComponents.Button
-Base.TextAppearance.MaterialComponents.Headline6
-Base.TextAppearance.MaterialComponents.Subtitle2
-Base.TextAppearance.Widget.AppCompat.ExpandedMenu.Item
-Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle
-Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle.Inverse
-Base.TextAppearance.Widget.AppCompat.Toolbar.Title
-Base.TextAppearance.Widget.AppCompat.Toolbar.Title.Inverse
-Base.Theme.AppCompat
-Base.Theme.AppCompat.CompactMenu
-Base.Theme.AppCompat.Dialog
-Base.Theme.AppCompat.Dialog.Alert
-Base.Theme.AppCompat.Dialog.FixedSize
-Base.Theme.AppCompat.Dialog.MinWidth
-Base.Theme.AppCompat.DialogWhenLarge
-Base.Theme.AppCompat.Light
-Base.Theme.AppCompat.Light.DarkActionBar
-Base.Theme.AppCompat.Light.Dialog
-Base.Theme.AppCompat.Light.Dialog.Alert
-Base.Theme.AppCompat.Light.Dialog.FixedSize
-Base.Theme.AppCompat.Light.Dialog.MinWidth
-Base.Theme.AppCompat.Light.DialogWhenLarge
-Base.Theme.MaterialComponents
-Base.Theme.MaterialComponents.Bridge
-Base.Theme.MaterialComponents.CompactMenu
-Base.Theme.MaterialComponents.Dialog
-Base.Theme.MaterialComponents.Dialog.Alert
-Base.Theme.MaterialComponents.Dialog.Bridge
-Base.Theme.MaterialComponents.Dialog.FixedSize
-Base.Theme.MaterialComponents.Dialog.MinWidth
-Base.Theme.MaterialComponents.DialogWhenLarge
-Base.Theme.MaterialComponents.Light
-Base.Theme.MaterialComponents.Light.Bridge
-Base.Theme.MaterialComponents.Light.DarkActionBar
-Base.Theme.MaterialComponents.Light.DarkActionBar.Bridge
-Base.Theme.MaterialComponents.Light.Dialog
-Base.Theme.MaterialComponents.Light.Dialog.Alert
-Base.Theme.MaterialComponents.Light.Dialog.Bridge
-Base.Theme.MaterialComponents.Light.Dialog.FixedSize
-Base.Theme.MaterialComponents.Light.Dialog.MinWidth
-Base.Theme.MaterialComponents.Light.DialogWhenLarge
-Base.ThemeOverlay.AppCompat
-Base.ThemeOverlay.AppCompat.ActionBar
-Base.ThemeOverlay.AppCompat.Dark
-Base.ThemeOverlay.AppCompat.Dark.ActionBar
-Base.ThemeOverlay.AppCompat.Dialog
-Base.ThemeOverlay.AppCompat.Dialog.Alert
-Base.ThemeOverlay.AppCompat.Light
-Base.ThemeOverlay.AppCompat.Light.Dialog
-Base.ThemeOverlay.AppCompat.Light.Dialog.Alert
-Base.ThemeOverlay.MaterialComponents.Dialog
-Base.ThemeOverlay.MaterialComponents.Dialog.Alert
-Base.ThemeOverlay.MaterialComponents.Dialog.Alert.Framework
-Base.ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework
-Base.ThemeOverlay.MaterialComponents.MaterialAlertDialog
-Base.V14.Theme.MaterialComponents
-Base.V14.Theme.MaterialComponents.Bridge
-Base.V14.Theme.MaterialComponents.Dialog
-Base.V14.Theme.MaterialComponents.Dialog.Bridge
-Base.V14.Theme.MaterialComponents.Light
-Base.V14.Theme.MaterialComponents.Light.Bridge
-Base.V14.Theme.MaterialComponents.Light.DarkActionBar.Bridge
-Base.V14.Theme.MaterialComponents.Light.Dialog
-Base.V14.Theme.MaterialComponents.Light.Dialog.Bridge
-Base.V14.ThemeOverlay.MaterialComponents.Dialog
-Base.V14.ThemeOverlay.MaterialComponents.Dialog.Alert
-Base.V14.ThemeOverlay.MaterialComponents.MaterialAlertDialog
-Base.V14.Widget.MaterialComponents.AutoCompleteTextView
-Base.V21.Theme.AppCompat
-Base.V21.Theme.AppCompat.Dialog
-Base.V21.Theme.AppCompat.Light
-Base.V21.Theme.MaterialComponents
-Base.V21.Theme.MaterialComponents.Dialog
-Base.V21.Theme.MaterialComponents.Light
-Base.V21.Theme.MaterialComponents.Light.Dialog
-Base.V21.ThemeOverlay.AppCompat.Dialog
-Base.V22.Theme.AppCompat
-Base.V22.Theme.AppCompat.Light
-Base.V23.Theme.AppCompat
-Base.V23.Theme.AppCompat.Light
-Base.V26.Theme.AppCompat
-Base.V26.Theme.AppCompat.Light
-Base.V26.Widget.AppCompat.Toolbar
-Base.V28.Theme.AppCompat
-Base.V28.Theme.AppCompat.Light
-Base.V29.Theme.AppCompat
-Base.V29.Theme.AppCompat.Light
-Base.V29.Widget.AppCompat.ActionBar.TabView
-Base.V29.Widget.AppCompat.ActionButton
-Base.V29.Widget.AppCompat.ActionButton.CloseMode
-Base.V29.Widget.AppCompat.ActionButton.Overflow
-Base.V29.Widget.AppCompat.Button
-Base.V29.Widget.AppCompat.Button.Dialog
-Base.V29.Widget.AppCompat.Button.Small
-Base.V29.Widget.AppCompat.CompoundButton.CheckBox
-Base.V29.Widget.AppCompat.CompoundButton.RadioButton
-Base.V29.Widget.AppCompat.CompoundButton.Switch
-Base.V29.Widget.AppCompat.ImageButton
-Base.V29.Widget.AppCompat.Light.ActionBar.TabView
-Base.V29.Widget.AppCompat.Light.ActionButton.Overflow
-Base.V29.Widget.AppCompat.Light.Button
-Base.V29.Widget.AppCompat.Light.Button.Dialog
-Base.V29.Widget.AppCompat.Light.Button.Small
-Base.V29.Widget.AppCompat.Light.CompoundButton.CheckBox
-Base.V29.Widget.AppCompat.Light.CompoundButton.RadioButton
-Base.V29.Widget.AppCompat.Light.CompoundButton.Switch
-Base.V29.Widget.AppCompat.Light.ListView.DropDown
-Base.V29.Widget.AppCompat.Light.Spinner
-Base.V29.Widget.AppCompat.ListMenuView
-Base.V29.Widget.AppCompat.ListView.DropDown
-Base.V29.Widget.AppCompat.Spinner
-Base.V29.Widget.AppCompat.Toolbar.Button.Navigation
-Base.V29.Widget.Design.DividerButtonLayout.DividerButton
-Base.V29.Widget.Design.DividerButtonLayout.DividerButton.Light
-Base.V29.Widget.Design.TabLayout
-Base.V7.Theme.AppCompat
-Base.V7.Theme.AppCompat.Dialog
-Base.V7.Theme.AppCompat.Light
-Base.V7.Theme.AppCompat.Light.Dialog
-Base.V7.ThemeOverlay.AppCompat.Dialog
-Base.V7.ThemeOverlay.AppCompat.Light.Dialog
-Base.V7.Widget.Design.DividerButtonLayout
-Base.V7.Widget.Design.DividerButtonLayout.DividerButton
-Base.V7.Widget.Design.DividerButtonLayout.DividerButton.Light
-Base.V7.Widget.Design.DividerButtonLayout.Light
-Base.Widget.AppCompat.ActionBar
-Base.Widget.AppCompat.ActionBar.Solid
-Base.Widget.AppCompat.ActionButton
-Base.Widget.AppCompat.ActionButton.CloseMode
-Base.Widget.AppCompat.ActionButton.Overflow
-Base.Widget.AppCompat.Button.Borderless.Colored
-Base.Widget.AppCompat.Button.Colored
-Base.Widget.AppCompat.DrawerArrowToggle
-Base.Widget.AppCompat.EditText
-Base.Widget.AppCompat.ImageButton
-Base.Widget.AppCompat.Light.ActionBar.Solid
-Base.Widget.AppCompat.Light.ActionBar.TabView
-Base.Widget.AppCompat.Light.EditText
-Base.Widget.AppCompat.Light.TextView.SeslListCaption
-Base.Widget.AppCompat.ProgressBar.Horizontal
-Base.Widget.AppCompat.ProgressBar.Mono
-Base.Widget.AppCompat.ProgressBar.Mono.Large
-Base.Widget.AppCompat.ProgressBar.Mono.Small
-Base.Widget.AppCompat.RatingBar.Indicator
-Base.Widget.AppCompat.SearchView.Bottom
-Base.Widget.AppCompat.SeekBar
-Base.Widget.AppCompat.TextView
-Base.Widget.AppCompat.TextView.SeslListCaption
-Base.Widget.AppCompat.Toolbar
-Base.Widget.Design.TabLayout
-Base.Widget.MaterialComponents.AutoCompleteTextView
-Base.Widget.MaterialComponents.CheckedTextView
-Base.Widget.MaterialComponents.Chip
-Base.Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton
-Base.Widget.MaterialComponents.MaterialCalendar.NavigationButton
-Base.Widget.MaterialComponents.PopupMenu
-Base.Widget.MaterialComponents.PopupMenu.ContextMenu
-Base.Widget.MaterialComponents.PopupMenu.ListPopupWindow
-Base.Widget.MaterialComponents.PopupMenu.Overflow
-Base.Widget.MaterialComponents.Slider
-Base.Widget.MaterialComponents.Snackbar
-Base.Widget.MaterialComponents.TextInputEditText
-Base.Widget.MaterialComponents.TextInputLayout
-Base.Widget.MaterialComponents.TextView
-BasePreferenceThemeOverlay
-MaterialAlertDialog.MaterialComponents
-MaterialAlertDialog.MaterialComponents.Body.Text
-MaterialAlertDialog.MaterialComponents.Picker.Date.Calendar
-MaterialAlertDialog.MaterialComponents.Picker.Date.Spinner
-MaterialAlertDialog.MaterialComponents.Title.Icon
-MaterialAlertDialog.MaterialComponents.Title.Icon.CenterStacked
-MaterialAlertDialog.MaterialComponents.Title.Panel
-MaterialAlertDialog.MaterialComponents.Title.Panel.CenterStacked
-MaterialAlertDialog.MaterialComponents.Title.Text
-MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked
-Platform.AppCompat
-Platform.AppCompat.Light
-Platform.MaterialComponents
-Platform.MaterialComponents.Dialog
-Platform.MaterialComponents.Light
-Platform.MaterialComponents.Light.Dialog
-Platform.ThemeOverlay.AppCompat
-Platform.ThemeOverlay.AppCompat.Dark
-Platform.ThemeOverlay.AppCompat.Light
-Platform.V21.AppCompat
-Platform.V21.AppCompat.Light
-Platform.V25.AppCompat
-Platform.V25.AppCompat.Light
-Platform.V7.AppCompat
-Platform.V7.AppCompat.Light
-Preference.Category
-Preference.DialogPreference.SeekBarPreferenceCompat
-Preference.DropDown
-Preference.PreferenceScreen
-Preference.RingtonePreference
-Preference.SeekBarPreference
-Preference.SwitchPreference
-Preference.SwitchPreferenceCompat
-PreferenceFragment
-PreferenceFragmentList
-PreferenceThemeOverlay
-RtlOverlay.DialogWindowTitle.AppCompat
-RtlOverlay.DialogWindowTitle.AppCompat.Light
-RtlOverlay.Widget.AppCompat.ActionBar.TitleItem
-RtlOverlay.Widget.AppCompat.DialogTitle.Icon
-RtlOverlay.Widget.AppCompat.PopupMenuItem
-RtlOverlay.Widget.AppCompat.PopupMenuItem.InternalGroup
-RtlOverlay.Widget.AppCompat.PopupMenuItem.Shortcut
-RtlOverlay.Widget.AppCompat.PopupMenuItem.SubmenuArrow
-RtlOverlay.Widget.AppCompat.PopupMenuItem.Text
-RtlOverlay.Widget.AppCompat.PopupMenuItem.Title
-RtlOverlay.Widget.AppCompat.Search.DropDown
-RtlOverlay.Widget.AppCompat.Search.DropDown.Icon1
-RtlOverlay.Widget.AppCompat.Search.DropDown.Icon2
-RtlOverlay.Widget.AppCompat.Search.DropDown.Query
-RtlOverlay.Widget.AppCompat.Search.DropDown.Text
-RtlOverlay.Widget.AppCompat.SearchView.MagIcon
-RtlUnderlay.Widget.AppCompat.ActionButton
-RtlUnderlay.Widget.AppCompat.ActionButton.Overflow
-ShapeAppearance.M3.Comp.Sheet.Side.Docked.Container.Shape
-ShapeAppearance.M3.Sys.Shape.Corner.Full
-ShapeAppearance.MaterialComponents.Badge
-ShapeAppearance.MaterialComponents.LargeComponent
-ShapeAppearance.MaterialComponents.MediumComponent
-ShapeAppearance.MaterialComponents.SmallComponent
-ShapeAppearanceOverlay.MaterialComponents.BottomSheet
-ShapeAppearanceOverlay.MaterialComponents.Chip
-ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton
-TextAppearance.AppCompat
-TextAppearance.AppCompat.Body1
-TextAppearance.AppCompat.Body2
-TextAppearance.AppCompat.Button
-TextAppearance.AppCompat.Caption
-TextAppearance.AppCompat.Display1
-TextAppearance.AppCompat.Display2
-TextAppearance.AppCompat.Display3
-TextAppearance.AppCompat.Display4
-TextAppearance.AppCompat.Headline
-TextAppearance.AppCompat.Inverse
-TextAppearance.AppCompat.Large
-TextAppearance.AppCompat.Large.Inverse
-TextAppearance.AppCompat.Light.SearchResult.Subtitle
-TextAppearance.AppCompat.Light.SearchResult.Title
-TextAppearance.AppCompat.Light.Widget.PopupMenu.Header
-TextAppearance.AppCompat.Light.Widget.PopupMenu.Large
-TextAppearance.AppCompat.Light.Widget.PopupMenu.Small
-TextAppearance.AppCompat.Light.Widget.TextView.SpinnerItem
-TextAppearance.AppCompat.Medium
-TextAppearance.AppCompat.Medium.Inverse
-TextAppearance.AppCompat.Menu
-TextAppearance.AppCompat.SearchResult.Subtitle
-TextAppearance.AppCompat.SearchResult.Title
-TextAppearance.AppCompat.Small
-TextAppearance.AppCompat.Small.Inverse
-TextAppearance.AppCompat.Subhead
-TextAppearance.AppCompat.Subhead.Inverse
-TextAppearance.AppCompat.Title
-TextAppearance.AppCompat.Title.Inverse
-TextAppearance.AppCompat.Tooltip
-TextAppearance.AppCompat.Widget.ActionBar.Menu
-TextAppearance.AppCompat.Widget.ActionBar.Subtitle
-TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse
-TextAppearance.AppCompat.Widget.ActionBar.Title
-TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse
-TextAppearance.AppCompat.Widget.ActionMode.Subtitle
-TextAppearance.AppCompat.Widget.ActionMode.Subtitle.Inverse
-TextAppearance.AppCompat.Widget.ActionMode.Title
-TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse
-TextAppearance.AppCompat.Widget.Button
-TextAppearance.AppCompat.Widget.Button.Borderless.Colored
-TextAppearance.AppCompat.Widget.Button.Colored
-TextAppearance.AppCompat.Widget.Button.Inverse
-TextAppearance.AppCompat.Widget.DropDownItem
-TextAppearance.AppCompat.Widget.Light.Button
-TextAppearance.AppCompat.Widget.PopupMenu.Header
-TextAppearance.AppCompat.Widget.PopupMenu.Large
-TextAppearance.AppCompat.Widget.PopupMenu.Small
-TextAppearance.AppCompat.Widget.SeslSwitchBar
-TextAppearance.AppCompat.Widget.Switch
-TextAppearance.AppCompat.Widget.TextView.SpinnerItem
-TextAppearance.Compat.Notification.Info.Media
-TextAppearance.Compat.Notification.Line2
-TextAppearance.Compat.Notification.Line2.Media
-TextAppearance.Compat.Notification.Media
-TextAppearance.Compat.Notification.Time.Media
-TextAppearance.Compat.Notification.Title.Media
-TextAppearance.Design.CollapsingToolbar.Expanded
-TextAppearance.Design.CollapsingToolbar.Expanded.Inverse
-TextAppearance.Design.CollapsingToolbar.Expanded.Subtitle
-TextAppearance.Design.CollapsingToolbar.Expanded.Subtitle.Inverse
-TextAppearance.Design.CollapsingToolbar.Suggest.SubTitle.Inverse
-TextAppearance.Design.Counter
-TextAppearance.Design.Counter.Overflow
-TextAppearance.Design.DividerButtonLayout.DividerButton
-TextAppearance.Design.DividerButtonLayout.DividerButton.Light
-TextAppearance.Design.Error
-TextAppearance.Design.HelperText
-TextAppearance.Design.Hint
-TextAppearance.Design.Placeholder
-TextAppearance.Design.Prefix
-TextAppearance.Design.Snackbar.Message
-TextAppearance.Design.Suffix
-TextAppearance.Design.Tab.IconText
-TextAppearance.Design.Tab.IconText.Light
-TextAppearance.Design.Widget.BottomNavigationView
-TextAppearance.Design.Widget.BottomNavigationView.Floating
-TextAppearance.Design.Widget.BottomNavigationView.Floating.Inverse
-TextAppearance.Design.Widget.BottomNavigationView.Inverse
-TextAppearance.Design.Widget.BottomNavigationView.Text
-TextAppearance.Design.Widget.BottomNavigationView.Text.Inverse
-TextAppearance.Design.Widget.NavigationRailView
-TextAppearance.MaterialComponents.Badge
-TextAppearance.MaterialComponents.Body1
-TextAppearance.MaterialComponents.Body2
-TextAppearance.MaterialComponents.Button
-TextAppearance.MaterialComponents.Caption
-TextAppearance.MaterialComponents.Chip
-TextAppearance.MaterialComponents.Headline1
-TextAppearance.MaterialComponents.Headline2
-TextAppearance.MaterialComponents.Headline3
-TextAppearance.MaterialComponents.Headline4
-TextAppearance.MaterialComponents.Headline5
-TextAppearance.MaterialComponents.Headline6
-TextAppearance.MaterialComponents.Overline
-TextAppearance.MaterialComponents.Subtitle1
-TextAppearance.MaterialComponents.Subtitle2
-TextAppearance.MaterialComponents.TimePicker.Title
-TextAppearance.MaterialComponents.Tooltip
-TextAppearance.Widget.AppCompat.ExpandedMenu.Item
-TextAppearance.Widget.AppCompat.Toolbar.Subtitle
-TextAppearance.Widget.AppCompat.Toolbar.Subtitle.Inverse
-TextAppearance.Widget.AppCompat.Toolbar.Title
-TextAppearance.Widget.AppCompat.Toolbar.Title.Inverse
-Theme.AppCompat
-Theme.AppCompat.CompactMenu
-Theme.AppCompat.DayNight
-Theme.AppCompat.DayNight.DarkActionBar
-Theme.AppCompat.DayNight.Dialog
-Theme.AppCompat.DayNight.Dialog.Alert
-Theme.AppCompat.DayNight.Dialog.MinWidth
-Theme.AppCompat.DayNight.DialogWhenLarge
-Theme.AppCompat.DayNight.NoActionBar
-Theme.AppCompat.DayNight.PickerDialog.DatePicker
-Theme.AppCompat.Dialog
-Theme.AppCompat.Dialog.Alert
-Theme.AppCompat.Dialog.MinWidth
-Theme.AppCompat.DialogWhenLarge
-Theme.AppCompat.Empty
-Theme.AppCompat.Light
-Theme.AppCompat.Light.DarkActionBar
-Theme.AppCompat.Light.Dialog
-Theme.AppCompat.Light.Dialog.Alert
-Theme.AppCompat.Light.Dialog.MinWidth
-Theme.AppCompat.Light.DialogWhenLarge
-Theme.AppCompat.Light.NoActionBar
-Theme.AppCompat.Light.PickerDialog
-Theme.AppCompat.Light.PickerDialog.DatePicker
-Theme.AppCompat.NoActionBar
-Theme.AppCompat.PickerDialog
-Theme.AppCompat.PickerDialog.DatePicker
-Theme.CoverWidgetGalleryPhoneWithTitle
-Theme.Design
-Theme.Design.BottomSheetDialog
-Theme.Design.Light
-Theme.Design.Light.BottomSheetDialog
-Theme.Design.Light.NoActionBar
-Theme.Design.NoActionBar
-Theme.Gallery
-Theme.GalleryCrop
-Theme.GalleryPhoneWithTitle
-Theme.GalleryPhoneWithTitle360
-Theme.GalleryTranslucent
-Theme.GalleryTranslucent36
-Theme.LiveEffect
-Theme.MaterialComponents
-Theme.MaterialComponents.BottomSheetDialog
-Theme.MaterialComponents.Bridge
-Theme.MaterialComponents.CompactMenu
-Theme.MaterialComponents.DayNight
-Theme.MaterialComponents.DayNight.BottomSheetDialog
-Theme.MaterialComponents.DayNight.Bridge
-Theme.MaterialComponents.DayNight.DarkActionBar
-Theme.MaterialComponents.DayNight.DarkActionBar.Bridge
-Theme.MaterialComponents.DayNight.Dialog
-Theme.MaterialComponents.DayNight.Dialog.Alert
-Theme.MaterialComponents.DayNight.Dialog.Alert.Bridge
-Theme.MaterialComponents.DayNight.Dialog.Bridge
-Theme.MaterialComponents.DayNight.Dialog.FixedSize
-Theme.MaterialComponents.DayNight.Dialog.FixedSize.Bridge
-Theme.MaterialComponents.DayNight.Dialog.MinWidth
-Theme.MaterialComponents.DayNight.Dialog.MinWidth.Bridge
-Theme.MaterialComponents.DayNight.DialogWhenLarge
-Theme.MaterialComponents.DayNight.NoActionBar
-Theme.MaterialComponents.DayNight.NoActionBar.Bridge
-Theme.MaterialComponents.Dialog
-Theme.MaterialComponents.Dialog.Alert
-Theme.MaterialComponents.Dialog.Alert.Bridge
-Theme.MaterialComponents.Dialog.Bridge
-Theme.MaterialComponents.Dialog.FixedSize
-Theme.MaterialComponents.Dialog.FixedSize.Bridge
-Theme.MaterialComponents.Dialog.MinWidth
-Theme.MaterialComponents.Dialog.MinWidth.Bridge
-Theme.MaterialComponents.DialogWhenLarge
-Theme.MaterialComponents.Light
-Theme.MaterialComponents.Light.BottomSheetDialog
-Theme.MaterialComponents.Light.Bridge
-Theme.MaterialComponents.Light.DarkActionBar
-Theme.MaterialComponents.Light.DarkActionBar.Bridge
-Theme.MaterialComponents.Light.Dialog
-Theme.MaterialComponents.Light.Dialog.Alert
-Theme.MaterialComponents.Light.Dialog.Alert.Bridge
-Theme.MaterialComponents.Light.Dialog.Bridge
-Theme.MaterialComponents.Light.Dialog.FixedSize
-Theme.MaterialComponents.Light.Dialog.FixedSize.Bridge
-Theme.MaterialComponents.Light.Dialog.MinWidth
-Theme.MaterialComponents.Light.Dialog.MinWidth.Bridge
-Theme.MaterialComponents.Light.DialogWhenLarge
-Theme.MaterialComponents.Light.NoActionBar
-Theme.MaterialComponents.Light.NoActionBar.Bridge
-Theme.MaterialComponents.NoActionBar
-Theme.MaterialComponents.NoActionBar.Bridge
-Theme.MotionPhotoMain
-Theme.Panorama
-Theme.SettingPreference
-ThemeOverlay.AppCompat
-ThemeOverlay.AppCompat.ActionBar
-ThemeOverlay.AppCompat.Dark
-ThemeOverlay.AppCompat.Dark.ActionBar
-ThemeOverlay.AppCompat.DayNight
-ThemeOverlay.AppCompat.DayNight.ActionBar
-ThemeOverlay.AppCompat.Dialog
-ThemeOverlay.AppCompat.Dialog.Alert
-ThemeOverlay.AppCompat.Light
-ThemeOverlay.AppCompat.Light.Dialog
-ThemeOverlay.AppCompat.Light.Dialog.Alert
-ThemeOverlay.MaterialComponents
-ThemeOverlay.MaterialComponents.ActionBar
-ThemeOverlay.MaterialComponents.ActionBar.Primary
-ThemeOverlay.MaterialComponents.ActionBar.Surface
-ThemeOverlay.MaterialComponents.AutoCompleteTextView
-ThemeOverlay.MaterialComponents.AutoCompleteTextView.FilledBox
-ThemeOverlay.MaterialComponents.AutoCompleteTextView.FilledBox.Dense
-ThemeOverlay.MaterialComponents.AutoCompleteTextView.OutlinedBox
-ThemeOverlay.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense
-ThemeOverlay.MaterialComponents.BottomAppBar.Primary
-ThemeOverlay.MaterialComponents.BottomAppBar.Surface
-ThemeOverlay.MaterialComponents.BottomSheetDialog
-ThemeOverlay.MaterialComponents.Dark
-ThemeOverlay.MaterialComponents.Dark.ActionBar
-ThemeOverlay.MaterialComponents.DayNight.BottomSheetDialog
-ThemeOverlay.MaterialComponents.Dialog
-ThemeOverlay.MaterialComponents.Dialog.Alert
-ThemeOverlay.MaterialComponents.Dialog.Alert.Framework
-ThemeOverlay.MaterialComponents.Light
-ThemeOverlay.MaterialComponents.Light.BottomSheetDialog
-ThemeOverlay.MaterialComponents.Light.Dialog.Alert.Framework
-ThemeOverlay.MaterialComponents.MaterialAlertDialog
-ThemeOverlay.MaterialComponents.MaterialAlertDialog.Centered
-ThemeOverlay.MaterialComponents.MaterialAlertDialog.Picker.Date
-ThemeOverlay.MaterialComponents.MaterialAlertDialog.Picker.Date.Calendar
-ThemeOverlay.MaterialComponents.MaterialAlertDialog.Picker.Date.Header.Text
-ThemeOverlay.MaterialComponents.MaterialAlertDialog.Picker.Date.Header.Text.Day
-ThemeOverlay.MaterialComponents.MaterialAlertDialog.Picker.Date.Spinner
-ThemeOverlay.MaterialComponents.MaterialCalendar
-ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen
-ThemeOverlay.MaterialComponents.TextInputEditText
-ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox
-ThemeOverlay.MaterialComponents.TextInputEditText.FilledBox.Dense
-ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox
-ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense
-ThemeOverlay.MaterialComponents.TimePicker
-ThemeOverlay.MaterialComponents.TimePicker.Display.TextInputEditText
-ThemeOverlay.MaterialComponents.Toolbar.Popup.Primary
-ThemeOverlay.MaterialComponents.Toolbar.Primary
-ThemeOverlay.MaterialComponents.Toolbar.Surface
-Widget.AppCompat.AbsListView
-Widget.AppCompat.ActionBar
-Widget.AppCompat.ActionBar.Solid
-Widget.AppCompat.ActionBar.TabBar
-Widget.AppCompat.ActionBar.TabText
-Widget.AppCompat.ActionBar.TabView
-Widget.AppCompat.ActionButton
-Widget.AppCompat.ActionButton.CloseMode
-Widget.AppCompat.ActionButton.Overflow
-Widget.AppCompat.ActionMode
-Widget.AppCompat.ActivityChooserView
-Widget.AppCompat.AutoCompleteTextView
-Widget.AppCompat.BottomPopupMenu.Overflow
-Widget.AppCompat.Button
-Widget.AppCompat.Button.Borderless
-Widget.AppCompat.Button.Borderless.Colored
-Widget.AppCompat.Button.ButtonBar.AlertDialog
-Widget.AppCompat.Button.Colored
-Widget.AppCompat.Button.Dialog
-Widget.AppCompat.Button.Small
-Widget.AppCompat.ButtonBar
-Widget.AppCompat.ButtonBar.AlertDialog
-Widget.AppCompat.CompoundButton.CheckBox
-Widget.AppCompat.CompoundButton.RadioButton
-Widget.AppCompat.CompoundButton.Switch
-Widget.AppCompat.DrawerArrowToggle
-Widget.AppCompat.DropDownItem.Spinner
-Widget.AppCompat.EditText
-Widget.AppCompat.ImageButton
-Widget.AppCompat.Light.AbsListView
-Widget.AppCompat.Light.ActionBar
-Widget.AppCompat.Light.ActionBar.Solid
-Widget.AppCompat.Light.ActionBar.Solid.Inverse
-Widget.AppCompat.Light.ActionBar.TabBar
-Widget.AppCompat.Light.ActionBar.TabBar.Inverse
-Widget.AppCompat.Light.ActionBar.TabText
-Widget.AppCompat.Light.ActionBar.TabText.Inverse
-Widget.AppCompat.Light.ActionBar.TabView
-Widget.AppCompat.Light.ActionBar.TabView.Inverse
-Widget.AppCompat.Light.ActionButton
-Widget.AppCompat.Light.ActionButton.CloseMode
-Widget.AppCompat.Light.ActionButton.Overflow
-Widget.AppCompat.Light.ActionMode
-Widget.AppCompat.Light.ActionMode.Inverse
-Widget.AppCompat.Light.ActivityChooserView
-Widget.AppCompat.Light.AutoCompleteTextView
-Widget.AppCompat.Light.BottomPopupMenu.Overflow
-Widget.AppCompat.Light.Button
-Widget.AppCompat.Light.Button.Borderless
-Widget.AppCompat.Light.Button.ButtonBar.AlertDialog
-Widget.AppCompat.Light.Button.Dialog
-Widget.AppCompat.Light.Button.Small
-Widget.AppCompat.Light.ButtonBar
-Widget.AppCompat.Light.CompoundButton.CheckBox
-Widget.AppCompat.Light.CompoundButton.RadioButton
-Widget.AppCompat.Light.CompoundButton.Switch
-Widget.AppCompat.Light.DatePicker
-Widget.AppCompat.Light.DropDownItem.Spinner
-Widget.AppCompat.Light.EditText
-Widget.AppCompat.Light.ListPopupWindow
-Widget.AppCompat.Light.ListView.DropDown
-Widget.AppCompat.Light.PopupMenu
-Widget.AppCompat.Light.PopupMenu.Overflow
-Widget.AppCompat.Light.PopupWindow
-Widget.AppCompat.Light.ProgressBar
-Widget.AppCompat.Light.ProgressBar.Horizontal
-Widget.AppCompat.Light.ProgressBar.Inverse
-Widget.AppCompat.Light.ProgressBar.Large
-Widget.AppCompat.Light.ProgressBar.Large.Inverse
-Widget.AppCompat.Light.ProgressBar.Small
-Widget.AppCompat.Light.ProgressBar.Small.Inverse
-Widget.AppCompat.Light.ProgressBar.Small.Title
-Widget.AppCompat.Light.SearchView
-Widget.AppCompat.Light.SeekBar
-Widget.AppCompat.Light.SeslSwitchBar
-Widget.AppCompat.Light.Spinner
-Widget.AppCompat.Light.Spinner.DropDown.ActionBar
-Widget.AppCompat.Light.TextView.ListSeparator
-Widget.AppCompat.Light.TextView.SeslListCaption
-Widget.AppCompat.Light.TextView.SpinnerItem
-Widget.AppCompat.Light.Toolbar
-Widget.AppCompat.Light.Toolbar.Button.Navigation
-Widget.AppCompat.ListMenuView
-Widget.AppCompat.ListPopupWindow
-Widget.AppCompat.ListView
-Widget.AppCompat.ListView.DropDown
-Widget.AppCompat.ListView.Menu
-Widget.AppCompat.PopupMenu
-Widget.AppCompat.PopupMenu.Overflow
-Widget.AppCompat.PopupWindow
-Widget.AppCompat.ProgressBar
-Widget.AppCompat.ProgressBar.Horizontal
-Widget.AppCompat.ProgressBar.Inverse
-Widget.AppCompat.ProgressBar.Large
-Widget.AppCompat.ProgressBar.Large.Inverse
-Widget.AppCompat.ProgressBar.Mono
-Widget.AppCompat.ProgressBar.Mono.Large
-Widget.AppCompat.ProgressBar.Mono.Small
-Widget.AppCompat.ProgressBar.Small
-Widget.AppCompat.ProgressBar.Small.Inverse
-Widget.AppCompat.ProgressBar.Small.Title
-Widget.AppCompat.RatingBar
-Widget.AppCompat.RatingBar.Indicator
-Widget.AppCompat.RatingBar.Small
-Widget.AppCompat.SearchView
-Widget.AppCompat.SearchView.ActionBar
-Widget.AppCompat.SeekBar
-Widget.AppCompat.SeekBar.Discrete
-Widget.AppCompat.SeslSwitchBar
-Widget.AppCompat.Spinner
-Widget.AppCompat.Spinner.DropDown
-Widget.AppCompat.Spinner.DropDown.ActionBar
-Widget.AppCompat.Spinner.Underlined
-Widget.AppCompat.TextView
-Widget.AppCompat.TextView.ListSeparator
-Widget.AppCompat.TextView.SeslListCaption
-Widget.AppCompat.TextView.SpinnerItem
-Widget.AppCompat.Toolbar
-Widget.AppCompat.Toolbar.Button.Navigation
-Widget.Compat.NotificationActionText
-Widget.Design.AppBarLayout
-Widget.Design.BottomNavigationView
-Widget.Design.BottomNavigationView.Floating
-Widget.Design.BottomNavigationView.Floating.IconText
-Widget.Design.BottomNavigationView.Text
-Widget.Design.BottomSheet.Modal
-Widget.Design.CollapsingToolbar
-Widget.Design.DividerButtonLayout
-Widget.Design.DividerButtonLayout.DividerButton
-Widget.Design.DividerButtonLayout.DividerButton.Light
-Widget.Design.DividerButtonLayout.Light
-Widget.Design.FloatingActionButton
-Widget.Design.Light.BottomNavigationView
-Widget.Design.Light.BottomNavigationView.Floating
-Widget.Design.Light.BottomNavigationView.Floating.IconText
-Widget.Design.Light.BottomNavigationView.Text
-Widget.Design.Light.CollapsingToolbar
-Widget.Design.NavigationView
-Widget.Design.Snackbar
-Widget.Design.TabLayout
-Widget.Design.TabLayout.Light
-Widget.Design.TabLayout.Light.Main
-Widget.Design.TabLayout.Light.Main.IconText
-Widget.Design.TabLayout.Main
-Widget.Design.TabLayout.Main.IconText
-Widget.Design.TextInputEditText
-Widget.Design.TextInputLayout
-Widget.Material3.SideSheet
-Widget.MaterialComponents.ActionBar.Primary
-Widget.MaterialComponents.ActionBar.PrimarySurface
-Widget.MaterialComponents.ActionBar.Solid
-Widget.MaterialComponents.ActionBar.Surface
-Widget.MaterialComponents.ActionMode
-Widget.MaterialComponents.AppBarLayout.Primary
-Widget.MaterialComponents.AppBarLayout.PrimarySurface
-Widget.MaterialComponents.AppBarLayout.Surface
-Widget.MaterialComponents.AutoCompleteTextView.FilledBox
-Widget.MaterialComponents.AutoCompleteTextView.FilledBox.Dense
-Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox
-Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense
-Widget.MaterialComponents.Badge
-Widget.MaterialComponents.BottomAppBar
-Widget.MaterialComponents.BottomAppBar.Colored
-Widget.MaterialComponents.BottomAppBar.PrimarySurface
-Widget.MaterialComponents.BottomNavigationView
-Widget.MaterialComponents.BottomNavigationView.Colored
-Widget.MaterialComponents.BottomNavigationView.PrimarySurface
-Widget.MaterialComponents.BottomSheet
-Widget.MaterialComponents.BottomSheet.Modal
-Widget.MaterialComponents.Button
-Widget.MaterialComponents.Button.Icon
-Widget.MaterialComponents.Button.OutlinedButton
-Widget.MaterialComponents.Button.OutlinedButton.Icon
-Widget.MaterialComponents.Button.TextButton
-Widget.MaterialComponents.Button.TextButton.Dialog
-Widget.MaterialComponents.Button.TextButton.Dialog.Flush
-Widget.MaterialComponents.Button.TextButton.Dialog.Icon
-Widget.MaterialComponents.Button.TextButton.Icon
-Widget.MaterialComponents.Button.TextButton.Snackbar
-Widget.MaterialComponents.Button.UnelevatedButton
-Widget.MaterialComponents.Button.UnelevatedButton.Icon
-Widget.MaterialComponents.CardView
-Widget.MaterialComponents.CheckedTextView
-Widget.MaterialComponents.Chip.Action
-Widget.MaterialComponents.Chip.Choice
-Widget.MaterialComponents.Chip.Entry
-Widget.MaterialComponents.Chip.Filter
-Widget.MaterialComponents.ChipGroup
-Widget.MaterialComponents.CircularProgressIndicator
-Widget.MaterialComponents.CompoundButton.CheckBox
-Widget.MaterialComponents.CompoundButton.RadioButton
-Widget.MaterialComponents.CompoundButton.Switch
-Widget.MaterialComponents.ExtendedFloatingActionButton
-Widget.MaterialComponents.ExtendedFloatingActionButton.Icon
-Widget.MaterialComponents.FloatingActionButton
-Widget.MaterialComponents.Light.ActionBar.Solid
-Widget.MaterialComponents.LinearProgressIndicator
-Widget.MaterialComponents.MaterialButtonToggleGroup
-Widget.MaterialComponents.MaterialCalendar
-Widget.MaterialComponents.MaterialCalendar.Day
-Widget.MaterialComponents.MaterialCalendar.Day.Invalid
-Widget.MaterialComponents.MaterialCalendar.Day.Selected
-Widget.MaterialComponents.MaterialCalendar.Day.Today
-Widget.MaterialComponents.MaterialCalendar.DayOfWeekLabel
-Widget.MaterialComponents.MaterialCalendar.DayTextView
-Widget.MaterialComponents.MaterialCalendar.Fullscreen
-Widget.MaterialComponents.MaterialCalendar.HeaderCancelButton
-Widget.MaterialComponents.MaterialCalendar.HeaderConfirmButton
-Widget.MaterialComponents.MaterialCalendar.HeaderDivider
-Widget.MaterialComponents.MaterialCalendar.HeaderLayout
-Widget.MaterialComponents.MaterialCalendar.HeaderLayout.Fullscreen
-Widget.MaterialComponents.MaterialCalendar.HeaderSelection
-Widget.MaterialComponents.MaterialCalendar.HeaderSelection.Fullscreen
-Widget.MaterialComponents.MaterialCalendar.HeaderTitle
-Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton
-Widget.MaterialComponents.MaterialCalendar.Item
-Widget.MaterialComponents.MaterialCalendar.MonthNavigationButton
-Widget.MaterialComponents.MaterialCalendar.MonthTextView
-Widget.MaterialComponents.MaterialCalendar.Year
-Widget.MaterialComponents.MaterialCalendar.Year.Selected
-Widget.MaterialComponents.MaterialCalendar.Year.Today
-Widget.MaterialComponents.MaterialCalendar.YearNavigationButton
-Widget.MaterialComponents.NavigationRailView
-Widget.MaterialComponents.NavigationView
-Widget.MaterialComponents.PopupMenu
-Widget.MaterialComponents.PopupMenu.ContextMenu
-Widget.MaterialComponents.PopupMenu.ListPopupWindow
-Widget.MaterialComponents.PopupMenu.Overflow
-Widget.MaterialComponents.ProgressIndicator
-Widget.MaterialComponents.ShapeableImageView
-Widget.MaterialComponents.Slider
-Widget.MaterialComponents.Snackbar
-Widget.MaterialComponents.Snackbar.FullWidth
-Widget.MaterialComponents.Snackbar.TextView
-Widget.MaterialComponents.TabLayout.Colored
-Widget.MaterialComponents.TabLayout.Light
-Widget.MaterialComponents.TabLayout.PrimarySurface
-Widget.MaterialComponents.TextInputEditText.FilledBox
-Widget.MaterialComponents.TextInputEditText.FilledBox.Dense
-Widget.MaterialComponents.TextInputEditText.OutlinedBox
-Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense
-Widget.MaterialComponents.TextInputLayout.FilledBox
-Widget.MaterialComponents.TextInputLayout.FilledBox.Dense
-Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu
-Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu
-Widget.MaterialComponents.TextInputLayout.OutlinedBox
-Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense
-Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu
-Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu
-Widget.MaterialComponents.TextView
-Widget.MaterialComponents.TimePicker.Button
-Widget.MaterialComponents.TimePicker.Clock
-Widget.MaterialComponents.TimePicker.Display
-Widget.MaterialComponents.TimePicker.Display.Divider
-Widget.MaterialComponents.TimePicker.Display.HelperText
-Widget.MaterialComponents.TimePicker.Display.TextInputEditText
-Widget.MaterialComponents.TimePicker.Display.TextInputLayout
-Widget.MaterialComponents.TimePicker.ImageButton
-Widget.MaterialComponents.TimePicker.ImageButton.ShapeAppearance
-Widget.MaterialComponents.Toolbar
-Widget.MaterialComponents.Toolbar.Primary
-Widget.MaterialComponents.Toolbar.PrimarySurface
-Widget.MaterialComponents.Toolbar.Surface
-Widget.MaterialComponents.Tooltip
-Widget.Support.CoordinatorLayout
-Widget.Theme.AppCompat.Light.CompoundButton.Switch
-Widget.V29.Design.BottomNavigationView
-Widget.V29.Design.BottomNavigationView.Text
-Widget.V29.Design.Light.BottomNavigationView.Text
-Widget.V29.Design.TabLayout.Light
-Widget.V7.Design.BottomNavigationView
-Widget.V7.Design.BottomNavigationView.Text
-Widget.V7.Design.Light.BottomNavigationView
+
