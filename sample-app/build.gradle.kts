@@ -47,8 +47,8 @@ android {
 }
 
 dependencies {
-    //implementation(project(":oneui-design"))
-    implementation(libs.oneuiDesign)
+    implementation(project(":oneui-design"))
+    //implementation(libs.oneuiDesign)
 
     // Since v0.7.6+oneui7, it's not anymore required to explicitly declare
     // sesl-androidx, sesl-material, or androidx navigation dependencies,
