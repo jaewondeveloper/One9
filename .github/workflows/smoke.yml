@@ -54,5 +54,7 @@ jobs:
           path: |
             crash.txt
             full.txt
+            monkey.txt
             shot1.png
+            shot2.png
           if-no-files-found: ignore

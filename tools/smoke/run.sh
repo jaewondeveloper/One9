@@ -5,8 +5,12 @@ APK=$(ls sample-app/build/outputs/apk/debug/*.apk | head -1)
 adb install -r "$APK" || { echo "INSTALL FAILED"; exit 0; }
 adb logcat -c
 adb shell monkey -p $PKG -c android.intent.category.LAUNCHER 1
-sleep 20
+sleep 15
 adb exec-out screencap -p > shot1.png || true
+echo '=== MONKEY'
+adb shell monkey -p $PKG --throttle 150 -s 7 --pct-syskeys 0 400 > monkey.txt 2>&1 || true
+tail -15 monkey.txt
+adb exec-out screencap -p > shot2.png || true
 adb logcat -d -b crash > crash.txt || true
 adb logcat -d > full.txt || true
 echo "=== PROCESS"

@@ -126,7 +126,7 @@ def canon_file(path):
     except ET.ParseError: return None
 
 # Switch / toggle widgets draw with SESL 8 geometry; mixing in SESL 9 drawables clips them.
-EXCLUDE = re.compile(r'(^sesl_(switch|toggle))|Switch|Toggle')
+EXCLUDE = re.compile(r'(^sesl_(switch|toggle))|Switch|Toggle|[Pp]rogress')
 
 # ---------- candidate files
 cand = {}  # (type,name) -> path of base content
