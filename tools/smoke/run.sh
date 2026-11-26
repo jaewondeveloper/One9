@@ -48,11 +48,13 @@ print('%d %d' % ((int(m.group(1)) + int(m.group(3))) // 2, (int(m.group(2)) + in
 PY
 )
   echo "tap '$1' -> '$XY'"
-  [ -n "$XY" ] && adb shell input tap $XY
+  if [ -n "$XY" ]; then adb shell input tap $XY; return 0; fi
+  return 1
 }
 visit() {  # menu text, file name
   open_drawer
-  tap_text "$1"
+  sleep 1
+  if ! tap_text "$1"; then open_drawer; sleep 1; tap_text "$1"; fi
   sleep 2
   adb exec-out screencap -p > $OUT/page_$2.png || true
 }
