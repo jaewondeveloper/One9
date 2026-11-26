@@ -157,8 +157,22 @@ def refs_of(text):
     text = re.sub(r'<\?xml[^>]*\?>', '', text)
     return REF.findall(text), ATTR.findall(text), TAGS.findall(text)
 
+AUTO_NS = 'http://schemas.android.com/apk/res-auto'
+def attr_names_in(text):
+    names = set()
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError:
+        return names
+    for el in root.iter():
+        for k in el.attrib:
+            if k.startswith('{' + AUTO_NS + '}'): names.add(k.split('}', 1)[1])
+    return names
+
 def check(text, imported_files):
     problems = []
+    for a in attr_names_in(text):
+        if a not in s8_attrs: problems.append('app:' + a)
     rs, at, tg = refs_of(text)
     for c in tg:
         if c.startswith(('android.', 'java.')): continue
