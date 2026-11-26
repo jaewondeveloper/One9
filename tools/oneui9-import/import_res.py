@@ -301,6 +301,9 @@ while changed_styles:
             pn = parent.replace('@style/', '').replace('@', '')
             if not style_known(pn):
                 del style_out[nm]; changed_styles = True; continue
+        elif parent is None and '.' in nm:
+            if not style_known(nm.rsplit('.', 1)[0]):
+                del style_out[nm]; changed_styles = True; continue
         keep = [it for it in items if all(style_known(n) for t, n in REF.findall(it.text or '') if t == 'style')]
         if len(keep) != len(items):
             style_out[nm] = (parent, keep); changed_styles = True
@@ -344,7 +347,7 @@ for q, fn in (('', 'values'), ('night', 'values-night')):
 if style_out:
     body = ''
     for nm, (parent, items) in sorted(style_out.items()):
-        body += f'    <style name="{nm}"' + (f' parent="{parent}"' if parent else '') + '>\n'
+        body += f'    <style name="{nm}"' + (f' parent="{parent}"' if parent is not None else '') + '>\n'
         for it in items: body += '        ' + re.sub(r'\sxmlns:\w+="[^"]*"', '', ET.tostring(it, encoding='unicode')).strip() + '\n'
         body += '    </style>\n'
     open(os.path.join(LIB, 'values', 'oui_des_oneui9_import_styles.xml'), 'w').write('<?xml version="1.0" encoding="utf-8"?>\n<resources xmlns:android="http://schemas.android.com/apk/res/android">\n' + body + '</resources>\n')
