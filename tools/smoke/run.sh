@@ -33,33 +33,45 @@ adb exec-out screencap -p > $OUT/6_drawer.png || true
 adb shell input swipe $((W*3/10)) $((H*3/4)) $((W*3/10)) $((H/4)) 300; sleep 1
 adb exec-out screencap -p > $OUT/7_drawer_scrolled.png || true
 
-# visit every screen through the drawer (edge swipe opens it regardless of the app bar state)
+# visit every screen through the drawer, locating the menu entries by their text (uiautomator)
+rm -f $OUT/page_*.png
 open_drawer() { adb shell input swipe 2 $((H/2)) $((W*7/10)) $((H/2)) 250; sleep 1; }
-go() {  # name, y fraction of the drawer item (percent of height)
-  open_drawer
-  adb shell input tap $((W*30/100)) $((H*$2/100)); sleep 2
-  adb exec-out screencap -p > $OUT/page_$1.png || true
+tap_text() {
+  adb shell uiautomator dump /sdcard/ui.xml >/dev/null 2>&1
+  adb pull /sdcard/ui.xml ui.xml >/dev/null 2>&1
+  XY=$(python3 - "$1" <<'PY'
+import sys, re
+t = sys.argv[1]
+x = open('ui.xml', encoding='utf-8').read()
+m = re.search(r'text="%s"[^>]*bounds="\[(\d+),(\d+)\]\[(\d+),(\d+)\]"' % re.escape(t), x)
+print('%d %d' % ((int(m.group(1)) + int(m.group(3))) // 2, (int(m.group(2)) + int(m.group(4))) // 2) if m else '')
+PY
+)
+  echo "tap '$1' -> '$XY'"
+  [ -n "$XY" ] && adb shell input tap $XY
 }
-go seekbar 40
-go pickers 48
-go navigation 64
+visit() {  # menu text, file name
+  open_drawer
+  tap_text "$1"
+  sleep 2
+  adb exec-out screencap -p > $OUT/page_$2.png || true
+}
+visit "SeekBar" seekbar
+adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
+adb exec-out screencap -p > $OUT/page_seekbar_scrolled.png || true
+visit "Pickers" pickers
+visit "Navigation" navigation
 adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
 adb exec-out screencap -p > $OUT/page_navigation_scrolled.png || true
-go recyclerviews 72
+visit "RecyclerViews" recyclerviews
 adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
 adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
 adb exec-out screencap -p > $OUT/page_recyclerviews_scrolled.png || true
-go misc 80
+visit "Misc. Widgets" misc
 adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
 adb exec-out screencap -p > $OUT/page_misc_scrolled.png || true
-go about 89
+visit "Custom About" about
 adb shell input keyevent KEYCODE_BACK; sleep 1
-# preferences (gear icon in the drawer header)
-open_drawer
-adb shell input tap $((W*73/100)) $((H*9/100)); sleep 2
-adb exec-out screencap -p > $OUT/page_settings.png || true
-adb shell input swipe $X $Y1 $X $Y2 300; sleep 1
-adb exec-out screencap -p > $OUT/page_settings_scrolled.png || true
 adb shell wm size > $OUT/info.txt; adb shell getprop ro.build.version.sdk >> $OUT/info.txt
 adb logcat -d -b crash > crash.txt || true
 echo "=== PROCESS"; adb shell pidof $PKG || echo "PROCESS NOT RUNNING"

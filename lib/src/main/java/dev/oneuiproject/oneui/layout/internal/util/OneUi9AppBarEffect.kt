@@ -1,6 +1,7 @@
 package dev.oneuiproject.oneui.layout.internal.util
 
 import android.graphics.Color
+import android.graphics.RectF
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
@@ -58,6 +59,8 @@ internal class OneUi9AppBarEffect(
     private var originalContentHeight: Int? = null
     private var collapsingBackground: Drawable? = null
     private var collapsing: View? = null
+    private var navButton: View? = null
+    private var menuView: View? = null
 
     private val layoutListener = View.OnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
         updateContentHeight()
@@ -136,6 +139,8 @@ internal class OneUi9AppBarEffect(
         }
 
         prepareToolbarButtons()
+        // the menu capsule keeps the same distance from the right edge as the circle has from the left
+        menuView?.translationX = -sideMargin() * p
         floating.forEach { (view, drawable) ->
             drawable.alpha = (255 * p).toInt()
             view.elevation = floatingElevation * p
@@ -178,14 +183,26 @@ internal class OneUi9AppBarEffect(
         toolbar.children.forEach { child ->
             when (child) {
                 is ImageButton -> if (prepared.add(child)) {
-                    val f = OuiFloatingBgDrawable(floatingColor, circle = true, sizePx = size)
+                    navButton = child
+                    // centre of the icon itself (the button has uneven padding), not of the view
+                    val iconArea = { RectF(child.paddingLeft.toFloat(), child.paddingTop.toFloat(),
+                        (child.width - child.paddingRight).toFloat(), (child.height - child.paddingBottom).toFloat()) }
+                    val f = OuiFloatingBgDrawable(floatingColor, circle = true, sizePx = size, anchor = iconArea)
                     f.alpha = (255 * progress.coerceAtLeast(0f)).toInt()
                     floating[child] = f
-                    child.background = LayerDrawable(arrayOf(f, OuiRecoilDrawable(recoilColor(), size)))
+                    child.background = LayerDrawable(arrayOf(f, OuiRecoilDrawable(recoilColor(), size, iconArea)))
                 }
                 is ActionMenuView -> {
+                    menuView = child
                     if (prepared.add(child)) {
-                        val f = OuiFloatingBgDrawable(floatingColor, circle = false, sizePx = size)
+                        // one capsule hugging all the menu buttons
+                        val itemsArea = {
+                            var l = Float.MAX_VALUE; var r = 0f
+                            child.children.forEach { c -> l = minOf(l, c.left.toFloat()); r = maxOf(r, c.right.toFloat()) }
+                            if (l > r) RectF(0f, 0f, child.width.toFloat(), child.height.toFloat())
+                            else RectF(l, 0f, r, child.height.toFloat())
+                        }
+                        val f = OuiFloatingBgDrawable(floatingColor, circle = false, sizePx = size, anchor = itemsArea)
                         f.alpha = (255 * progress.coerceAtLeast(0f)).toInt()
                         floating[child] = f
                         child.background = f
@@ -196,6 +213,13 @@ internal class OneUi9AppBarEffect(
                 }
             }
         }
+    }
+
+    /** Left margin of the circle (distance of its edge from the screen edge), mirrored on the right. */
+    private fun sideMargin(): Float {
+        val nav = navButton ?: return 0f
+        val iconCenter = nav.left + nav.paddingLeft + (nav.width - nav.paddingLeft - nav.paddingRight) / 2f
+        return (iconCenter - 24 * density).coerceAtLeast(0f)
     }
 
     /** The colour behind the page, so the vignette is invisible against it. */

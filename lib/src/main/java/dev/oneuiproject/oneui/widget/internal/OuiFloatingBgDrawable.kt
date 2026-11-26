@@ -19,7 +19,9 @@ import kotlin.math.min
 internal class OuiFloatingBgDrawable(
     private val color: Int,
     private val circle: Boolean,
-    private val sizePx: Int
+    private val sizePx: Int,
+    /** Area (in view coordinates) the shape is fitted into; defaults to the drawable bounds. */
+    private val anchor: (() -> RectF)? = null
 ) : Drawable() {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -27,15 +29,15 @@ internal class OuiFloatingBgDrawable(
     private var alphaF = 1f
 
     private fun updateRect() {
-        val b = bounds
-        val cx = b.exactCenterX()
-        val cy = b.exactCenterY()
+        val area = anchor?.invoke() ?: RectF(bounds)
+        val cx = area.centerX()
+        val cy = area.centerY()
         if (circle) {
-            val d = min(min(b.width(), b.height()), sizePx).toFloat()
+            val d = min(min(area.width(), area.height()), sizePx.toFloat())
             rect.set(cx - d / 2f, cy - d / 2f, cx + d / 2f, cy + d / 2f)
         } else {
-            val h = min(b.height(), sizePx).toFloat()
-            rect.set(b.left.toFloat(), cy - h / 2f, b.right.toFloat(), cy + h / 2f)
+            val h = min(area.height(), sizePx.toFloat())
+            rect.set(area.left, cy - h / 2f, area.right, cy + h / 2f)
         }
     }
 

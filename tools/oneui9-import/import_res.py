@@ -231,6 +231,8 @@ want = {}
 for (tag, nm, q), e in app_elems.items():
     if q not in ('', 'night'): continue
     if tag != 'color' and (tag, nm) not in needed: continue   # palette + the dimens an imported layout needs
+    # SESL 9 builds some widget colours from translucent tokens (tone_on_tone*); SESL 8 widgets expect opaque colours
+    if tag == 'color' and nm.startswith('sesl_') and (re.search(r'seekbar|tick_mark|control_color|scrollbar', nm) or 'tone_on_tone' in elem_text(e)): continue
     if nm in lib_names.get(tag, set()) or EXCLUDE.search(nm): continue
     in8 = (tag, nm, q) in s8_values or nm in s8_names.get(tag, set())
     sesl_like = nm.startswith(('sesl_', 'basic_token_'))
