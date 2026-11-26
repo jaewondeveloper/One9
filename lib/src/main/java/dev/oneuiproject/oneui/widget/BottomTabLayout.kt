@@ -788,8 +788,6 @@ class BottomTabLayout(
     }
 
 
-    @Deprecated("This does nothing in BottomTabLayout",
-        level = DeprecationLevel.HIDDEN)
     // ------------------------------------------------------------------------------------------
     // One UI 9 floating capsule style (container, press feedback, sliding selected capsule)
     // ------------------------------------------------------------------------------------------
@@ -912,6 +910,8 @@ class BottomTabLayout(
         return super.dispatchTouchEvent(ev)
     }
 
+    @Deprecated("This does nothing in BottomTabLayout",
+        level = DeprecationLevel.HIDDEN)
     override fun seslSetSubTabStyle() {
         //No op
     }

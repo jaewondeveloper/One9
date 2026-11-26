@@ -244,12 +244,23 @@ def style_canon(e):
         its.append((it.get('name'), v))
     return (p, tuple(sorted(its)))
 style_out = {}
+def ref_available(t, n):
+    if t == 'style': return None  # decided after the style set is final
+    if known(t, n, set()): return True
+    if (t, n, '') in want or (t, n, 'night') in want: return True
+    if t in FILE_TYPES and (t, n) in cand: return True
+    return False
+def item_ok(it):
+    for t, n in REF.findall((it.text or '')):
+        if t in ('id', 'string', 'plurals', 'array', 'layout', 'menu', 'raw', 'font', 'navigation', 'mipmap', 'xml'): continue
+        if ref_available(t, n) is False: return False
+    return True
 def style_items(e):
     out = []
     for it in e:
         nm = it.get('name') or ''
-        a = nm.replace('android:', '')
         if not nm.startswith('android:') and nm not in s8_attrs: continue
+        if not item_ok(it): continue
         out.append(it)
     return out
 for (tag, nm, q), e in app_elems.items():
@@ -266,6 +277,20 @@ for (tag, nm, q), e in app_elems.items():
     if in8 and old is not None and style_canon(ET.fromstring(old)) == style_canon(e): continue
     if in8 and old is None: continue
     style_out[nm] = (parent, items)
+
+def style_known(n):
+    return n in s8_names.get('style', set()) or n in lib_names.get('style', set()) or n in style_out
+changed_styles = True
+while changed_styles:
+    changed_styles = False
+    for nm, (parent, items) in list(style_out.items()):
+        if parent and not parent.startswith('@android:'):
+            pn = parent.replace('@style/', '').replace('@', '')
+            if not style_known(pn):
+                del style_out[nm]; changed_styles = True; continue
+        keep = [it for it in items if all(style_known(n) for t, n in REF.findall(it.text or '') if t == 'style')]
+        if len(keep) != len(items):
+            style_out[nm] = (parent, keep); changed_styles = True
 
 # ---------- write
 def wipe_generated():
