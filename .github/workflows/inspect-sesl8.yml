@@ -1,0 +1,46 @@
+name: Inspect SESL 8 API
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    env:
+      GH_USERNAME: ${{ secrets.GH_USERNAME }}
+      GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Download SESL 8 AARs
+        run: |
+          mkdir -p work/sesl8
+          python3 - <<'PY'
+          import tomllib, subprocess, sys, os
+          t = tomllib.load(open('gradle/libs.versions.toml', 'rb'))
+          vers, libs = t['versions'], t['libraries']
+          for name, l in libs.items():
+              if not name.startswith('sesl-') or 'module' not in l: continue
+              g, a = l['module'].split(':'); v = vers[l['version']['ref']]
+              r = 'sesl-material-components-android' if 'material' in g else 'sesl-androidx'
+              ve = v.replace('+', '%2B')
+              url = f"https://maven.pkg.github.com/tribalfs/{r}/{g.replace('.', '/')}/{a}/{ve}/{a}-{ve}.aar"
+              p = subprocess.run(['curl', '-sSL', '-u', f"{os.environ['GH_USERNAME']}:{os.environ['GH_ACCESS_TOKEN']}",
+                                  '-o', f'work/sesl8/{a}.aar', '-w', '%{http_code}', url], capture_output=True, text=True)
+              if p.stdout.strip() != '200': print(a, p.stdout); sys.exit(1)
+          PY
+      - run: tools/oneui9-import/inspect_sesl8.sh work/sesl8 docs/oneui9/sesl8-api.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/oneui9/sesl8-api.txt
+          git commit -m "docs: SESL 8 public API of appbar/tabs classes (generated)" || echo "nothing"
+          git pull --rebase origin ${{ github.ref_name }} || true
+          git push origin HEAD:${{ github.ref_name }}
