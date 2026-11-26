@@ -100,7 +100,7 @@
     </style>
     <style name="Base.Theme.AppCompat" parent="@style/Base.V29.Theme.AppCompat">
     </style>
-    <style name="Base.Theme.AppCompat.CompactMenu">
+    <style name="Base.Theme.AppCompat.CompactMenu" parent="">
         <item name="android:listViewStyle">@style/Widget.AppCompat.ListView.Menu</item>
         <item name="android:windowAnimationStyle">@style/Animation.AppCompat.DropDownUp</item>
         <item name="android:itemTextAppearance">?android:textAppearanceMedium</item>
@@ -109,7 +109,7 @@
     </style>
     <style name="Base.Theme.MaterialComponents" parent="@style/Base.V21.Theme.MaterialComponents">
     </style>
-    <style name="Base.Theme.MaterialComponents.CompactMenu">
+    <style name="Base.Theme.MaterialComponents.CompactMenu" parent="">
         <item name="android:listViewStyle">@style/Widget.AppCompat.ListView.Menu</item>
         <item name="android:windowAnimationStyle">@style/Animation.AppCompat.DropDownUp</item>
         <item name="android:itemTextAppearance">?android:textAppearanceMedium</item>
@@ -1159,7 +1159,7 @@
         <item name="windowActionBar">?android:windowActionBar</item>
         <item name="windowActionModeOverlay">true</item>
     </style>
-    <style name="Base.V7.Widget.Design.DividerButtonLayout">
+    <style name="Base.V7.Widget.Design.DividerButtonLayout" parent="">
         <item name="android:gravity">center</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:background">@drawable/sesl_divider_button_layout_background_dark</item>
@@ -1169,7 +1169,7 @@
         <item name="android:paddingBottom">@dimen/sesl_divider_button_layout_padding</item>
         <item name="android:elevation">@dimen/sesl_divider_button_layout_elevation</item>
     </style>
-    <style name="Base.V7.Widget.Design.DividerButtonLayout.DividerButton">
+    <style name="Base.V7.Widget.Design.DividerButtonLayout.DividerButton" parent="">
         <item name="android:textAppearance">@style/TextAppearance.Design.DividerButtonLayout.DividerButton</item>
         <item name="android:background">@drawable/sesl_divider_button_layout_button_background_dark</item>
         <item name="android:paddingLeft">@dimen/sesl_divider_button_layout_button_side_padding</item>
@@ -1183,7 +1183,7 @@
     <style name="Base.V7.Widget.Design.DividerButtonLayout.Light" parent="@style/Base.V7.Widget.Design.DividerButtonLayout">
         <item name="android:background">@drawable/sesl_divider_button_layout_background_light</item>
     </style>
-    <style name="Base.Widget.AppCompat.ActionBar">
+    <style name="Base.Widget.AppCompat.ActionBar" parent="">
         <item name="actionButtonStyle">@style/Widget.AppCompat.ActionButton</item>
         <item name="actionOverflowButtonStyle">@style/Widget.AppCompat.ActionButton.Overflow</item>
         <item name="background">@drawable/sesl_action_bar_background_dark</item>
@@ -1476,7 +1476,7 @@
     </style>
     <style name="Platform.AppCompat.Light" parent="@style/Platform.V25.AppCompat.Light">
     </style>
-    <style name="Platform.ThemeOverlay.AppCompat">
+    <style name="Platform.ThemeOverlay.AppCompat" parent="">
         <item name="android:colorControlNormal">?colorControlNormal</item>
         <item name="android:colorControlActivated">?colorControlActivated</item>
         <item name="android:colorButtonNormal">?colorButtonNormal</item>
@@ -1501,7 +1501,7 @@
         <item name="android:layout_gravity">left|center</item>
         <item name="android:paddingRight">8.0dp</item>
     </style>
-    <style name="ShapeAppearance.M3.Sys.Shape.Corner.Full">
+    <style name="ShapeAppearance.M3.Sys.Shape.Corner.Full" parent="">
         <item name="cornerFamily">?shapeCornerFamily</item>
         <item name="cornerSize">50.0%</item>
     </style>
@@ -1509,10 +1509,10 @@
         <item name="cornerFamily">?shapeCornerFamily</item>
         <item name="cornerSize">50.0%</item>
     </style>
-    <style name="ShapeAppearanceOverlay.MaterialComponents.Chip">
+    <style name="ShapeAppearanceOverlay.MaterialComponents.Chip" parent="">
         <item name="cornerSize">50.0%</item>
     </style>
-    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton">
+    <style name="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton" parent="">
         <item name="cornerSize">50.0%</item>
     </style>
     <style name="TextAppearance.Compat.Notification.Info.Media" parent="@style/TextAppearance.Compat.Notification.Info">
@@ -1701,10 +1701,10 @@
         <item name="actionMenuTextColor">@color/material_on_surface_emphasis_medium</item>
         <item name="colorControlNormal">@color/material_on_surface_emphasis_medium</item>
     </style>
-    <style name="ThemeOverlay.MaterialComponents.AutoCompleteTextView">
+    <style name="ThemeOverlay.MaterialComponents.AutoCompleteTextView" parent="">
         <item name="colorControlActivated">?colorPrimary</item>
     </style>
-    <style name="ThemeOverlay.MaterialComponents.BottomAppBar.Primary">
+    <style name="ThemeOverlay.MaterialComponents.BottomAppBar.Primary" parent="">
         <item name="actionMenuTextColor">?colorOnPrimary</item>
         <item name="colorControlNormal">?colorOnPrimary</item>
     </style>
@@ -1737,10 +1737,10 @@
         <item name="colorControlActivated">?colorPrimary</item>
         <item name="editTextBackground">@null</item>
     </style>
-    <style name="ThemeOverlay.MaterialComponents.Toolbar.Popup.Primary">
+    <style name="ThemeOverlay.MaterialComponents.Toolbar.Popup.Primary" parent="">
         <item name="colorControlNormal">?colorOnSurface</item>
     </style>
-    <style name="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+    <style name="ThemeOverlay.MaterialComponents.Toolbar.Primary" parent="">
         <item name="actionMenuTextColor">?colorOnPrimary</item>
         <item name="colorControlNormal">?colorOnPrimary</item>
     </style>
@@ -1798,7 +1798,7 @@
     </style>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="@style/Base.V29.Widget.AppCompat.Toolbar.Button.Navigation">
     </style>
-    <style name="Widget.Compat.NotificationActionText">
+    <style name="Widget.Compat.NotificationActionText" parent="">
         <item name="android:textAppearance">?android:textAppearanceButton</item>
         <item name="android:textSize">@dimen/notification_action_text_size</item>
         <item name="android:textColor">@color/androidx_core_secondary_text_default_material_light</item>
@@ -1934,7 +1934,7 @@
         <item name="suffixTextAppearance">@style/TextAppearance.Design.Suffix</item>
         <item name="suffixTextColor">@null</item>
     </style>
-    <style name="Widget.Material3.SideSheet">
+    <style name="Widget.Material3.SideSheet" parent="">
         <item name="android:layout_gravity">end</item>
         <item name="android:elevation">@dimen/m3_side_sheet_standard_elevation</item>
         <item name="backgroundTint">?colorSurface</item>
@@ -2130,7 +2130,7 @@
         <item name="itemStrokeWidth">0.0dp</item>
         <item name="itemTextColor">?colorOnPrimary</item>
     </style>
-    <style name="Widget.MaterialComponents.MaterialCalendar.DayOfWeekLabel">
+    <style name="Widget.MaterialComponents.MaterialCalendar.DayOfWeekLabel" parent="">
         <item name="android:textAppearance">?textAppearanceBody2</item>
         <item name="android:gravity">center</item>
     </style>
@@ -2177,7 +2177,7 @@
         <item name="autoSizeMinTextSize">2.0sp</item>
         <item name="autoSizeTextType">uniform</item>
     </style>
-    <style name="Widget.MaterialComponents.MaterialCalendar.Item">
+    <style name="Widget.MaterialComponents.MaterialCalendar.Item" parent="">
         <item name="itemFillColor">@android:color/transparent</item>
         <item name="itemShapeAppearance">?shapeAppearanceSmallComponent</item>
         <item name="itemStrokeColor">@color/mtrl_calendar_item_stroke_color</item>
@@ -2194,7 +2194,7 @@
         <item name="itemStrokeWidth">0.0dp</item>
         <item name="itemTextColor">?colorOnPrimary</item>
     </style>
-    <style name="Widget.MaterialComponents.NavigationRailView">
+    <style name="Widget.MaterialComponents.NavigationRailView" parent="">
         <item name="android:background">?colorSurface</item>
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:minWidth">@dimen/mtrl_navigation_rail_default_width</item>
@@ -2289,7 +2289,7 @@
         <item name="strokeColor">@color/material_timepicker_button_stroke</item>
         <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
     </style>
-    <style name="Widget.MaterialComponents.TimePicker.Clock">
+    <style name="Widget.MaterialComponents.TimePicker.Clock" parent="">
         <item name="clockFaceBackgroundColor">@color/material_timepicker_clockface</item>
         <item name="clockHandColor">?colorPrimary</item>
         <item name="clockNumberTextColor">@color/material_timepicker_clock_text_color</item>
@@ -2302,7 +2302,7 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.MaterialComponents.TimePicker.Display</item>
         <item name="shapeAppearanceOverlay">?shapeAppearanceMediumComponent</item>
     </style>
-    <style name="Widget.MaterialComponents.TimePicker.Display.Divider">
+    <style name="Widget.MaterialComponents.TimePicker.Display.Divider" parent="">
         <item name="android:textAppearance">?textAppearanceHeadline3</item>
         <item name="android:textSize">56.0dp</item>
         <item name="android:textColor">?colorOnSurface</item>
@@ -2333,7 +2333,7 @@
         <item name="shapeAppearance">?shapeAppearanceMediumComponent</item>
         <item name="shapeAppearanceOverlay">@null</item>
     </style>
-    <style name="Widget.MaterialComponents.TimePicker.ImageButton">
+    <style name="Widget.MaterialComponents.TimePicker.ImageButton" parent="">
         <item name="android:minWidth">?minTouchTargetSize</item>
         <item name="android:minHeight">?minTouchTargetSize</item>
         <item name="android:insetTop">0.0dp</item>
@@ -2344,7 +2344,7 @@
         <item name="rippleColor">@color/mtrl_on_surface_ripple_color</item>
         <item name="shapeAppearance">@style/Widget.MaterialComponents.TimePicker.ImageButton.ShapeAppearance</item>
     </style>
-    <style name="Widget.MaterialComponents.TimePicker.ImageButton.ShapeAppearance">
+    <style name="Widget.MaterialComponents.TimePicker.ImageButton.ShapeAppearance" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50.0%</item>
     </style>
@@ -2376,7 +2376,7 @@
     <style name="Widget.V29.Design.Light.BottomNavigationView.Text" parent="@style/Widget.V7.Design.Light.BottomNavigationView.Text">
         <item name="itemBackground">@drawable/sesl_bottom_navigation_recoil_background_text_light</item>
     </style>
-    <style name="Widget.V7.Design.BottomNavigationView">
+    <style name="Widget.V7.Design.BottomNavigationView" parent="">
         <item name="android:background">@color/sesl_bottom_navigation_background_dark</item>
         <item name="android:minHeight">@dimen/design_bottom_navigation_height</item>
         <item name="android:paddingStart">@dimen/sesl_bottom_navigation_icon_mode_padding_horizontal</item>
