@@ -1254,7 +1254,6 @@
         <item name="useHorizontalProgress">true</item>
     </style>
     <style name="Base.Widget.AppCompat.ProgressBar.Mono" parent="@android:style/Widget.ProgressBar">
-        <item name="android:indeterminateDrawable">@drawable/sesl_progress_mono</item>
     </style>
     <style name="Base.Widget.AppCompat.ProgressBar.Mono.Large" parent="@style/Base.Widget.AppCompat.ProgressBar.Mono">
         <item name="android:maxWidth">@dimen/sesl_progress_bar_size_large</item>
@@ -1637,39 +1636,26 @@
         <item name="windowNoTitle">?android:windowNoTitle</item>
     </style>
     <style name="Theme.CoverWidgetGalleryPhoneWithTitle" parent="@style/Theme.GalleryPhoneWithTitle">
-        <item name="android:windowBackground">@color/light_black_color</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:enforceNavigationBarContrast">false</item>
-        <item name="android:windowSplashScreenBackground">@color/light_black_color</item>
     </style>
     <style name="Theme.Gallery" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <item name="android:textColorPrimary">@color/actionbar_menu_text_selector</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowDisablePreview">true</item>
-        <item name="android:statusBarColor">@color/white_color</item>
         <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
-        <item name="alertDialogTheme">@style/CustomAlertDialogTheme</item>
         <item name="searchViewStyle">@style/Widget.AppCompat.Light.SearchView</item>
     </style>
     <style name="Theme.GalleryCrop" parent="@style/Theme.GalleryPhoneWithTitle">
-        <item name="android:windowBackground">@color/black_color</item>
     </style>
     <style name="Theme.GalleryPhoneWithTitle" parent="@style/Theme.Gallery">
-        <item name="android:windowBackground">@color/default_background</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowDisablePreview">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">@bool/is_light_status_bar</item>
-        <item name="android:windowLightNavigationBar">@bool/gallery_window_light_navigation_bar</item>
         <item name="android:enforceStatusBarContrast">false</item>
         <item name="android:enforceNavigationBarContrast">false</item>
-        <item name="preferenceTheme">@style/AppTheme.FragmentPreferenceThemeOverlay</item>
     </style>
     <style name="Theme.GalleryPhoneWithTitle360" parent="@style/Theme.GalleryPhoneWithTitle">
-        <item name="android:windowBackground">@color/default_background</item>
-        <item name="android:statusBarColor">@color/gallery_status_bar_background_color</item>
-        <item name="android:navigationBarColor">@color/gallery_status_bar_background_color</item>
     </style>
     <style name="Theme.GalleryTranslucent" parent="@style/Theme.GalleryPhoneWithTitle">
         <item name="android:windowIsTranslucent">true</item>
@@ -1693,11 +1679,8 @@
         <item name="android:windowDisablePreview">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">@bool/is_light_status_bar</item>
-        <item name="android:windowLightNavigationBar">@bool/gallery_window_light_navigation_bar</item>
         <item name="android:enforceStatusBarContrast">false</item>
         <item name="android:enforceNavigationBarContrast">false</item>
-        <item name="alertDialogTheme">@style/CustomAlertDialogTheme</item>
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
     <style name="ThemeOverlay.AppCompat.DayNight.ActionBar" parent="@style/ThemeOverlay.AppCompat.DayNight">
@@ -2079,17 +2062,6 @@
     </style>
     <style name="Widget.MaterialComponents.Button.TextButton.Snackbar" parent="@style/Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?colorPrimary</item>
-    </style>
-    <style name="Widget.MaterialComponents.CardView" parent="@style/CardView">
-        <item name="android:stateListAnimator">@animator/mtrl_card_state_list_anim</item>
-        <item name="cardForegroundColor">@color/mtrl_card_view_foreground</item>
-        <item name="checkedIcon">@drawable/ic_mtrl_checked_circle</item>
-        <item name="checkedIconMargin">@dimen/mtrl_card_checked_icon_margin</item>
-        <item name="checkedIconSize">@dimen/mtrl_card_checked_icon_size</item>
-        <item name="checkedIconTint">?colorPrimary</item>
-        <item name="enforceMaterialTheme">true</item>
-        <item name="rippleColor">@color/mtrl_card_view_ripple</item>
-        <item name="shapeAppearance">?shapeAppearanceMediumComponent</item>
     </style>
     <style name="Widget.MaterialComponents.CheckedTextView" parent="@style/Base.Widget.MaterialComponents.CheckedTextView">
         <item name="android:textAppearance">?textAppearanceBody1</item>

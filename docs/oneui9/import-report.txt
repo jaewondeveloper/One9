@@ -1,4 +1,4 @@
-imported files: 387, values: 454, styles: 256
+imported files: 387, values: 454, styles: 255
 
 ## FILES
 anim/design_bottom_sheet_slide_in [changed]
@@ -606,7 +606,6 @@ Widget.MaterialComponents.BottomNavigationView.Colored
 Widget.MaterialComponents.BottomSheet
 Widget.MaterialComponents.Button
 Widget.MaterialComponents.Button.TextButton.Snackbar
-Widget.MaterialComponents.CardView
 Widget.MaterialComponents.CheckedTextView
 Widget.MaterialComponents.CircularProgressIndicator
 Widget.MaterialComponents.CompoundButton.CheckBox
