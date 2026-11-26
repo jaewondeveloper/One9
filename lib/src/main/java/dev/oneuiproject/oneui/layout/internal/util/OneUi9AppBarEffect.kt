@@ -280,15 +280,17 @@ internal class OneUi9AppBarEffect(
                     menuView = child
                     if (prepared.add(child)) {
                         // one capsule hugging all the menu buttons
+                        // same geometry as the circle: icon centre +/- 24dp, so both sides have identical margins
                         val itemsArea = {
-                            var l = Float.MAX_VALUE
-                            var r = 0f
-                            child.children.filter { it.visibility != View.GONE }.forEach { c ->
-                                l = minOf(l, c.left + c.translationX)
-                                r = maxOf(r, c.right + c.translationX)
+                            val visible = child.children.filter { it.visibility != View.GONE }.toList()
+                            if (visible.isEmpty()) RectF(0f, 0f, child.width.toFloat(), child.height.toFloat())
+                            else {
+                                val first = visible.first()
+                                val last = visible.last()
+                                val firstCenter = first.left + first.translationX + first.width / 2f
+                                val lastCenter = last.left + last.translationX + last.width / 2f
+                                RectF(firstCenter - 24 * density, 0f, lastCenter + 24 * density, child.height.toFloat())
                             }
-                            if (l > r) RectF(0f, 0f, child.width.toFloat(), child.height.toFloat())
-                            else RectF(l, 0f, r, child.height.toFloat())
                         }
                         val f = OuiFloatingBgDrawable(floatingColor, circle = false, sizePx = size, anchor = itemsArea)
                         f.alpha = (255 * floatingAlpha).toInt()
