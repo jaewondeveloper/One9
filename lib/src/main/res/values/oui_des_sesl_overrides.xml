@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from observed One UI 9 design tokens. Do not hand-edit values; see docs/oneui9/design-tokens.md -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="sesl_action_bar_text_color_title_dark" tools:override="true">#fffcfcff</color>
+    <color name="sesl_action_bar_text_color_title_light" tools:override="true">#ff010102</color>
+    <color name="sesl_background_color_dark" tools:override="true">#ff17171a</color>
+    <color name="sesl_background_color_light" tools:override="true">#fffcfcff</color>
+    <color name="sesl_badge_background_color" tools:override="true">#ffe65b17</color>
+    <color name="sesl_dialog_blur_background_color" tools:override="true">#0d000000</color>
+    <color name="sesl_functional_green_dark" tools:override="true">#ff11a85f</color>
+    <color name="sesl_functional_green_light" tools:override="true">#ff11a85f</color>
+    <color name="sesl_functional_orange_dark" tools:override="true">#ffe65b17</color>
+    <color name="sesl_functional_orange_light" tools:override="true">#ffe65b17</color>
+    <color name="sesl_functional_red_dark" tools:override="true">#ffd93e36</color>
+    <color name="sesl_functional_red_light" tools:override="true">#ffd93e36</color>
+    <color name="sesl_list_divider_color_dark" tools:override="true">#ff3a3a3d</color>
+    <color name="sesl_list_divider_color_light" tools:override="true">#ffe4e4e7</color>
+    <color name="sesl_list_ripple_color_dark" tools:override="true">#29ffffff</color>
+    <color name="sesl_list_ripple_color_light" tools:override="true">#1a000000</color>
+    <color name="sesl_list_subheader_text_color" tools:override="true">#ff848487</color>
+    <color name="sesl_list_subheader_text_color_dark" tools:override="true">#ffa3a3a7</color>
+    <color name="sesl_menu_badge_text_color" tools:override="true">#fffafaff</color>
+    <color name="sesl_primary_color_dark" tools:override="true">#ff387aff</color>
+    <color name="sesl_primary_color_light" tools:override="true">#ff387aff</color>
+    <color name="sesl_ripple_color_dark" tools:override="true">#33ffffff</color>
+    <color name="sesl_ripple_color_light" tools:override="true">#1a000000</color>
+    <color name="sesl_round_and_bgcolor_dark" tools:override="true">#ff010102</color>
+    <color name="sesl_round_and_bgcolor_light" tools:override="true">#fff3f3f5</color>
+    <color name="sesl_seekbar_overlap_color_activated_dark" tools:override="true">#ffe65b17</color>
+    <color name="sesl_seekbar_overlap_color_activated_light" tools:override="true">#ffe65b17</color>
+    <color name="sesl_seekbar_overlap_color_default_dark" tools:override="true">#73c9c9cc</color>
+    <color name="sesl_seekbar_overlap_color_default_light" tools:override="true">#73c9c9cc</color>
+    <color name="sesl_text1_dark" tools:override="true">#fffcfcff</color>
+    <color name="sesl_text3_dark" tools:override="true">#ffccccce</color>
+    <color name="sesl_white" tools:override="true">#fffafaff</color>
+</resources>

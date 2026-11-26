@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated from observed One UI 9 design tokens. Do not hand-edit values; see docs/oneui9/design-tokens.md -->
+<resources>
+    <color name="oui_des_sys_background">#ff010102</color>
+    <color name="oui_des_sys_background_variant">#ff010102</color>
+    <color name="oui_des_sys_green">#ff11a85f</color>
+    <color name="oui_des_sys_green_bright">#ff5ae0a0</color>
+    <color name="oui_des_sys_on_surface_container">#ffccccce</color>
+    <color name="oui_des_sys_on_surface_container_fixed">#fffcfcff</color>
+    <color name="oui_des_sys_on_surface_container_fixed_variant">#ff010102</color>
+    <color name="oui_des_sys_on_surface_container_high">#ffe9e9ec</color>
+    <color name="oui_des_sys_on_surface_container_highest">#fffcfcff</color>
+    <color name="oui_des_sys_on_surface_container_low">#ffb7b7bb</color>
+    <color name="oui_des_sys_on_surface_container_lowest">#ffa3a3a7</color>
+    <color name="oui_des_sys_orange">#ffe65b17</color>
+    <color name="oui_des_sys_orange_bright">#fff58249</color>
+    <color name="oui_des_sys_outline">#ff636368</color>
+    <color name="oui_des_sys_outline_high">#ffa3a3a7</color>
+    <color name="oui_des_sys_outline_highest">#ffe9e9ec</color>
+    <color name="oui_des_sys_outline_low">#ff3a3a3d</color>
+    <color name="oui_des_sys_primary">#ff387aff</color>
+    <color name="oui_des_sys_primary_bright">#ff598fff</color>
+    <color name="oui_des_sys_primary_high">#ff598fff</color>
+    <color name="oui_des_sys_red">#ffd93e36</color>
+    <color name="oui_des_sys_red_bright">#fff56962</color>
+    <color name="oui_des_sys_surface">#ff17171a</color>
+    <color name="oui_des_sys_surface_bright">#ff252528</color>
+    <color name="oui_des_sys_surface_brightest">#ff3a3a3d</color>
+    <color name="oui_des_sys_surface_container">#ff3a3a3d</color>
+    <color name="oui_des_sys_surface_container_fixed">#fffcfcff</color>
+    <color name="oui_des_sys_surface_container_fixed_variant">#ff010102</color>
+    <color name="oui_des_sys_surface_container_high">#ff4d4d52</color>
+    <color name="oui_des_sys_surface_container_higher">#ff636368</color>
+    <color name="oui_des_sys_surface_container_highest">#ff848487</color>
+    <color name="oui_des_sys_surface_container_low">#ff252528</color>
+    <color name="oui_des_sys_surface_container_lowest">#ff010102</color>
+    <color name="oui_des_sys_surface_fixed">#ff4d4d52</color>
+    <color name="oui_des_sys_surface_fixed_variant">#ff010102</color>
+    <color name="oui_des_sys_surface_variant">#ff17171a</color>
+    <color name="oui_des_sys_tone_on_tone">#1afcfcff</color>
+    <color name="oui_des_sys_tone_on_tone_high">#26fcfcff</color>
+</resources>

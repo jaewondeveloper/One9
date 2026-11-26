@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Corner radius scale observed in One UI 9. Existing oui_des_* radii already match this scale. -->
+<resources>
+    <dimen name="oui_des_radius_xs">8dp</dimen>
+    <dimen name="oui_des_radius_sm">12dp</dimen>
+    <dimen name="oui_des_radius_md">18dp</dimen>
+    <dimen name="oui_des_radius_lg">22dp</dimen>
+    <dimen name="oui_des_radius_xl">26dp</dimen>
+    <dimen name="oui_des_radius_full">999dp</dimen>
+</resources>
