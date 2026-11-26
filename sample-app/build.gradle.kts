@@ -9,6 +9,8 @@ plugins {
 
 android {
     namespace = "com.sec.sesl.tester"
+    // SESL 8 dependencies require compileSdk 37.1 (same as the library module)
+    compileSdkMinor = 1
 
     defaultConfig {
         applicationId = "com.tribalfs.oneuisample8"
