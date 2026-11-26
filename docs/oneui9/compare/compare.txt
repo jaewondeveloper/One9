@@ -1,0 +1,895 @@
+SESL8: 5517 value entries, 1443 files
+
+=== dec_browser: new files 194, removed 113
+  new dimen: 602
+  new bool: 2
+  new style: 38
+  new color: 545
+  new integer: 7
+  new item: 2
+  new attr: 86
+  changed dimen: 423
+  changed style: 49
+  changed color: 142
+  changed attr: 1
+
+=== dec_notes: new files 174, removed 172
+  new dimen: 433
+  new integer: 27
+  new bool: 2
+  new style: 40
+  new color: 265
+  new item: 3
+  new attr: 86
+  changed dimen: 404
+  changed style: 45
+  changed color: 154
+  changed attr: 1
+
+################ dec_browser
+
+##### NEW FILES (not in SESL8) (194)
+   anim/sesl_glance_easing_custom_0_091__0_000_0_000_1_000
+   anim/sesl_glance_easing_custom_0_117_0_126_0_312_1_000
+   anim/sesl_glance_easing_custom_0_344_0_830_0_605_1_000
+   anim/sesl_glance_easing_custom_0_497_0_000_0_833_0_571
+   anim/sesl_glance_easing_custom_0_497_0_763_0_605_1_000
+   anim/sesl_glance_easing_custom_0_497_0_933_0_605_1_000
+   anim/sesl_glance_easing_custom_0_497_1_399_0_605_1_000
+   anim/sesl_glance_easing_custom_0_499_0_000_0_765_1_000
+   anim/sesl_glance_progress_dot_cir_0_path1custom3_gradientfill1_c2s4pg1p2
+   anim/sesl_glance_progress_dot_cir_1_path1custom7_gradientfill1_c2s3pg1p2
+   anim/sesl_glance_progress_dot_cir_2_path1custom11_gradientfill1_c2s2pg1p2
+   anim/sesl_glance_progress_dot_cir_3_path1custom15_gradientfill1_c2s1pg1p2
+   anim/sesl_glance_progress_dot_progress_dot_cir_0_translatey_2
+   anim/sesl_glance_progress_dot_progress_dot_cir_1_translatey_6
+   anim/sesl_glance_progress_dot_progress_dot_cir_2_translatey_10
+   anim/sesl_glance_progress_dot_progress_dot_cir_3_translatey_14
+   anim/sesl_glance_progress_dotparentlink_progress_dot_scaley_1
+   anim/sesl_glance_progress_dotparentlink_rotation_0
+   anim/sesl_glance_rotation_rotation_18
+   anim/sesl_hierarchy_up_enter
+   anim/sesl_hierarchy_up_exit
+   anim/sesl_menu_popup_enter_bottom_center
+   anim/sesl_menu_popup_enter_bottom_left
+   anim/sesl_menu_popup_enter_bottom_right
+   anim/sesl_menu_popup_enter_top_center
+   anim/sesl_menu_popup_enter_top_left
+   anim/sesl_menu_popup_exit_bottom_center
+   anim/sesl_menu_popup_exit_bottom_left
+   anim/sesl_menu_popup_exit_bottom_right
+   anim/sesl_menu_popup_exit_top_center
+   anim/sesl_menu_popup_exit_top_left
+   anim/sesl_tip_popup_enter
+   animator/sesl_fragment_close_enter
+   animator/sesl_fragment_close_enter_pop_over
+   animator/sesl_fragment_close_enter_rtl
+   animator/sesl_fragment_close_exit
+   animator/sesl_fragment_close_exit_pop_over
+   animator/sesl_fragment_close_exit_rtl
+   animator/sesl_fragment_open_enter
+   animator/sesl_fragment_open_enter_pop_over
+   animator/sesl_fragment_open_enter_rtl
+   animator/sesl_fragment_open_exit
+   animator/sesl_fragment_open_exit_pop_over
+   animator/sesl_fragment_open_exit_rtl
+   animator/sesl_suggestion_appbar_height
+   color/sesl_bottom_nav_floating_icon_text_color_dark
+   color/sesl_bottom_nav_floating_icon_text_color_light
+   color/sesl_bottom_nav_icon_color_for_theme
+   color/sesl_bottom_navigation_floating_background_selector_dark
+   color/sesl_bottom_navigation_floating_background_selector_light
+   color/sesl_divider_button_layout_background_selector_dark
+   color/sesl_divider_button_layout_background_selector_light
+   color/sesl_divider_button_layout_button_text_dark
+   color/sesl_divider_button_layout_button_text_light
+   color/sesl_divider_button_layout_divider_dark
+   color/sesl_divider_button_layout_divider_for_theme
+   color/sesl_divider_button_layout_divider_light
+   color/sesl_floating_pane_drag_handler_selector
+   color/sesl_floating_pane_resize_background_selector
+   color/sesl_floating_toolbar_background_selector_dark
+   color/sesl_floating_toolbar_background_selector_dark_for_theme
+   color/sesl_floating_toolbar_background_selector_for_theme
+   color/sesl_floating_toolbar_background_selector_light
+   color/sesl_glance_switch_thumb
+   color/sesl_glance_switch_track
+   color/sesl_tablayout_main_background_color_selector_dark
+   color/sesl_tablayout_main_background_color_selector_dark_for_theme
+   color/sesl_tablayout_main_background_color_selector_for_theme
+   color/sesl_tablayout_main_background_color_selector_light
+   color/sesl_tablayout_main_tab_selected_background_color_selector_dark
+   color/sesl_tablayout_main_tab_selected_background_color_selector_dark_for_theme
+   color/sesl_tablayout_main_tab_selected_background_color_selector_for_theme
+   color/sesl_tablayout_main_tab_selected_background_color_selector_light
+   color/sesl_tablayout_subtab_date_picker_text_color_dark
+   color/sesl_tablayout_subtab_date_picker_text_color_dark_for_theme
+   color/sesl_tablayout_subtab_date_picker_text_color_light
+   color/sesl_tablayout_subtab_date_picker_text_color_light_for_theme
+   color/sesl_tablayout_text_color_default_selector_dark_for_theme
+   color/sesl_tablayout_text_color_default_selector_for_theme
+   drawable/sesl_appbar_suggest_content_image_background
+   drawable/sesl_bottom_navigation_floating_background_dark
+   drawable/sesl_bottom_navigation_floating_background_light
+   drawable/sesl_bottom_navigation_item_background_dark
+   drawable/sesl_bottom_navigation_item_background_icon_dark
+   drawable/sesl_bottom_navigation_item_background_icon_dark_small_screen
+   drawable/sesl_bottom_navigation_item_background_icon_light
+   drawable/sesl_bottom_navigation_item_background_icon_light_small_screen
+   drawable/sesl_bottom_navigation_item_background_light
+   drawable/sesl_bottom_navigation_recoil_background_text_dark
+   drawable/sesl_bottom_navigation_recoil_background_text_light
+   drawable/sesl_bottom_navigation_ripple_mask
+   drawable/sesl_bottom_navigation_ripple_mask_icon
+   drawable/sesl_bottom_navigation_ripple_mask_icon_small_screen
+   drawable/sesl_dialog_scroll_thumb_horizontal
+   drawable/sesl_dialog_scroll_thumb_horizontal_dark
+   drawable/sesl_dialog_scroll_thumb_vertical
+   drawable/sesl_dialog_scroll_thumb_vertical_dark
+   drawable/sesl_divider_button_layout_background_dark
+   drawable/sesl_divider_button_layout_background_light
+   drawable/sesl_divider_button_layout_button_background
+   drawable/sesl_divider_button_layout_button_background_dark
+   drawable/sesl_divider_button_layout_divider_background_dark
+   drawable/sesl_divider_button_layout_divider_background_for_theme
+   drawable/sesl_divider_button_layout_divider_background_light
+   drawable/sesl_fastscroll_normal_thumb
+   drawable/sesl_floating_appbar_round_background_dark
+   drawable/sesl_floating_appbar_round_background_dark_for_theme
+   drawable/sesl_floating_appbar_round_background_for_theme
+   drawable/sesl_floating_appbar_round_background_light
+   drawable/sesl_floating_pane_background_bottom_divider
+   drawable/sesl_floating_pane_background_bottom_square
+   drawable/sesl_floating_pane_background_bottom_square_dark
+   drawable/sesl_focus_stroke_26dp_dark
+   drawable/sesl_focus_stroke_26dp_light
+   drawable/sesl_focus_stroke_button_dark
+   drawable/sesl_focus_stroke_button_light
+   drawable/sesl_focus_stroke_button_small_dark
+   drawable/sesl_focus_stroke_button_small_light
+   drawable/sesl_focus_stroke_compound_button_dark
+   drawable/sesl_focus_stroke_compound_button_light
+   drawable/sesl_focus_stroke_oval_dark
+   drawable/sesl_focus_stroke_oval_light
+   drawable/sesl_focus_stroke_search_button_dark
+   drawable/sesl_focus_stroke_search_button_light
+   drawable/sesl_focus_stroke_square_dark
+   drawable/sesl_focus_stroke_square_light
+   drawable/sesl_focus_stroke_switch_dark
+   drawable/sesl_focus_stroke_switch_light
+   drawable/sesl_glance_dim_effect
+   drawable/sesl_glance_left_leaf_background_shape
+   drawable/sesl_glance_left_speech_balloon_background_shape
+   drawable/sesl_glance_no_effect
+   drawable/sesl_glance_progress_material_mono
+   drawable/sesl_glance_right_leaf_background_shape
+   drawable/sesl_glance_right_speech_balloon_background_shape
+   drawable/sesl_glance_switch_ripple
+   drawable/sesl_glance_switch_thumb
+   drawable/sesl_glance_switch_track
+   drawable/sesl_glance_vector_drawable_progress_bar_mono
+   drawable/sesl_go_to_top_background_blur
+   drawable/sesl_ic_expansion_button_not_floated
+   drawable/sesl_ic_search_bottom_clear
+   drawable/sesl_list_selector_recoil_background_dark
+   drawable/sesl_list_selector_recoil_background_light
+   drawable/sesl_menu_ai_popup_background
+   drawable/sesl_popup_menu_submenu_arrow
+   drawable/sesl_progress_mono
+   drawable/sesl_scroll_thumb_horizontal
+   drawable/sesl_scroll_thumb_horizontal_dark
+   drawable/sesl_scroll_thumb_vertical
+
+##### CHANGED dimen (423)
+   sesl_action_bar_background_divider_height|values -> 2px -> 2.0px
+   sesl_action_bar_content_inset_with_nav|values -> 60dp -> 60.0dp
+   sesl_action_bar_content_inset|values -> 28dp -> 28.0dp
+   sesl_action_bar_default_height|values -> 64dp -> 56.0dp
+   sesl_action_bar_elevation|values -> 0dp -> 0.0dp
+   sesl_action_bar_height_with_padding|values -> 72dp -> 56.0dp
+   sesl_action_bar_last_padding|values -> 16dp -> 16.0dp
+   sesl_action_bar_overflow_padding_end|values -> 24dp -> 8.0dp
+   sesl_action_bar_overflow_padding_start|values -> 3dp -> 4.0dp
+   sesl_action_bar_overflow_side_padding|values -> 4dp -> 4.0dp
+   sesl_action_bar_top_padding|values -> 8dp -> 0.0dp
+   sesl_action_button_icon_size|values -> 24dp -> 24.0dp
+   sesl_action_button_min_width|values -> 34dp -> 34.0dp
+   sesl_action_button_padding_horizontal|values -> 10dp -> 10.0dp
+   sesl_action_button_side_padding|values -> 8dp -> 8.0dp
+   sesl_action_item_icon_show_button_background_padding_horizontal|values -> 11dp -> 11.0dp
+   sesl_action_item_show_button_background_inset_horizontal|values -> 5dp -> 5.0dp
+   sesl_action_item_show_button_background_inset_vertical|values -> 8dp -> 4.0dp
+   sesl_action_item_show_button_background_padding_horizontal|values -> 7dp -> 7.0dp
+   sesl_action_menu_item_text_ripple_radius|values -> 24dp -> 24.0dp
+   sesl_alert_dialog_button_bar_height|values -> 48.0dip -> 48.0dp
+   sesl_appbar_bottom_padding|values -> 0dp -> 0.0dp
+   sesl_appbar_button_max_width_multi|values -> 280dp -> 280.0dp
+   sesl_appbar_button_max_width|values -> 120dp -> 120.0dp
+   sesl_appbar_button_side_margin|values -> 8dp -> 8.0dp
+   sesl_appbar_button_text_size|values -> 13dp -> 12.0dp
+   sesl_appbar_elevation|values -> 0dp -> 0.0dp
+   sesl_appbar_extended_subtitle_text_size|values -> 15sp -> 15.0sp
+   sesl_appbar_extended_title_and_subtitle_padding|values -> 4dp -> 4.0dp
+   sesl_appbar_extended_title_extra_line_space|values -> -3dp -> -3.0dp
+   sesl_appbar_extended_title_padding|values -> 24dp -> 24.0dp
+   sesl_appbar_extended_title_text_size_with_subtitle|values -> 30sp -> 30.0sp
+   sesl_appbar_extended_title_text_size|values -> 34sp -> 34.0sp
+   sesl_appbar_extended_title_text_view_height|values -> 105dp -> 105.0dp
+   sesl_appbar_suggest_button_top_margin|values -> 12dp -> 12.0dp
+   sesl_appbar_suggest_close_button_size|values -> 24dp -> 20.0dp
+   sesl_appbar_suggest_close_button_vertical|values -> 32dp -> 32.0dp
+   sesl_appbar_suggest_title_text_size|values -> 20dp -> 15.0dp
+   sesl_appbar_viewpager_close_icon_end_margin|values -> 12dp -> 12.0dp
+   sesl_appbar_viewpager_close_icon_top_margin|values -> 12dp -> 12.0dp
+   sesl_appbar_viewpager_margin_horizontal|values -> 10dp -> 10.0dp
+   sesl_appbar_viewpager_round|values -> 26dp -> 26.0dp
+   sesl_badge_additional_width|values -> 4dp -> 4.0dp
+   sesl_badge_default_width|values -> 13dp -> 13.0dp
+   sesl_bottom_navigation_N_badge_start_margin|values -> 3.0dip -> 3.0dp
+   sesl_bottom_navigation_N_badge_top_margin|values -> 6.0dip -> 6.0dp
+   sesl_bottom_navigation_active_item_max_width|values -> 810.0dip -> 810.0dp
+   sesl_bottom_navigation_active_item_min_width|values -> 96.0dip -> 96.0dp
+   sesl_bottom_navigation_baseline_margin_top|values -> 30.0dip -> 30.0dp
+   sesl_bottom_navigation_dot_badge_size|values -> 6.0dip -> 6.0dp
+   sesl_bottom_navigation_elevation|values -> 0.0dip -> 0.0dp
+   sesl_bottom_navigation_icon_inset|values -> 5.0dip -> 0.0dp
+   sesl_bottom_navigation_icon_mode_height|values -> 60.0dip -> 60.0dp
+   sesl_bottom_navigation_icon_mode_min_padding_horizontal|values -> 2.5dip -> 2.0dp
+   sesl_bottom_navigation_icon_mode_padding_horizontal|values -> 5.0dip -> 5.0dp
+   sesl_bottom_navigation_icon_size|values -> 24.0dip -> 24.0dp
+   sesl_bottom_navigation_item_max_width|values -> 96.0dip -> 96.0dp
+   sesl_bottom_navigation_item_min_width|values -> 56.0dip -> 56.0dp
+   sesl_bottom_navigation_label_padding_bottom|values -> 1.0dip -> 1.0dp
+   sesl_bottom_navigation_label_padding_horizontal|values -> 6.0dip -> 6.0dp
+   sesl_bottom_navigation_label_padding_vertical|values -> 4.0dip -> 4.0dp
+   sesl_bottom_navigation_margin|values -> 8.0dip -> 8.0dp
+   sesl_bottom_navigation_shadow_height|values -> 0.0dip -> 0.0dp
+   sesl_bottom_navigation_show_button_shapes_inset_vertical|values -> 2.0dip -> 2.0dp
+   sesl_bottom_navigation_show_button_shapes_padding_horizontal|values -> 11.0dip -> 11.0dp
+   sesl_bottom_navigation_text_mode_height|values -> 56.0dip -> 72.0dp
+   sesl_bottom_navigation_text_mode_padding_horizontal|values -> 24.0dip -> 24.0dp
+   sesl_button_corner_radius|values -> 18dp -> 18.0dp
+   sesl_button_inset_vertical|values -> 6dp -> 6.0dp
+   sesl_button_padding_horizontal|values -> 8dp -> 8.0dp
+
+##### CHANGED integer (0)
+
+##### CHANGED bool (0)
+
+##### CHANGED color (142)
+   sesl_action_bar_background_color_dark|values -> @color/sesl_gray_D1 -> @color/basic_token_sys_background_dark
+   sesl_action_bar_background_color_light|values -> @color/sesl_gray_L3 -> @color/basic_token_sys_background_light
+   sesl_action_bar_text_color_menu_dark|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_highest_dark
+   sesl_action_bar_text_color_menu_light|values -> @color/sesl_text1_light -> @color/basic_token_sys_on_surface_container_highest_light
+   sesl_action_bar_text_color_subtitle_dark|values -> @color/sesl_text5_dark -> @color/basic_token_sys_on_surface_container_low_dark
+   sesl_action_bar_text_color_subtitle_light|values -> @color/sesl_text4_light -> @color/basic_token_sys_on_surface_container_low_light
+   sesl_action_bar_text_color_title_dark|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_highest_dark
+   sesl_action_bar_text_color_title_light|values -> @color/sesl_text1_light -> @color/basic_token_sys_on_surface_container_highest_light
+   sesl_appbar_suggest_title_dark_for_theme|values -> @color/sesl_edit_text_tint_color_light -> @color/basic_token_sys_on_surface_container_highest
+   sesl_appbar_suggest_title_dark|values -> @color/sesl_text1_dark -> @color/sesl_primary_text_color_dark
+   sesl_appbar_viewpager_indicator_off_dark|values -> @color/sesl_gray_D8 -> @color/basic_token_sys_surface_container_high_dark
+   sesl_appbar_viewpager_indicator_off|values -> @color/sesl_gray_L8 -> @color/basic_token_sys_surface_container_high_light
+   sesl_appbar_viewpager_indicator_on|values -> @color/sesl_gray_L10 -> @color/basic_token_sys_surface_container_highest_light
+   sesl_badge_background_color|values -> #ffef5e16 -> #e65b17
+   sesl_black|values -> #252528 -> @color/basic_token_gray_90
+   sesl_blue_color_light|values -> #387aff -> @color/basic_token_primary_50
+   sesl_blue_dark_color_dark|values -> #598fff -> @color/basic_token_sys_primary_high_dark
+   sesl_blue_dark_color_light|values -> #376fde -> @color/basic_token_sys_primary_high_light
+   sesl_bottom_navigation_background_dark|values -> @color/sesl_gray_D1 -> @color/basic_token_sys_background_dark
+   sesl_bottom_navigation_background_light|values -> @color/sesl_gray_L3 -> @color/basic_token_sys_background_light
+   sesl_bottom_navigation_icon_dark|values -> @color/sesl_text3_dark -> @color/basic_token_sys_on_surface_container_dark
+   sesl_bottom_navigation_icon_light|values -> @color/sesl_text3_light -> @color/basic_token_sys_on_surface_container_light
+   sesl_bottom_navigation_text_dark|values -> @color/sesl_text4_dark -> @color/basic_token_sys_on_surface_container_low_dark
+   sesl_bottom_navigation_text_light|values -> @color/sesl_text4_light -> @color/basic_token_sys_on_surface_container_low_light
+   sesl_btn_background_color_dark|values -> @color/sesl_gray_D4 -> @color/sesl_gray_D5
+   sesl_button_text_color_dark_for_theme|values -> @color/sesl_btn_default_text_color_light -> @color/basic_token_sys_on_surface_container_highest
+   sesl_control_normal_color_light|values -> #cc99999e -> @color/basic_token_sys_surface_container_higher
+   sesl_design_snackbar_suggest_action_background_color|values -> #fffcfcfc -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_design_snackbar_suggest_action_text_color|values -> @color/sesl_gray_D1 -> @color/basic_token_sys_on_surface_container_fixed_variant
+   sesl_design_snackbar_suggest_background_color|values -> #cc2d2d30 -> @color/basic_token_sys_surface_fixed
+   sesl_design_snackbar_suggest_text_color|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_design_snackbar_text_color|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_dialog_divider_color_dark|values -> #3b848487 -> @color/basic_token_sys_outline_high_dark
+   sesl_dialog_divider_color_material_dark|values -> @color/sesl_dialog_divider_color -> @color/sesl_dialog_divider_color_dark
+   sesl_dialog_divider_color_material_light|values -> @color/sesl_dialog_divider_color_dark -> @color/sesl_dialog_divider_color
+   sesl_dialog_divider_color|values -> #3b848487 -> @color/basic_token_sys_outline_high_light
+   sesl_edit_text_tint_color_dark|values -> @color/sesl_white -> @color/basic_token_sys_outline_highest_dark
+   sesl_edit_text_tint_color_light|values -> @color/sesl_black -> @color/basic_token_sys_on_surface_container_highest_light
+   sesl_extended_appbar_subtitle_dark|values -> @color/sesl_text5_dark -> @color/basic_token_sys_on_surface_container_low_dark
+   sesl_extended_appbar_subtitle_light|values -> @color/sesl_text4_light -> @color/basic_token_sys_on_surface_container_low_light
+   sesl_floating_pane_background_color_dark|values -> #252528 -> @color/basic_token_sys_surface_bright_dark
+   sesl_floating_pane_background_color|values -> #f1f1f3 -> @color/basic_token_sys_surface_bright_light
+   sesl_floating_pane_drag_handler_color|values -> #80848487 -> @color/basic_token_sys_on_surface_container
+   sesl_floating_pane_menu_icon_dark|values -> #fcfcff -> @color/basic_token_sys_on_surface_container_dark
+   sesl_floating_pane_menu_icon|values -> #4d4d52 -> @color/basic_token_sys_on_surface_container_light
+   sesl_floating_pane_resize_background_color|values -> #1a010102 -> @color/basic_token_sys_surface_container_fixed_variant
+   sesl_floating_pane_resize_background_stroke_color|values -> #387aff -> @color/basic_token_sys_primary
+   sesl_functional_green_light|values -> #11a85f -> @color/basic_token_green_50
+   sesl_functional_orange_light|values -> #e65b17 -> @color/basic_token_orange_50
+   sesl_functional_orange_text_dark|values -> #fc864c -> @color/basic_token_orange_20
+   sesl_functional_red_light|values -> #d93e36 -> @color/basic_token_red_50
+   sesl_functional_red_text_dark|values -> #fc6c65 -> @color/basic_token_red_30
+   sesl_gray_D1|values -> #010102 -> @color/basic_token_gray_100
+   sesl_gray_D3|values -> #17171a -> @color/basic_token_gray_95
+   sesl_gray_D5|values -> #3a3a3d -> @color/basic_token_gray_80
+   sesl_gray_L1|values -> #fcfcff -> @color/basic_token_gray_01
+   sesl_gray_L3|values -> #f1f1f3 -> @color/basic_token_gray_05
+   sesl_gray_L5|values -> #e9e9ec -> @color/basic_token_gray_10
+   sesl_gray_L6|values -> #e4e4e7 -> @color/basic_token_gray_15
+   sesl_list_divider_color_dark|values -> #3a3a3d -> @color/basic_token_sys_outline_low_dark
+   sesl_list_divider_color_light|values -> #e4e4e7 -> @color/basic_token_sys_outline_low_light
+   sesl_list_ripple_color_dark|values -> #29ffffff -> @color/basic_token_state_pressed_on_color_dark
+   sesl_list_subheader_text_color_dark|values -> #99999e -> @color/basic_token_sys_on_surface_container_lowest_dark
+   sesl_list_subheader_text_color|values -> #848487 -> @color/basic_token_sys_on_surface_container_lowest_light
+   sesl_menu_badge_background_color|values -> #e65b17 -> @color/basic_token_orange_50
+   sesl_menu_popup_background_color_dark|values -> @color/sesl_gray_D5 -> @color/basic_token_sys_surface_bright_dark
+   sesl_menu_popup_background_color|values -> @color/sesl_gray_L1 -> @color/basic_token_sys_surface_bright_light
+   sesl_menu_popup_background_stroke_color_dark|values -> @color/sesl_gray_D5 -> #00000000
+   sesl_popup_menu_blur_background_dark|values -> #cc3a3a3d -> @color/basic_token_effect_blur_surface_dark
+   sesl_popup_menu_blur_background|values -> #ccfcfcff -> @color/basic_token_effect_blur_surface_light
+
+##### CHANGED style (49)
+   Base.Widget.AppCompat.ActionBar.Solid|values -> <item name="background">?attr/colorPrimary</item> <item name="backgroundStacked">?attr/colorPrimary</item> <item name="backgroundSplit">?attr/colorPrimary</item> -> <item name="backg
+   Base.Widget.AppCompat.ActionBar.TabBar|values -> <item name="divider">?actionBarDivider</item> <item name="dividerPadding">8.0dip</item> <item name="showDividers">middle</item> -> <item name="divider">?actionBarDivider</item> <ite
+   Base.Widget.AppCompat.ActionBar.TabText|values -> <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item> <item name="android:textSize">12.0sp</item> <item name="android:textStyle">bold</item> <item name=
+   Base.Widget.AppCompat.ActionBar.TabView|values -> <item name="android:gravity">center_horizontal</item> <item name="android:paddingLeft">16.0dip</item> <item name="android:paddingRight">16.0dip</item> <item name="android:layout_wi
+   Base.Widget.AppCompat.ActionBar|values -> <item name="displayOptions">showTitle</item> <item name="height">?attr/actionBarSize</item> <item name="titleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionBar.Title</item> <item 
+   Base.Widget.AppCompat.ActionButton.CloseMode|values -> <item name="android:background">?attr/actionBarItemBackground</item> <item name="android:minWidth">@dimen/sesl_action_button_min_width</item> <item name="android:minHeight">?a
+   Base.Widget.AppCompat.ActionButton.Overflow|values -> <item name="android:src">@drawable/sesl_ic_menu_overflow_dark</item> <item name="android:background">?attr/actionBarItemBackground</item> <item name="android:minWidth">@dimen/s
+   Base.Widget.AppCompat.ActionButton|values -> <item name="android:background">?attr/actionBarItemBackground</item> <item name="android:minWidth">@dimen/sesl_action_button_min_width</item> <item name="android:minHeight">?attr/action
+   Base.Widget.AppCompat.ActionMode|values -> <item name="android:minHeight">?actionBarSize</item> <item name="background">?actionModeBackground</item> <item name="backgroundSplit">?actionModeSplitBackground</item> <item name="button
+   Base.Widget.AppCompat.ActivityChooserView|values -> <item name="android:gravity">center</item> <item name="android:divider">?android:dividerVertical</item> <item name="android:showDividers">middle</item> <item name="android:divide
+   Base.Widget.AppCompat.Button.ButtonBar.AlertDialog|values -> <item name="android:minWidth">64.0dip</item> <item name="android:minHeight">@dimen/sesl_alert_dialog_button_bar_height</item> -> <item name="android:minWidth">64.0dp</it
+   Base.Widget.AppCompat.Button|values -> <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button</item> <item name="android:ellipsize">end</item> <item name="android:gravity">center</item> <item name="andro
+   Base.Widget.AppCompat.CompoundButton.Switch|values -> <item name="android:background">@drawable/sesl_switch_background</item> <item name="android:textOn">@string/sesl_capital_on</item> <item name="android:textOff">@string/sesl_cap
+   Base.Widget.AppCompat.DrawerArrowToggle.Common|values -> <item name="arrowHeadLength">8.0dip</item> <item name="arrowShaftLength">16.0dip</item> <item name="color">?android:textColorSecondary</item> <item name="spinBars">true</ite
+   Base.Widget.AppCompat.DrawerArrowToggle|values -> <item name="barLength">18.0dip</item> <item name="drawableSize">24.0dip</item> <item name="gapBetweenBars">3.0dip</item> -> <item name="barLength">18.0dp</item> <item name="drawabl
+   Base.Widget.AppCompat.DropDownItem.Spinner|values -> <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.DropDownItem </item> <item name="android:gravity">center_vertical</item> <item name="android:paddingTo
+   Base.Widget.AppCompat.EditText|values ->  -> <item name="android:breakStrategy">simple</item> <item name="android:hyphenationFrequency">none</item>
+   Base.Widget.AppCompat.Light.ActionBar.Solid|values -> <item name="background">?attr/colorPrimary</item> <item name="backgroundStacked">?attr/colorPrimary</item> <item name="backgroundSplit">?attr/colorPrimary</item> -> <item name=
+   Base.Widget.AppCompat.Light.CompoundButton.Switch|values -> <item name="android:background">@drawable/sesl_switch_background</item> <item name="android:textOn">@string/sesl_capital_on</item> <item name="android:textOff">@string/se
+   Base.Widget.AppCompat.Light.EditText|values ->  -> <item name="android:breakStrategy">simple</item> <item name="android:hyphenationFrequency">none</item>
+   Base.Widget.AppCompat.Light.ListView.DropDown|values -> <item name="android:scrollbarThumbHorizontal"> @drawable/sesl_dropdown_scrollbar_handle_light </item> <item name="android:scrollbarThumbVertical">@drawable/sesl_dropdown_scro
+   Base.Widget.AppCompat.Light.SeslSwitchBar|values -> <item name="seslSwitchBarBackgroundActivatedColor"> @color/sesl_switchbar_on_background_color_light </item> <item name="seslSwitchBarBackgroundColor">@color/sesl_switchbar_off_ba
+   Base.Widget.AppCompat.Light.TextView.SpinnerItem|values -> <item name="android:textAppearance"> @style/TextAppearance.AppCompat.Light.Widget.TextView.SpinnerItem </item> -> <item name="android:textAppearance">@style/TextAppearance
+   Base.Widget.AppCompat.Light.Toolbar|values -> <item name="background">@color/sesl_action_bar_background_color_light</item> <item name="subtitleTextAppearance"> @style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle.Inverse </item
+   Base.Widget.AppCompat.ListPopupWindow|values -> <item name="android:dropDownSelector">?listChoiceBackgroundIndicator</item> <item name="android:popupBackground">@drawable/sesl_menu_popup_background_dark</item> <item name="android:
+   Base.Widget.AppCompat.ListView.DropDown|values -> <item name="android:scrollbarThumbHorizontal"> @drawable/sesl_dropdown_scrollbar_handle_dark </item> <item name="android:scrollbarThumbVertical">@drawable/sesl_dropdown_scrollbar_h
+   Base.Widget.AppCompat.PopupMenu.Overflow|values -> <item name="android:popupBackground">@drawable/sesl_menu_popup_background_dark</item> <item name="android:dropDownHorizontalOffset">@dimen/sesl_menu_popup_offset_horizontal </item
+   Base.Widget.AppCompat.PopupMenu|values -> <item name="android:popupBackground">@drawable/sesl_menu_popup_background_dark</item> <item name="android:dropDownHorizontalOffset">@dimen/sesl_menu_popup_offset_horizontal </item> <item n
+   Base.Widget.AppCompat.ProgressBar.Circle|values -> <item name="android:maxWidth">@dimen/sesl_progress_circle_size</item> <item name="android:maxHeight">@dimen/sesl_progress_circle_size</item> <item name="android:indeterminate">tru
+   Base.Widget.AppCompat.ProgressBar.Horizontal|values -> <item name="android:indeterminateDrawable"> @drawable/sesl_progress_bar_indeterminate_xlarge_transition </item> <item name="android:progressDrawable">@drawable/sesl_progress_h
+   Base.Widget.AppCompat.SeekBar|values -> <item name="android:background">@drawable/sesl_seek_bar_background_borderless</item> <item name="android:focusable">true</item> <item name="android:maxHeight">@dimen/sesl_progress_bar_min_he
+   Base.Widget.AppCompat.SeslSwitchBar|values -> <item name="seslSwitchBarBackgroundActivatedColor"> @color/sesl_switchbar_on_background_color_dark </item> <item name="seslSwitchBarBackgroundColor">@color/sesl_switchbar_off_backgroun
+   Base.Widget.AppCompat.Spinner|values -> <item name="android:gravity">start|center</item> <item name="android:background">@drawable/sesl_spinner_background_dark</item> <item name="android:clickable">true</item> <item name="android:
+   Base.Widget.AppCompat.TextView.ListSeparator|values-v34 -> <item name="android:textSize">@dimen/sesl_list_subheader_text_size</item> <item name="android:textColor">@color/sesl_list_subheader_text_color_dark</item> <item name="andr
+   Base.Widget.AppCompat.TextView.SpinnerItem|values -> <item name="android:textAppearance"> @style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem </item> <item name="android:paddingTop">@dimen/sesl_spinner_item_top_padding</it
+   Base.Widget.AppCompat.TextView|values ->  -> <item name="android:breakStrategy">high_quality</item> <item name="android:hyphenationFrequency">none</item>
+   Base.Widget.AppCompat.Toolbar.Button.Navigation|values -> <item name="android:background">?actionBarItemBackground</item> <item name="android:scaleType">center</item> <item name="android:minWidth">60.0dip</item> <item name="androi
+   TextAppearance.Design.CollapsingToolbar.Expanded|values -> <!--none in sesl--> <item name="android:textSize">@dimen/sesl_appbar_extended_title_text_size</item> <item name="android:textStyle">normal</item> <item name="android:fontF
+   TextAppearance.Design.Hint|values -> <item name="android:textColor">?attr/colorControlActivated</item> -> <item name="android:textColor">?colorControlActivated</item>
+   TextAppearance.Design.Widget.NavigationRailView|values-v34 -> <item name="android:textSize">@dimen/sesl_navigation_bar_icon_mode_text_size</item> <item name="android:textStyle">normal</item> <item name="android:textColor">@color/s
+   Widget.AppCompat.DrawerArrowToggle|values -> <item name="color">?attr/colorControlNormal</item> -> <item name="color">?colorControlNormal</item>
+   Widget.Design.AppBarLayout|values -> <!--non in sesl--> <item name="android:stateListAnimator">@animator/sesl_appbar_state_list_animator<!--sesl--></item> <item name="android:keyboardNavigationCluster" ns1:targetApi="o">true</item
+   Widget.Design.BottomSheet.Modal|values -> <item name="enforceMaterialTheme">false</item> <item name="android:background">?android:colorBackground</item> <item name="android:elevation">@dimen/design_bottom_sheet_modal_elevation</it
+   Widget.Design.CollapsingToolbar|values -> <!--none in sesl--> <item name="statusBarScrim">?attr/colorPrimaryDark</item> <item name="android:background">@color/sesl_action_bar_background_color_dark</item> <item name="android:minHei
+   Widget.Design.FloatingActionButton|values -> <item name="android:background">@drawable/design_fab_background</item> <item name="android:clickable">true</item> <item name="android:focusable">true</item> <item name="backgroundTint">
+   Widget.Design.NavigationView|values -> <item name="elevation">@dimen/design_navigation_elevation</item> <item name="itemIconPadding">@dimen/design_navigation_item_icon_padding</item> <item name="itemHorizontalPadding">@dimen/desig
+   Widget.Design.Snackbar|values -> <item name="android:minWidth">@dimen/design_snackbar_min_width</item> <item name="android:maxWidth">@dimen/design_snackbar_max_width</item> <item name="android:background">@drawable/sem_snackbar_fr
+   Widget.Design.TabLayout|values -> <item name="tabGravity">fill</item> <item name="tabMode">fixed</item> <item name="tabIndicatorFullWidth">true</item> -> <item name="seslDatePickerStyle">false</item> <item name="seslTabApplyBlur">
+   Widget.Design.TextInputLayout|values -> <item name="materialThemeOverlay">@style/ThemeOverlay.Design.TextInputEditText</item> <item name="enforceMaterialTheme">false</item> <item name="enforceTextAppearance">false</item> <item nam
+
+##### NEW style (38)
+   Base.Widget.AppCompat.Button.Borderless.Colored|values
+   Base.Widget.AppCompat.Light.SearchButton|values
+   Base.Widget.AppCompat.Light.TextView.SeslListCaption|values
+   Base.Widget.AppCompat.SearchButton|values
+   Base.Widget.AppCompat.SearchView.Bottom|values
+   Base.Widget.AppCompat.TextView.SeslListCaption|values
+   Sesl.Glance.AppWidget.Switch|values
+   SeslGlanceErrorTextAppearance|values
+   TextAppearance.Design.CollapsingToolbar.Suggest.SubTitle.Inverse|values
+   TextAppearance.Design.DividerButtonLayout.DividerButton.Light|values
+   TextAppearance.Design.DividerButtonLayout.DividerButton|values
+   TextAppearance.Design.Tab.DatePicker.Light|values
+   TextAppearance.Design.Tab.DatePicker.SubText.Light|values
+   TextAppearance.Design.Tab.DatePicker.SubText|values
+   TextAppearance.Design.Tab.DatePicker.SubText|values-v34
+   TextAppearance.Design.Tab.DatePicker|values
+   TextAppearance.Design.Tab.DatePicker|values-v34
+   TextAppearance.Design.Tab.IconText.Light|values
+   TextAppearance.Design.Tab.IconText|values
+   TextAppearance.Design.Widget.BottomNavigationView.Floating.Inverse|values
+   TextAppearance.Design.Widget.BottomNavigationView.Floating|values
+   TextAppearance.Design.Widget.BottomNavigationView.Floating|values-v34
+   Widget.AppCompat.AbsListView|values
+   Widget.AppCompat.Light.AbsListView|values
+   Widget.AppCompat.Light.SearchButton|values
+   Widget.AppCompat.Light.TextView.SeslListCaption|values
+   Widget.AppCompat.SearchButton|values
+   Widget.AppCompat.TextView.SeslListCaption|values
+   Widget.Design.BottomNavigationView.Floating.BlurBackground.IconText|values
+   Widget.Design.BottomNavigationView.Floating.BlurBackground|values
+   Widget.Design.BottomNavigationView.Floating|values
+   Widget.Design.DividerButtonLayout.DividerButton.Light|values
+   Widget.Design.DividerButtonLayout.DividerButton|values
+   Widget.Design.DividerButtonLayout.Light|values
+   Widget.Design.DividerButtonLayout|values
+   Widget.Design.Light.BottomNavigationView.Floating.BlurBackground.IconText|values
+   Widget.Design.Light.BottomNavigationView.Floating.BlurBackground|values
+   Widget.Design.Light.BottomNavigationView.Floating|values
+
+##### NEW attr (86)
+   seslActionBarItemBackgroundFocusStroke|values
+   seslApplyBlur|values
+   seslApplyStrokeBackground|values
+   seslBottomBarApplyBlur|values
+   seslBottomBarApplyStrokeBackground|values
+   seslBottomBarHasIcon|values
+   seslCircleModePadding|values
+   seslCircleModeStrokeWidth|values
+   seslDatePickerStyle|values
+   seslDialogDivderColor|values
+   seslDrawRoundedCornerColor|values
+   seslDrawRoundedCorner|values
+   seslDrawerMarginBottom|values
+   seslDrawerMarginTop|values
+   seslEnableToolbarItemTransition|values
+   seslHapticEnabled|values
+   seslHeightProportion|values
+   seslHide|values
+   seslInnerStrokeColor|values
+   seslInnerStrokeGradientAngle|values
+   seslInnerStrokeGradientColors|values
+   seslInnerStrokeGradientStops|values
+   seslInnerStrokeInset|values
+   seslInnerStrokeWidth|values
+   seslIsBottomSearchView|values
+   seslIsSinglePanel|values
+   seslLabelTextAppearance|values
+   seslListCaptionTextViewStyle|values
+   seslListChoiceBackgroundIndicatorFocusStroke|values
+   seslMediumTouchAnimator|values
+   seslMenuViewWrapContent|values
+   seslNaviMenuItemType|values
+   seslOuterStrokeColor|values
+   seslOuterStrokeGradientAngle|values
+   seslOuterStrokeGradientColors|values
+   seslOuterStrokeGradientStops|values
+   seslOuterStrokeInset|values
+   seslOuterStrokeWidth|values
+   seslPrefContentWidthSize|values
+   seslPrefDrawerWidthSize|values
+
+################ dec_notes
+
+##### NEW FILES (not in SESL8) (174)
+   anim/sesl_glance_easing_custom_0_091__0_000_0_000_1_000
+   anim/sesl_glance_easing_custom_0_117_0_126_0_312_1_000
+   anim/sesl_glance_easing_custom_0_344_0_830_0_605_1_000
+   anim/sesl_glance_easing_custom_0_497_0_000_0_833_0_571
+   anim/sesl_glance_easing_custom_0_497_0_763_0_605_1_000
+   anim/sesl_glance_easing_custom_0_497_0_933_0_605_1_000
+   anim/sesl_glance_easing_custom_0_497_1_399_0_605_1_000
+   anim/sesl_glance_easing_custom_0_499_0_000_0_765_1_000
+   anim/sesl_glance_progress_dot_cir_0_path1custom3_gradientfill1_c2s4pg1p2
+   anim/sesl_glance_progress_dot_cir_1_path1custom7_gradientfill1_c2s3pg1p2
+   anim/sesl_glance_progress_dot_cir_2_path1custom11_gradientfill1_c2s2pg1p2
+   anim/sesl_glance_progress_dot_cir_3_path1custom15_gradientfill1_c2s1pg1p2
+   anim/sesl_glance_progress_dot_progress_dot_cir_0_translatey_2
+   anim/sesl_glance_progress_dot_progress_dot_cir_1_translatey_6
+   anim/sesl_glance_progress_dot_progress_dot_cir_2_translatey_10
+   anim/sesl_glance_progress_dot_progress_dot_cir_3_translatey_14
+   anim/sesl_glance_progress_dotparentlink_progress_dot_scaley_1
+   anim/sesl_glance_progress_dotparentlink_rotation_0
+   anim/sesl_glance_rotation_rotation_18
+   anim/sesl_menu_popup_enter_bottom_center
+   anim/sesl_menu_popup_enter_bottom_left
+   anim/sesl_menu_popup_enter_bottom_right
+   anim/sesl_menu_popup_enter_top_center
+   anim/sesl_menu_popup_enter_top_left
+   anim/sesl_menu_popup_exit_bottom_center
+   anim/sesl_menu_popup_exit_bottom_left
+   anim/sesl_menu_popup_exit_bottom_right
+   anim/sesl_menu_popup_exit_top_center
+   anim/sesl_menu_popup_exit_top_left
+   anim/sesl_tip_popup_enter
+   animator/sesl_fragment_close_enter
+   animator/sesl_fragment_close_enter_pop_over
+   animator/sesl_fragment_close_enter_rtl
+   animator/sesl_fragment_close_exit
+   animator/sesl_fragment_close_exit_pop_over
+   animator/sesl_fragment_close_exit_rtl
+   animator/sesl_fragment_open_enter
+   animator/sesl_fragment_open_enter_pop_over
+   animator/sesl_fragment_open_enter_rtl
+   animator/sesl_fragment_open_exit
+   animator/sesl_fragment_open_exit_pop_over
+   animator/sesl_fragment_open_exit_rtl
+   color/sesl_bottom_nav_floating_icon_text_color_dark
+   color/sesl_bottom_nav_floating_icon_text_color_light
+   color/sesl_divider_button_layout_background_selector_dark
+   color/sesl_divider_button_layout_background_selector_light
+   color/sesl_divider_button_layout_button_text_dark
+   color/sesl_divider_button_layout_button_text_light
+   color/sesl_divider_button_layout_divider_dark
+   color/sesl_divider_button_layout_divider_for_theme
+   color/sesl_divider_button_layout_divider_light
+   color/sesl_floating_pane_drag_handler_selector
+   color/sesl_floating_pane_resize_background_selector
+   color/sesl_floating_toolbar_background_selector_dark
+   color/sesl_floating_toolbar_background_selector_dark_for_theme
+   color/sesl_floating_toolbar_background_selector_for_theme
+   color/sesl_floating_toolbar_background_selector_light
+   color/sesl_glance_switch_thumb
+   color/sesl_glance_switch_track
+   color/sesl_tablayout_main_background_color_selector_dark
+   color/sesl_tablayout_main_background_color_selector_dark_for_theme
+   color/sesl_tablayout_main_background_color_selector_for_theme
+   color/sesl_tablayout_main_background_color_selector_light
+   color/sesl_tablayout_main_tab_selected_background_color_selector_dark
+   color/sesl_tablayout_main_tab_selected_background_color_selector_dark_for_theme
+   color/sesl_tablayout_main_tab_selected_background_color_selector_for_theme
+   color/sesl_tablayout_main_tab_selected_background_color_selector_light
+   color/sesl_tablayout_subtab_date_picker_text_color_dark_for_theme
+   color/sesl_tablayout_subtab_date_picker_text_color_light_for_theme
+   color/sesl_tablayout_text_color_default_selector_dark_for_theme
+   color/sesl_tablayout_text_color_default_selector_for_theme
+   drawable/sesl_appbar_suggest_content_image_background
+   drawable/sesl_bottom_navigation_item_background_dark
+   drawable/sesl_bottom_navigation_item_background_icon_dark
+   drawable/sesl_bottom_navigation_item_background_icon_dark_small_screen
+   drawable/sesl_bottom_navigation_item_background_icon_light
+   drawable/sesl_bottom_navigation_item_background_icon_light_small_screen
+   drawable/sesl_bottom_navigation_item_background_light
+   drawable/sesl_bottom_navigation_recoil_background_text_dark
+   drawable/sesl_bottom_navigation_recoil_background_text_light
+   drawable/sesl_bottom_navigation_ripple_mask
+   drawable/sesl_bottom_navigation_ripple_mask_icon
+   drawable/sesl_bottom_navigation_ripple_mask_icon_small_screen
+   drawable/sesl_dialog_scroll_thumb_horizontal
+   drawable/sesl_dialog_scroll_thumb_horizontal_dark
+   drawable/sesl_dialog_scroll_thumb_vertical
+   drawable/sesl_dialog_scroll_thumb_vertical_dark
+   drawable/sesl_divider_button_layout_background_dark
+   drawable/sesl_divider_button_layout_background_light
+   drawable/sesl_divider_button_layout_button_background
+   drawable/sesl_divider_button_layout_button_background_dark
+   drawable/sesl_divider_button_layout_divider_background_dark
+   drawable/sesl_divider_button_layout_divider_background_for_theme
+   drawable/sesl_divider_button_layout_divider_background_light
+   drawable/sesl_floating_appbar_round_background_dark
+   drawable/sesl_floating_appbar_round_background_dark_for_theme
+   drawable/sesl_floating_appbar_round_background_for_theme
+   drawable/sesl_floating_appbar_round_background_light
+   drawable/sesl_floating_pane_background_bottom_divider
+   drawable/sesl_floating_pane_background_bottom_square
+   drawable/sesl_floating_pane_background_bottom_square_dark
+   drawable/sesl_focus_stroke_26dp_dark
+   drawable/sesl_focus_stroke_26dp_light
+   drawable/sesl_focus_stroke_button_dark
+   drawable/sesl_focus_stroke_button_light
+   drawable/sesl_focus_stroke_button_small_dark
+   drawable/sesl_focus_stroke_button_small_light
+   drawable/sesl_focus_stroke_compound_button_dark
+   drawable/sesl_focus_stroke_compound_button_light
+   drawable/sesl_focus_stroke_oval_dark
+   drawable/sesl_focus_stroke_oval_light
+   drawable/sesl_focus_stroke_search_button_dark
+   drawable/sesl_focus_stroke_search_button_light
+   drawable/sesl_focus_stroke_square_dark
+   drawable/sesl_focus_stroke_square_light
+   drawable/sesl_focus_stroke_switch_dark
+   drawable/sesl_focus_stroke_switch_light
+   drawable/sesl_glance_dim_effect
+   drawable/sesl_glance_left_leaf_background_shape
+   drawable/sesl_glance_left_speech_balloon_background_shape
+   drawable/sesl_glance_no_effect
+   drawable/sesl_glance_progress_material_mono
+   drawable/sesl_glance_right_leaf_background_shape
+   drawable/sesl_glance_right_speech_balloon_background_shape
+   drawable/sesl_glance_switch_ripple
+   drawable/sesl_glance_switch_thumb
+   drawable/sesl_glance_switch_track
+   drawable/sesl_glance_vector_drawable_progress_bar_mono
+   drawable/sesl_go_to_top_background_blur
+   drawable/sesl_ic_search_bottom_clear
+   drawable/sesl_list_selector_recoil_background_dark
+   drawable/sesl_list_selector_recoil_background_light
+   drawable/sesl_popup_menu_submenu_arrow
+   drawable/sesl_scroll_thumb_horizontal
+   drawable/sesl_scroll_thumb_horizontal_dark
+   drawable/sesl_scroll_thumb_vertical
+   drawable/sesl_scroll_thumb_vertical_dark
+   drawable/sesl_search_view_bottom_background_light
+   drawable/sesl_suggest_button_background
+   drawable/sesl_suggest_button_background_dark
+   drawable/sesl_suggest_button_recoil_background
+   drawable/sesl_suggest_button_recoil_background_dark
+   drawable/sesl_tablayout_maintab_background_dark
+   drawable/sesl_tablayout_maintab_background_dark_for_theme
+   drawable/sesl_tablayout_maintab_background_for_theme
+   drawable/sesl_tablayout_maintab_background_light
+   drawable/sesl_tablayout_maintab_item_background_dark
+   drawable/sesl_tablayout_maintab_item_background_dark_for_theme
+   drawable/sesl_tablayout_maintab_item_background_for_theme
+   drawable/sesl_tablayout_maintab_item_background_light
+
+##### CHANGED dimen (404)
+   sesl_action_bar_background_divider_height|values -> 2px -> 2.0px
+   sesl_action_bar_content_inset_with_nav|values -> 60dp -> 60.0dp
+   sesl_action_bar_content_inset|values -> 28dp -> 28.0dp
+   sesl_action_bar_default_height|values -> 64dp -> 56.0dp
+   sesl_action_bar_elevation|values -> 0dp -> 0.0dp
+   sesl_action_bar_overflow_padding_end|values -> 24dp -> 8.0dp
+   sesl_action_bar_overflow_padding_start|values -> 3dp -> 4.0dp
+   sesl_action_bar_top_padding|values -> 8dp -> 0.0dp
+   sesl_action_button_icon_size|values -> 24dp -> 24.0dp
+   sesl_action_button_min_width|values -> 34dp -> 34.0dp
+   sesl_action_button_padding_horizontal|values -> 10dp -> 10.0dp
+   sesl_action_button_side_padding|values -> 8dp -> 8.0dp
+   sesl_action_item_show_button_background_inset_vertical|values -> 8dp -> 4.0dp
+   sesl_action_menu_item_text_ripple_radius|values -> 24dp -> 24.0dp
+   sesl_alert_dialog_button_bar_height|values -> 48.0dip -> 48.0dp
+   sesl_appbar_bottom_padding|values -> 0dp -> 0.0dp
+   sesl_appbar_button_max_width_multi|values -> 280dp -> 280.0dp
+   sesl_appbar_button_max_width|values -> 120dp -> 120.0dp
+   sesl_appbar_button_side_margin|values -> 8dp -> 8.0dp
+   sesl_appbar_button_text_size|values -> 13dp -> 12.0dp
+   sesl_appbar_elevation|values -> 0dp -> 0.0dp
+   sesl_appbar_extended_subtitle_text_size|values -> 15sp -> 15.0sp
+   sesl_appbar_extended_title_and_subtitle_padding|values -> 4dp -> 4.0dp
+   sesl_appbar_extended_title_extra_line_space|values -> -3dp -> -3.0dp
+   sesl_appbar_extended_title_padding|values -> 24dp -> 24.0dp
+   sesl_appbar_extended_title_text_size_with_subtitle|values -> 30sp -> 30.0sp
+   sesl_appbar_extended_title_text_size|values -> 34sp -> 34.0sp
+   sesl_appbar_suggest_button_top_margin|values -> 12dp -> 12.0dp
+   sesl_appbar_suggest_close_button_size|values -> 24dp -> 20.0dp
+   sesl_appbar_suggest_close_button_vertical|values -> 32dp -> 32.0dp
+   sesl_appbar_suggest_title_text_size|values -> 20dp -> 15.0dp
+   sesl_appbar_viewpager_close_icon_end_margin|values -> 12dp -> 12.0dp
+   sesl_appbar_viewpager_close_icon_top_margin|values -> 12dp -> 12.0dp
+   sesl_appbar_viewpager_margin_horizontal|values -> 10dp -> 10.0dp
+   sesl_appbar_viewpager_round|values -> 26dp -> 26.0dp
+   sesl_badge_additional_width|values -> 4dp -> 4.0dp
+   sesl_badge_default_width|values -> 13dp -> 13.0dp
+   sesl_bedtime_time_picker_ampm_padding|values -> 2dp -> 2.0dp
+   sesl_bottom_bedtime_layout_radius|values -> 6dp -> 6.0dp
+   sesl_bottom_navigation_N_badge_start_margin|values -> 3.0dip -> 3.0dp
+   sesl_bottom_navigation_N_badge_top_margin|values -> 6.0dip -> 6.0dp
+   sesl_bottom_navigation_active_item_min_width|values -> 96.0dip -> 96.0dp
+   sesl_bottom_navigation_dot_badge_size|values -> 6.0dip -> 6.0dp
+   sesl_bottom_navigation_elevation|values -> 0.0dip -> 0.0dp
+   sesl_bottom_navigation_icon_inset|values -> 5.0dip -> 0.0dp
+   sesl_bottom_navigation_icon_mode_height|values -> 60.0dip -> 60.0dp
+   sesl_bottom_navigation_icon_mode_min_padding_horizontal|values -> 2.5dip -> 2.0dp
+   sesl_bottom_navigation_icon_mode_padding_horizontal|values -> 5.0dip -> 5.0dp
+   sesl_bottom_navigation_icon_size|values -> 24.0dip -> 24.0dp
+   sesl_bottom_navigation_item_max_width|values -> 96.0dip -> 96.0dp
+   sesl_bottom_navigation_item_min_width|values -> 56.0dip -> 56.0dp
+   sesl_bottom_navigation_label_padding_bottom|values -> 1.0dip -> 1.0dp
+   sesl_bottom_navigation_label_padding_vertical|values -> 4.0dip -> 4.0dp
+   sesl_bottom_navigation_text_mode_height|values -> 56.0dip -> 72.0dp
+   sesl_bottom_navigation_text_mode_padding_horizontal|values -> 24.0dip -> 24.0dp
+   sesl_button_corner_radius|values -> 18dp -> 18.0dp
+   sesl_button_small_corner_radius|values -> 16dp -> 16.0dp
+   sesl_button_text_size|values -> 15sp -> 15.0sp
+   sesl_checked_text_padding|values -> 18dp -> 18.0dp
+   sesl_circular_bar_icon_width|values -> 19dp -> 19.0dp
+   sesl_circular_seekbar_bottom_margin|values -> 20dp -> 20.0dp
+   sesl_circular_seekbar_bottom_margin|values-land -> 10dp -> 10.0dp
+   sesl_circular_seekbar_circle_stroke_width|values -> 30dp -> 30.0dp
+   sesl_context_menu_title_bottom_padding|values -> 6dp -> 6.0dp
+   sesl_context_menu_title_end_padding|values -> 24dp -> 24.0dp
+   sesl_context_menu_title_start_padding|values -> 24dp -> 24.0dp
+   sesl_context_menu_title_text_size|values -> 17sp -> 17.0sp
+   sesl_context_menu_title_top_padding|values -> 14dp -> 14.0dp
+   sesl_custom_toast_padding_bottom|values -> 9dp -> 9.0dp
+   sesl_custom_toast_padding_end|values -> 20dp -> 20.0dp
+
+##### CHANGED integer (0)
+
+##### CHANGED bool (0)
+
+##### CHANGED color (154)
+   sesl_action_bar_background_color_dark|values -> @color/sesl_gray_D1 -> @color/basic_token_sys_background_dark
+   sesl_action_bar_background_color_light|values -> @color/sesl_gray_L3 -> @color/basic_token_sys_background_light
+   sesl_action_bar_text_color_menu_dark|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_highest_dark
+   sesl_action_bar_text_color_menu_light|values -> @color/sesl_text1_light -> @color/basic_token_sys_on_surface_container_highest_light
+   sesl_action_bar_text_color_subtitle_dark|values -> @color/sesl_text5_dark -> @color/basic_token_sys_on_surface_container_low_dark
+   sesl_action_bar_text_color_subtitle_light|values -> @color/sesl_text4_light -> @color/basic_token_sys_on_surface_container_low_light
+   sesl_action_bar_text_color_title_dark|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_highest_dark
+   sesl_action_bar_text_color_title_light|values -> @color/sesl_text1_light -> @color/basic_token_sys_on_surface_container_highest_light
+   sesl_appbar_suggest_title_dark|values -> @color/sesl_text1_dark -> @color/sesl_primary_text_color_dark
+   sesl_appbar_viewpager_indicator_off_dark|values -> @color/sesl_gray_D8 -> @color/basic_token_sys_surface_container_high_dark
+   sesl_appbar_viewpager_indicator_off|values -> @color/sesl_gray_L8 -> @color/basic_token_sys_surface_container_high_light
+   sesl_appbar_viewpager_indicator_on|values -> @color/sesl_gray_L10 -> @color/basic_token_sys_surface_container_highest_light
+   sesl_badge_background_color|values -> #ffef5e16 -> #e65b17
+   sesl_black|values -> #252528 -> @color/basic_token_gray_90
+   sesl_blue_color_light|values -> #387aff -> @color/basic_token_primary_50
+   sesl_blue_dark_color_dark|values -> #598fff -> @color/basic_token_sys_primary_high_dark
+   sesl_blue_dark_color_light|values -> #376fde -> @color/basic_token_sys_primary_high_light
+   sesl_bottom_navigation_background_dark|values -> @color/sesl_gray_D1 -> @color/basic_token_sys_background_dark
+   sesl_bottom_navigation_background_light|values -> @color/sesl_gray_L3 -> @color/basic_token_sys_background_light
+   sesl_bottom_navigation_icon_dark|values -> @color/sesl_text3_dark -> @color/basic_token_sys_on_surface_container_dark
+   sesl_bottom_navigation_icon_light|values -> @color/sesl_text3_light -> @color/basic_token_sys_on_surface_container_light
+   sesl_bottom_navigation_text_dark|values -> @color/sesl_text4_dark -> @color/basic_token_sys_on_surface_container_low_dark
+   sesl_bottom_navigation_text_light|values -> @color/sesl_text4_light -> @color/basic_token_sys_on_surface_container_low_light
+   sesl_btn_background_color_dark|values -> @color/sesl_gray_D4 -> @color/sesl_gray_D5
+   sesl_circular_seekbar_color|values -> @color/sesl_gray_L5 -> @color/basic_token_sys_tone_on_tone_high_light
+   sesl_clock_dial_number_color|values -> @color/sesl_text5_light -> @color/basic_token_sys_on_surface_container_lowest_light
+   sesl_control_normal_color_light|values -> #cc99999e -> @color/basic_token_sys_surface_container_higher
+   sesl_date_picker_button_tint_color_light|values -> #cc4d4d52 -> @color/basic_token_sys_on_surface_container_light
+   sesl_date_picker_header_spinner|values -> @color/sesl_text3_light -> @color/sesl_date_picker_header_text_color_light
+   sesl_date_picker_normal_day_number_text_color_dark|values -> @color/sesl_text3_dark -> @color/basic_token_sys_on_surface_container_dark
+   sesl_date_picker_normal_day_number_text_color_light|values -> @color/sesl_text3_light -> @color/basic_token_sys_on_surface_container_light
+   sesl_date_picker_normal_text_color_light|values -> #cc4d4d52 -> @color/basic_token_sys_on_surface_container_light
+   sesl_date_picker_saturday_text_color_light|values -> @color/sesl_blue_dark_color_light -> @color/basic_token_sys_primary_high_light
+   sesl_date_picker_saturday_week_text_color_light|values -> @color/sesl_blue_dark_color_light -> @color/basic_token_sys_primary_high_light
+   sesl_date_picker_selected_day_number_text_color_light|values -> @color/sesl_dialog_window_background_color_material_light -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_date_picker_sunday_number_text_color_light|values -> @color/sesl_functional_red_light -> @color/sesl_date_picker_sunday_text_color_light
+   sesl_date_picker_sunday_text_color_dark|values -> @color/sesl_functional_red_text_dark -> @color/basic_token_sys_red_bright_dark
+   sesl_date_picker_sunday_text_color_light|values -> @color/sesl_functional_red_light -> @color/basic_token_sys_red_bright_light
+   sesl_design_snackbar_suggest_action_background_color|values -> #fffcfcfc -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_design_snackbar_suggest_action_text_color|values -> @color/sesl_gray_D1 -> @color/basic_token_sys_on_surface_container_fixed_variant
+   sesl_design_snackbar_suggest_background_color|values -> #cc2d2d30 -> @color/basic_token_sys_surface_fixed
+   sesl_design_snackbar_suggest_text_color|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_design_snackbar_text_color|values -> @color/sesl_text1_dark -> @color/basic_token_sys_on_surface_container_fixed
+   sesl_dialog_divider_color_dark|values -> #3b848487 -> @color/basic_token_sys_outline_high_dark
+   sesl_dialog_divider_color_material_dark|values -> @color/sesl_dialog_divider_color -> @color/sesl_dialog_divider_color_dark
+   sesl_dialog_divider_color_material_light|values -> @color/sesl_dialog_divider_color_dark -> @color/sesl_dialog_divider_color
+   sesl_dialog_divider_color|values -> #3b848487 -> @color/basic_token_sys_outline_high_light
+   sesl_dotted_line_color|values -> #b3fcfcff -> @color/basic_token_sys_surface_container_fixed
+   sesl_edit_text_tint_color_dark|values -> @color/sesl_white -> @color/basic_token_sys_outline_highest_dark
+   sesl_edit_text_tint_color_light|values -> @color/sesl_black -> @color/basic_token_sys_on_surface_container_highest_light
+   sesl_extended_appbar_subtitle_dark|values -> @color/sesl_text5_dark -> @color/basic_token_sys_on_surface_container_low_dark
+   sesl_extended_appbar_subtitle_light|values -> @color/sesl_text4_light -> @color/basic_token_sys_on_surface_container_low_light
+   sesl_floating_pane_background_color_dark|values -> #252528 -> @color/basic_token_sys_surface_bright_dark
+   sesl_floating_pane_background_color|values -> #f1f1f3 -> @color/basic_token_sys_surface_bright_light
+   sesl_floating_pane_drag_handler_color|values -> #80848487 -> @color/basic_token_sys_on_surface_container
+   sesl_floating_pane_menu_icon_dark|values -> #fcfcff -> @color/basic_token_sys_on_surface_container_dark
+   sesl_floating_pane_menu_icon|values -> #4d4d52 -> @color/basic_token_sys_on_surface_container_light
+   sesl_floating_pane_resize_background_color|values -> #1a010102 -> @color/basic_token_sys_surface_container_fixed_variant
+   sesl_floating_pane_resize_background_stroke_color|values -> #387aff -> @color/basic_token_sys_primary
+   sesl_functional_orange_light|values -> #e65b17 -> @color/basic_token_orange_50
+   sesl_functional_red_light|values -> #d93e36 -> @color/basic_token_red_50
+   sesl_functional_red_text_dark|values -> #fc6c65 -> @color/basic_token_red_30
+   sesl_gray_D1|values -> #010102 -> @color/basic_token_gray_100
+   sesl_gray_D3|values -> #17171a -> @color/basic_token_gray_95
+   sesl_gray_D5|values -> #3a3a3d -> @color/basic_token_gray_80
+   sesl_gray_L1|values -> #fcfcff -> @color/basic_token_gray_01
+   sesl_gray_L3|values -> #f1f1f3 -> @color/basic_token_gray_05
+   sesl_gray_L5|values -> #e9e9ec -> @color/basic_token_gray_10
+   sesl_gray_L6|values -> #e4e4e7 -> @color/basic_token_gray_15
+   sesl_grid_medium_size_color|values -> #b3929295 -> @color/basic_token_sys_on_surface_container_lowest_light
+
+##### CHANGED style (45)
+   Base.Widget.AppCompat.ActionBar.TabBar|values -> <item name="divider">?actionBarDivider</item> <item name="dividerPadding">8.0dip</item> <item name="showDividers">middle</item> -> <item name="divider">?actionBarDivider</item> <ite
+   Base.Widget.AppCompat.ActionBar.TabText|values -> <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item> <item name="android:textSize">12.0sp</item> <item name="android:textStyle">bold</item> <item name=
+   Base.Widget.AppCompat.ActionBar.TabView|values -> <item name="android:gravity">center_horizontal</item> <item name="android:paddingLeft">16.0dip</item> <item name="android:paddingRight">16.0dip</item> <item name="android:layout_wi
+   Base.Widget.AppCompat.ActionBar|values -> <item name="displayOptions">showTitle</item> <item name="height">?attr/actionBarSize</item> <item name="titleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionBar.Title</item> <item 
+   Base.Widget.AppCompat.ActionButton.CloseMode|values -> <item name="android:background">?attr/actionBarItemBackground</item> <item name="android:minWidth">@dimen/sesl_action_button_min_width</item> <item name="android:minHeight">?a
+   Base.Widget.AppCompat.ActionButton.Overflow|values -> <item name="android:src">@drawable/sesl_ic_menu_overflow_dark</item> <item name="android:background">?attr/actionBarItemBackground</item> <item name="android:minWidth">@dimen/s
+   Base.Widget.AppCompat.ActionButton|values -> <item name="android:background">?attr/actionBarItemBackground</item> <item name="android:minWidth">@dimen/sesl_action_button_min_width</item> <item name="android:minHeight">?attr/action
+   Base.Widget.AppCompat.ActionMode|values -> <item name="android:minHeight">?actionBarSize</item> <item name="background">?actionModeBackground</item> <item name="backgroundSplit">?actionModeSplitBackground</item> <item name="button
+   Base.Widget.AppCompat.ActivityChooserView|values -> <item name="android:gravity">center</item> <item name="android:divider">?android:dividerVertical</item> <item name="android:showDividers">middle</item> <item name="android:divide
+   Base.Widget.AppCompat.Button.ButtonBar.AlertDialog|values -> <item name="android:minWidth">64.0dip</item> <item name="android:minHeight">@dimen/sesl_alert_dialog_button_bar_height</item> -> <item name="android:minWidth">64.0dp</it
+   Base.Widget.AppCompat.Button.Custom|values -> <item name="android:textSize">18.0sp<!--sesl7--></item> <item name="android:minHeight">44.0dip</item> <item name="buttonCornerRadius">22.0dip</item> -> <item name="android:textSize">18
+   Base.Widget.AppCompat.Button|values -> <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.Button</item> <item name="android:ellipsize">end</item> <item name="android:gravity">center</item> <item name="andro
+   Base.Widget.AppCompat.CompoundButton.Switch|values -> <item name="android:background">@drawable/sesl_switch_background</item> <item name="android:textOn">@string/sesl_capital_on</item> <item name="android:textOff">@string/sesl_cap
+   Base.Widget.AppCompat.DrawerArrowToggle.Common|values -> <item name="arrowHeadLength">8.0dip</item> <item name="arrowShaftLength">16.0dip</item> <item name="color">?android:textColorSecondary</item> <item name="spinBars">true</ite
+   Base.Widget.AppCompat.DrawerArrowToggle|values -> <item name="barLength">18.0dip</item> <item name="drawableSize">24.0dip</item> <item name="gapBetweenBars">3.0dip</item> -> <item name="barLength">18.0dp</item> <item name="drawabl
+   Base.Widget.AppCompat.DropDownItem.Spinner|values -> <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.DropDownItem </item> <item name="android:gravity">center_vertical</item> <item name="android:paddingTo
+   Base.Widget.AppCompat.EditText|values ->  -> <item name="android:breakStrategy">simple</item> <item name="android:hyphenationFrequency">none</item>
+   Base.Widget.AppCompat.Light.CompoundButton.Switch|values -> <item name="android:background">@drawable/sesl_switch_background</item> <item name="android:textOn">@string/sesl_capital_on</item> <item name="android:textOff">@string/se
+   Base.Widget.AppCompat.Light.EditText|values ->  -> <item name="android:breakStrategy">simple</item> <item name="android:hyphenationFrequency">none</item>
+   Base.Widget.AppCompat.Light.ListView.DropDown|values -> <item name="android:scrollbarThumbHorizontal"> @drawable/sesl_dropdown_scrollbar_handle_light </item> <item name="android:scrollbarThumbVertical">@drawable/sesl_dropdown_scro
+   Base.Widget.AppCompat.Light.SeslSwitchBar|values -> <item name="seslSwitchBarBackgroundActivatedColor"> @color/sesl_switchbar_on_background_color_light </item> <item name="seslSwitchBarBackgroundColor">@color/sesl_switchbar_off_ba
+   Base.Widget.AppCompat.Light.TextView.SpinnerItem|values -> <item name="android:textAppearance"> @style/TextAppearance.AppCompat.Light.Widget.TextView.SpinnerItem </item> -> <item name="android:textAppearance">@style/TextAppearance
+   Base.Widget.AppCompat.Light.Toolbar|values -> <item name="background">@color/sesl_action_bar_background_color_light</item> <item name="subtitleTextAppearance"> @style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle.Inverse </item
+   Base.Widget.AppCompat.ListPopupWindow|values -> <item name="android:dropDownSelector">?listChoiceBackgroundIndicator</item> <item name="android:popupBackground">@drawable/sesl_menu_popup_background_dark</item> <item name="android:
+   Base.Widget.AppCompat.ListView.DropDown|values -> <item name="android:scrollbarThumbHorizontal"> @drawable/sesl_dropdown_scrollbar_handle_dark </item> <item name="android:scrollbarThumbVertical">@drawable/sesl_dropdown_scrollbar_h
+   Base.Widget.AppCompat.PopupMenu.Overflow|values -> <item name="android:popupBackground">@drawable/sesl_menu_popup_background_dark</item> <item name="android:dropDownHorizontalOffset">@dimen/sesl_menu_popup_offset_horizontal </item
+   Base.Widget.AppCompat.PopupMenu|values -> <item name="android:popupBackground">@drawable/sesl_menu_popup_background_dark</item> <item name="android:dropDownHorizontalOffset">@dimen/sesl_menu_popup_offset_horizontal </item> <item n
+   Base.Widget.AppCompat.ProgressBar.Circle|values -> <item name="android:maxWidth">@dimen/sesl_progress_circle_size</item> <item name="android:maxHeight">@dimen/sesl_progress_circle_size</item> <item name="android:indeterminate">tru
+   Base.Widget.AppCompat.ProgressBar.Horizontal|values -> <item name="android:indeterminateDrawable"> @drawable/sesl_progress_bar_indeterminate_xlarge_transition </item> <item name="android:progressDrawable">@drawable/sesl_progress_h
+   Base.Widget.AppCompat.SeekBar|values -> <item name="android:background">@drawable/sesl_seek_bar_background_borderless</item> <item name="android:focusable">true</item> <item name="android:maxHeight">@dimen/sesl_progress_bar_min_he
+   Base.Widget.AppCompat.SeslSwitchBar|values -> <item name="seslSwitchBarBackgroundActivatedColor"> @color/sesl_switchbar_on_background_color_dark </item> <item name="seslSwitchBarBackgroundColor">@color/sesl_switchbar_off_backgroun
+   Base.Widget.AppCompat.Spinner|values -> <item name="android:gravity">start|center</item> <item name="android:background">@drawable/sesl_spinner_background_dark</item> <item name="android:clickable">true</item> <item name="android:
+   Base.Widget.AppCompat.TextView.ListSeparator|values-v34 -> <item name="android:textSize">@dimen/sesl_list_subheader_text_size</item> <item name="android:textColor">@color/sesl_list_subheader_text_color_dark</item> <item name="andr
+   Base.Widget.AppCompat.TextView.SpinnerItem|values -> <item name="android:textAppearance"> @style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem </item> <item name="android:paddingTop">@dimen/sesl_spinner_item_top_padding</it
+   Base.Widget.AppCompat.Toolbar.Button.Navigation|values -> <item name="android:background">?actionBarItemBackground</item> <item name="android:scaleType">center</item> <item name="android:minWidth">60.0dip</item> <item name="androi
+   TextAppearance.Design.CollapsingToolbar.Expanded|values -> <!--none in sesl--> <item name="android:textSize">@dimen/sesl_appbar_extended_title_text_size</item> <item name="android:textStyle">normal</item> <item name="android:fontF
+   TextAppearance.Design.Hint|values -> <item name="android:textColor">?attr/colorControlActivated</item> -> <item name="android:textColor">?colorControlActivated</item>
+   Widget.AppCompat.DrawerArrowToggle|values -> <item name="color">?attr/colorControlNormal</item> -> <item name="color">?colorControlNormal</item>
+   Widget.Design.AppBarLayout|values -> <!--non in sesl--> <item name="android:stateListAnimator">@animator/sesl_appbar_state_list_animator<!--sesl--></item> <item name="android:keyboardNavigationCluster" ns1:targetApi="o">true</item
+   Widget.Design.BottomSheet.Modal|values -> <item name="enforceMaterialTheme">false</item> <item name="android:background">?android:colorBackground</item> <item name="android:elevation">@dimen/design_bottom_sheet_modal_elevation</it
+   Widget.Design.CollapsingToolbar|values -> <!--none in sesl--> <item name="statusBarScrim">?attr/colorPrimaryDark</item> <item name="android:background">@color/sesl_action_bar_background_color_dark</item> <item name="android:minHei
+   Widget.Design.FloatingActionButton|values -> <item name="android:background">@drawable/design_fab_background</item> <item name="android:clickable">true</item> <item name="android:focusable">true</item> <item name="backgroundTint">
+   Widget.Design.Snackbar|values -> <item name="android:minWidth">@dimen/design_snackbar_min_width</item> <item name="android:maxWidth">@dimen/design_snackbar_max_width</item> <item name="android:background">@drawable/sem_snackbar_fr
+   Widget.Design.TabLayout|values -> <item name="tabGravity">fill</item> <item name="tabMode">fixed</item> <item name="tabIndicatorFullWidth">true</item> -> <item name="seslDatePickerStyle">false</item> <item name="seslTabApplyBlur">
+   Widget.Design.TextInputLayout|values -> <item name="materialThemeOverlay">@style/ThemeOverlay.Design.TextInputEditText</item> <item name="enforceMaterialTheme">false</item> <item name="enforceTextAppearance">false</item> <item nam
+
+##### NEW style (40)
+   Base.Widget.AppCompat.Button.Borderless.Colored|values
+   Base.Widget.AppCompat.Light.SearchButton|values
+   Base.Widget.AppCompat.Light.TextView.SeslListCaption|values
+   Base.Widget.AppCompat.SearchButton|values
+   Base.Widget.AppCompat.SearchView.Bottom|values
+   Base.Widget.AppCompat.TextView.SeslListCaption|values
+   Sesl.Glance.AppWidget.ProgressBar.Mono|values
+   Sesl.Glance.AppWidget.ProgressBar.Small.Mono|values
+   Sesl.Glance.AppWidget.Switch|values
+   SeslGlanceErrorTextAppearance|values
+   TextAppearance.Design.CollapsingToolbar.Suggest.SubTitle.Inverse|values
+   TextAppearance.Design.DividerButtonLayout.DividerButton.Light|values
+   TextAppearance.Design.DividerButtonLayout.DividerButton|values
+   TextAppearance.Design.Tab.IconText.Light|values
+   TextAppearance.Design.Tab.IconText|values
+   TextAppearance.Design.Widget.BottomNavigationView.Floating.Inverse|values
+   TextAppearance.Design.Widget.BottomNavigationView.Floating|values
+   TextAppearance.Design.Widget.BottomNavigationView.Floating|values-v34
+   Widget.AppCompat.AbsListView|values
+   Widget.AppCompat.Light.AbsListView|values
+   Widget.AppCompat.Light.SearchButton|values
+   Widget.AppCompat.Light.TextView.SeslListCaption|values
+   Widget.AppCompat.SearchButton|values
+   Widget.AppCompat.TextView.SeslListCaption|values
+   Widget.Design.BottomNavigationView.Floating.IconText|values
+   Widget.Design.BottomNavigationView.Floating|values
+   Widget.Design.DividerButtonLayout.DividerButton.Light|values
+   Widget.Design.DividerButtonLayout.DividerButton|values
+   Widget.Design.DividerButtonLayout.Light|values
+   Widget.Design.DividerButtonLayout|values
+   Widget.Design.Light.BottomNavigationView.Floating.IconText|values
+   Widget.Design.Light.BottomNavigationView.Floating|values
+   Widget.Design.TabLayout.Light.Main.BlurBackground.IconText|values
+   Widget.Design.TabLayout.Light.Main.BlurBackground|values
+   Widget.Design.TabLayout.Light.Main.IconText|values
+   Widget.Design.TabLayout.Light.Main|values
+   Widget.Design.TabLayout.Main.BlurBackground.IconText|values
+   Widget.Design.TabLayout.Main.BlurBackground|values
+   Widget.Design.TabLayout.Main.IconText|values
+   Widget.Design.TabLayout.Main|values
+
+##### NEW attr (86)
+   seslActionBarItemBackgroundFocusStroke|values
+   seslApplyBlur|values
+   seslApplyStrokeBackground|values
+   seslBottomBarApplyBlur|values
+   seslBottomBarApplyStrokeBackground|values
+   seslBottomBarHasIcon|values
+   seslCircleModePadding|values
+   seslCircleModeStrokeWidth|values
+   seslDatePickerStyle|values
+   seslDialogDivderColor|values
+   seslDrawRoundedCornerColor|values
+   seslDrawRoundedCorner|values
+   seslDrawerMarginBottom|values
+   seslDrawerMarginTop|values
+   seslEnableToolbarItemTransition|values
+   seslHapticEnabled|values
+   seslHeightProportion|values
+   seslHide|values
+   seslInnerStrokeColor|values
+   seslInnerStrokeGradientAngle|values
+   seslInnerStrokeGradientColors|values
+   seslInnerStrokeGradientStops|values
+   seslInnerStrokeInset|values
+   seslInnerStrokeWidth|values
+   seslIsBottomSearchView|values
+   seslIsSinglePanel|values
+   seslLabelTextAppearance|values
+   seslListCaptionTextViewStyle|values
+   seslListChoiceBackgroundIndicatorFocusStroke|values
+   seslMediumTouchAnimator|values
+   seslMenuViewWrapContent|values
+   seslNaviMenuItemType|values
+   seslOuterStrokeColor|values
+   seslOuterStrokeGradientAngle|values
+   seslOuterStrokeGradientColors|values
+   seslOuterStrokeGradientStops|values
+   seslOuterStrokeInset|values
+   seslOuterStrokeWidth|values
+   seslPrefContentWidthSize|values
+   seslPrefDrawerWidthSize|values
