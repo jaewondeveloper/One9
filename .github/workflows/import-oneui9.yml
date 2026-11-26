@@ -7,6 +7,7 @@ on:
       - ccr-b96e5fe8-1e4mcs
     paths:
       - 'tools/oneui9-import/import_res.py'
+      - 'tools/oneui9-import/diff_layouts.py'
       - '.github/workflows/import-oneui9.yml'
 
 permissions:
@@ -56,6 +57,9 @@ jobs:
 
       - name: Import
         run: python3 tools/oneui9-import/import_res.py work/sesl8 work/dec_gallery/res lib/src/main/res docs/oneui9/import-report.txt
+
+      - name: Layout diff (SESL 8 vs One UI 9)
+        run: python3 tools/oneui9-import/diff_layouts.py work/sesl8 work/dec_gallery/res docs/oneui9/layout-diff-gallery.txt
 
       - name: Commit result
         run: |
