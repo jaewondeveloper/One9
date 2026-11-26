@@ -1,4 +1,4 @@
-imported files: 406, values: 470, styles: 263
+imported files: 387, values: 454, styles: 256
 
 ## FILES
 anim/design_bottom_sheet_slide_in [changed]
@@ -153,12 +153,6 @@ color/sesl_spinner_dropdown_text_color_dark [changed]
 color/sesl_spinner_dropdown_text_color_light [changed]
 color/sesl_spinner_item_text_dark [changed]
 color/sesl_spinner_item_text_light [changed]
-color/sesl_switch_thumb_on_disabled_stroke_color [changed]
-color/sesl_switch_thumb_on_disabled_stroke_color_dark [changed]
-color/sesl_switch_thumb_on_stroke_color_light [changed]
-color/sesl_switch_track_on_color_light [changed]
-color/sesl_switch_track_on_disabled_color [changed]
-color/sesl_switchbar_on_text_color_light [changed]
 color/sesl_tablayout_main_background_color_selector_dark_for_theme [new]
 color/sesl_tablayout_main_background_color_selector_for_theme [new]
 color/sesl_tablayout_main_tab_selected_background_color_selector_dark [new]
@@ -357,19 +351,6 @@ drawable/sesl_spinner_background_dark [changed]
 drawable/sesl_spinner_background_light [changed]
 drawable/sesl_spinner_background_mask [changed]
 drawable/sesl_split_seekbar_primary_progress [changed]
-drawable/sesl_switch_recoil_background_dark [changed]
-drawable/sesl_switch_recoil_background_light [changed]
-drawable/sesl_switch_thumb_disabled_off [changed]
-drawable/sesl_switch_thumb_off [changed]
-drawable/sesl_switch_track_dark_disabled_off [changed]
-drawable/sesl_switch_track_dark_off [changed]
-drawable/sesl_switch_track_disabled_off [changed]
-drawable/sesl_switch_track_disabled_on [changed]
-drawable/sesl_switch_track_off [changed]
-drawable/sesl_switch_track_on [changed]
-drawable/sesl_switchbar_background [changed]
-drawable/sesl_switchthumb_off [changed]
-drawable/sesl_switchthumb_off_pressed [changed]
 drawable/sesl_tablayout_maintab_background_dark_for_theme [new]
 drawable/sesl_tablayout_maintab_background_for_theme [new]
 drawable/sesl_tablayout_maintab_item_background_dark [new]
@@ -431,7 +412,6 @@ Base.TextAppearance.AppCompat.Dialog
 Base.TextAppearance.AppCompat.Light.Dialog
 Base.TextAppearance.AppCompat.Small
 Base.TextAppearance.AppCompat.Small.Inverse
-Base.TextAppearance.AppCompat.Widget.SeslSwitchBar
 Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem
 Base.TextAppearance.MaterialComponents.Button
 Base.TextAppearance.MaterialComponents.Headline6
@@ -493,7 +473,6 @@ Base.Widget.Design.TabLayout
 Base.Widget.MaterialComponents.AutoCompleteTextView
 Base.Widget.MaterialComponents.CheckedTextView
 Base.Widget.MaterialComponents.Chip
-Base.Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton
 Base.Widget.MaterialComponents.PopupMenu.ContextMenu
 Base.Widget.MaterialComponents.PopupMenu.ListPopupWindow
 Base.Widget.MaterialComponents.TextInputEditText
@@ -573,8 +552,6 @@ Widget.AppCompat.Button.Dialog
 Widget.AppCompat.Button.Small
 Widget.AppCompat.CompoundButton.CheckBox
 Widget.AppCompat.CompoundButton.RadioButton
-Widget.AppCompat.CompoundButton.Switch
-Widget.AppCompat.DrawerArrowToggle
 Widget.AppCompat.Light.ActionBar.TabView
 Widget.AppCompat.Light.ActionButton.Overflow
 Widget.AppCompat.Light.Button
@@ -582,7 +559,6 @@ Widget.AppCompat.Light.Button.Dialog
 Widget.AppCompat.Light.Button.Small
 Widget.AppCompat.Light.CompoundButton.CheckBox
 Widget.AppCompat.Light.CompoundButton.RadioButton
-Widget.AppCompat.Light.CompoundButton.Switch
 Widget.AppCompat.Light.ListView.DropDown
 Widget.AppCompat.Light.Spinner
 Widget.AppCompat.Light.TextView.SeslListCaption
@@ -635,7 +611,6 @@ Widget.MaterialComponents.CheckedTextView
 Widget.MaterialComponents.CircularProgressIndicator
 Widget.MaterialComponents.CompoundButton.CheckBox
 Widget.MaterialComponents.CompoundButton.RadioButton
-Widget.MaterialComponents.CompoundButton.Switch
 Widget.MaterialComponents.ExtendedFloatingActionButton.Icon
 Widget.MaterialComponents.FloatingActionButton
 Widget.MaterialComponents.Light.ActionBar.Solid
@@ -649,7 +624,6 @@ Widget.MaterialComponents.MaterialCalendar.HeaderLayout
 Widget.MaterialComponents.MaterialCalendar.HeaderSelection
 Widget.MaterialComponents.MaterialCalendar.HeaderSelection.Fullscreen
 Widget.MaterialComponents.MaterialCalendar.HeaderTitle
-Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton
 Widget.MaterialComponents.MaterialCalendar.Item
 Widget.MaterialComponents.MaterialCalendar.MonthTextView
 Widget.MaterialComponents.MaterialCalendar.Year.Selected

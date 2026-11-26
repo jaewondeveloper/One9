@@ -69,10 +69,6 @@
         <item name="android:textColor">?android:textColorTertiaryInverse</item>
         <item name="android:textColorHint">?android:textColorHintInverse</item>
     </style>
-    <style name="Base.TextAppearance.AppCompat.Widget.SeslSwitchBar" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-        <item name="android:textSize">@dimen/sesl_text_size_large</item>
-        <item name="android:textColor">?colorPrimaryDark</item>
-    </style>
     <style name="Base.TextAppearance.AppCompat.Widget.TextView.SpinnerItem" parent="@android:style/TextAppearance.Material.Widget.TextView.SpinnerItem">
         <item name="android:textSize">@dimen/sesl_spinner_item_text_size</item>
         <item name="android:textColor">@color/sesl_spinner_item_text_dark</item>
@@ -1358,10 +1354,6 @@
         <item name="textEndPadding">6.0dp</item>
         <item name="textStartPadding">8.0dp</item>
     </style>
-    <style name="Base.Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton" parent="@style/Widget.AppCompat.ImageButton">
-        <item name="android:background">?actionBarItemBackground</item>
-        <item name="android:tint">?colorOnPrimary</item>
-    </style>
     <style name="Base.Widget.MaterialComponents.PopupMenu.ContextMenu" parent="@style/Widget.AppCompat.PopupMenu">
         <item name="android:overlapAnchor">true</item>
     </style>
@@ -1787,11 +1779,6 @@
     </style>
     <style name="Widget.AppCompat.CompoundButton.RadioButton" parent="@style/Base.V29.Widget.AppCompat.CompoundButton.RadioButton">
     </style>
-    <style name="Widget.AppCompat.CompoundButton.Switch" parent="@style/Base.V29.Widget.AppCompat.CompoundButton.Switch">
-    </style>
-    <style name="Widget.AppCompat.DrawerArrowToggle" parent="@style/Base.Widget.AppCompat.DrawerArrowToggle">
-        <item name="color">?colorControlNormal</item>
-    </style>
     <style name="Widget.AppCompat.Light.ActionBar.TabView" parent="@style/Base.V29.Widget.AppCompat.Light.ActionBar.TabView">
     </style>
     <style name="Widget.AppCompat.Light.ActionButton.Overflow" parent="@style/Base.V29.Widget.AppCompat.Light.ActionButton.Overflow">
@@ -1805,8 +1792,6 @@
     <style name="Widget.AppCompat.Light.CompoundButton.CheckBox" parent="@style/Base.V29.Widget.AppCompat.Light.CompoundButton.CheckBox">
     </style>
     <style name="Widget.AppCompat.Light.CompoundButton.RadioButton" parent="@style/Base.V29.Widget.AppCompat.Light.CompoundButton.RadioButton">
-    </style>
-    <style name="Widget.AppCompat.Light.CompoundButton.Switch" parent="@style/Base.V29.Widget.AppCompat.Light.CompoundButton.Switch">
     </style>
     <style name="Widget.AppCompat.Light.ListView.DropDown" parent="@style/Base.V29.Widget.AppCompat.Light.ListView.DropDown">
     </style>
@@ -2129,12 +2114,6 @@
         <item name="enforceMaterialTheme">true</item>
         <item name="useMaterialThemeColors">true</item>
     </style>
-    <style name="Widget.MaterialComponents.CompoundButton.Switch" parent="@style/Widget.AppCompat.CompoundButton.Switch">
-        <item name="android:minWidth">?minTouchTargetSize</item>
-        <item name="android:minHeight">?minTouchTargetSize</item>
-        <item name="enforceMaterialTheme">true</item>
-        <item name="useMaterialThemeColors">true</item>
-    </style>
     <style name="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon" parent="@style/Widget.MaterialComponents.ExtendedFloatingActionButton">
         <item name="android:gravity">start|center</item>
         <item name="android:paddingLeft">@dimen/mtrl_extended_fab_start_padding_icon</item>
@@ -2227,9 +2206,6 @@
         <item name="autoSizeMaxTextSize">10.0sp</item>
         <item name="autoSizeMinTextSize">2.0sp</item>
         <item name="autoSizeTextType">uniform</item>
-    </style>
-    <style name="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton" parent="@style/Base.Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton">
-        <item name="android:layout_gravity">end|bottom</item>
     </style>
     <style name="Widget.MaterialComponents.MaterialCalendar.Item">
         <item name="itemFillColor">@android:color/transparent</item>
