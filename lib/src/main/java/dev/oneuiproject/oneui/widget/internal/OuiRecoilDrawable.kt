@@ -18,7 +18,7 @@ import kotlin.math.min
  *  - press:   100ms, linear
  *  - release: 350ms, PathInterpolator(0.17, 0.17, 0.67, 1.0)
  */
-internal class OuiRecoilDrawable(private val color: Int) : Drawable() {
+internal class OuiRecoilDrawable(private val color: Int, private val circleSizePx: Int = 0) : Drawable() {
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val rect = RectF()
@@ -58,7 +58,14 @@ internal class OuiRecoilDrawable(private val color: Int) : Drawable() {
         if (level <= 0f) return
         paint.color = color
         paint.alpha = (Color.alpha(color) * level).toInt()
-        rect.set(bounds)
+        if (circleSizePx > 0) {
+            // perfect circle centred in the (possibly non square) bounds
+            val d = min(min(bounds.width(), bounds.height()), circleSizePx).toFloat()
+            rect.set(bounds.exactCenterX() - d / 2f, bounds.exactCenterY() - d / 2f,
+                bounds.exactCenterX() + d / 2f, bounds.exactCenterY() + d / 2f)
+        } else {
+            rect.set(bounds)
+        }
         val r = min(rect.width(), rect.height()) / 2f
         canvas.drawRoundRect(rect, r, r, paint)
     }

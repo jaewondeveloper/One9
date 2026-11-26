@@ -885,7 +885,8 @@ class BottomTabLayout(
         super.onDraw(canvas)
         if (!oui9HasIndicator) return
         val inner = oui9Density * 4f
-        oui9Rect.set(oui9Left, inner, oui9Right, height - inner)
+        // concentric with the outer capsule: 4dp inner padding on every side
+        oui9Rect.set(oui9Left + inner, inner, oui9Right - inner, height - inner)
         val radius = oui9Rect.height() / 2f
         canvas.save()
         canvas.translate(-scrollX.toFloat(), 0f)

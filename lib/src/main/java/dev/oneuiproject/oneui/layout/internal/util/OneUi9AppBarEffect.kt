@@ -19,6 +19,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import com.google.android.material.appbar.AppBarLayout
 import dev.oneuiproject.oneui.design.R
+import dev.oneuiproject.oneui.widget.internal.OuiFloatingBgDrawable
 import dev.oneuiproject.oneui.widget.internal.OuiRecoilDrawable
 import kotlin.math.abs
 
@@ -170,38 +171,27 @@ internal class OneUi9AppBarEffect(
 
     private fun recoilColor() = ContextCompat.getColor(ctx, R.color.oui_des_btn_ripple_color)
 
-    private fun inset(d: Drawable, horizontalDp: Float, verticalDp: Float): Drawable =
-        InsetDrawable(d, (horizontalDp * density).toInt(), (verticalDp * density).toInt(),
-            (horizontalDp * density).toInt(), (verticalDp * density).toInt())
-
     /** Press feedback on the navigation button and every menu item, floating bg on the buttons. */
     private fun prepareToolbarButtons() {
+        val size = (48 * density).toInt()
+        val floatingColor = ContextCompat.getColor(ctx, R.color.oui_des_floating_navigate_up_bg_color)
         toolbar.children.forEach { child ->
             when (child) {
                 is ImageButton -> if (prepared.add(child)) {
-                    val floatingBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_navigate_up_bg)?.mutate()
-                    val layers = ArrayList<Drawable>()
-                    if (floatingBg != null) {
-                        val f = inset(floatingBg, 4f, 4f).also { it.alpha = (255 * progress.coerceAtLeast(0f)).toInt() }
-                        floating[child] = f
-                        layers.add(f)
-                    }
-                    layers.add(inset(OuiRecoilDrawable(recoilColor()), 4f, 4f))
-                    child.background = LayerDrawable(layers.toTypedArray())
+                    val f = OuiFloatingBgDrawable(floatingColor, circle = true, sizePx = size)
+                    f.alpha = (255 * progress.coerceAtLeast(0f)).toInt()
+                    floating[child] = f
+                    child.background = LayerDrawable(arrayOf(f, OuiRecoilDrawable(recoilColor(), size)))
                 }
                 is ActionMenuView -> {
                     if (prepared.add(child)) {
-                        val floatingBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_toolbar_bg)?.mutate()
-                        if (floatingBg != null) {
-                            val f = inset(floatingBg, 0f, 4f).also { it.alpha = (255 * progress.coerceAtLeast(0f)).toInt() }
-                            floating[child] = f
-                            child.background = f
-                        }
+                        val f = OuiFloatingBgDrawable(floatingColor, circle = false, sizePx = size)
+                        f.alpha = (255 * progress.coerceAtLeast(0f)).toInt()
+                        floating[child] = f
+                        child.background = f
                     }
                     child.children.forEach { item ->
-                        if (prepared.add(item)) {
-                            item.background = inset(OuiRecoilDrawable(recoilColor()), 0f, 4f)
-                        }
+                        if (prepared.add(item)) item.background = OuiRecoilDrawable(recoilColor(), size)
                     }
                 }
             }
