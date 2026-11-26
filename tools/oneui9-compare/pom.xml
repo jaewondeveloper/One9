@@ -1,0 +1,6 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"><modelVersion>4.0.0</modelVersion>
+<groupId>x</groupId><artifactId>x</artifactId><version>1</version>
+<dependencies><dependency><groupId>org.apktool</groupId><artifactId>apktool-cli</artifactId><version>3.0.3</version>
+<exclusions><exclusion><groupId>com.github.iBotPeaches.smali</groupId><artifactId>smali</artifactId></exclusion>
+<exclusion><groupId>com.github.iBotPeaches.smali</groupId><artifactId>smali-baksmali</artifactId></exclusion></exclusions>
+</dependency></dependencies></project>
