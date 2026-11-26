@@ -60,6 +60,8 @@ if os.path.exists(MANIFEST):
         fp = os.path.join(LIB, line)
         if os.path.exists(fp): os.remove(fp)
 
+for _p in glob.glob(LIB + '/*/oui_des_oneui9_import*.xml'): os.remove(_p)
+
 # ---------- existing lib resources (never redefine)
 lib_names = {}
 for p in glob.glob(LIB + '/*/*'):
