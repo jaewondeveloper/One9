@@ -1,16 +1,18 @@
 package dev.oneuiproject.oneui.layout.internal.util
 
+import android.animation.ValueAnimator
 import android.graphics.Color
 import android.graphics.RectF
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.InsetDrawable
 import android.graphics.drawable.LayerDrawable
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
+import android.view.animation.LinearInterpolator
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.ActionMenuView
@@ -18,6 +20,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
+import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
 import dev.oneuiproject.oneui.design.R
 import dev.oneuiproject.oneui.widget.internal.OuiFloatingBgDrawable
@@ -25,17 +29,18 @@ import dev.oneuiproject.oneui.widget.internal.OuiRecoilDrawable
 import kotlin.math.abs
 
 /**
- * One UI 9 app bar behaviour.
+ * One UI 9 app bar behaviour, following the state machine of SESL 9's `AppBarLayout`
+ * (floating toolbar mode):
  *
- * Always:
- *  - the toolbar buttons show the One UI 9 press feedback (round recoil background).
- *
- * On screens whose app bar can collapse, once it has been seen expanded and is then collapsed
- * by scrolling:
- *  - the title/subtitle in the bar disappears,
- *  - the content moves up to the very top of the screen, under the (transparent) bar,
- *  - a vignette in the page background colour fades the content out at the top edge,
- *  - the navigation button and the menu keep a floating round background.
+ *  - EXPANDED -> COLLAPSED: the normal collapsing title (SESL 8 `AppBarLayout`, untouched).
+ *  - COLLAPSED -> HIDING -> HIDED: once collapsed, scrolling the content hides the bar 1:1
+ *    (scrolling back shows it again). While hiding:
+ *      * the title/subtitle fades out,
+ *      * the content moves up to the very top of the screen,
+ *      * a vignette in the page background colour fades the content at the top edge,
+ *      * the navigation button / menu get their floating round backgrounds
+ *        (alpha 0 -> 1 in 150ms, linear: `ProjectionView` of SESL 9).
+ *  - The toolbar buttons show the round recoil press feedback at all times.
  */
 internal class OneUi9AppBarEffect(
     private val appBar: AppBarLayout,
@@ -47,11 +52,15 @@ internal class OneUi9AppBarEffect(
     private val res = ctx.resources
     private val density = res.displayMetrics.density
     private val vignette = View(ctx)
-    private var progress = -1f
-    // Only after the bar was seen expanded: a screen that starts collapsed must look as before.
-    private var sawExpanded = false
     private val floatingElevation = res.getDimension(R.dimen.oui_des_floating_navigate_up_elevation)
     private val toolbarHeight: Int
+
+    /** How far the bar has been hidden, 0 (collapsed) .. [toolbarHeight] (hided). */
+    private var hideOffset = 0f
+    private var lastScroll = Int.MIN_VALUE
+    private var scrollable: View? = null
+    private var floatingAlpha = 0f
+    private var floatingAnimator: ValueAnimator? = null
 
     private val floating = HashMap<View, Drawable>()
     private val prepared = HashSet<View>()
@@ -66,6 +75,8 @@ internal class OneUi9AppBarEffect(
         updateContentHeight()
         prepareToolbarButtons()
     }
+
+    private val scrollListener = ViewTreeObserver.OnScrollChangedListener { onContentScrolled() }
 
     init {
         val tv = TypedValue()
@@ -103,10 +114,13 @@ internal class OneUi9AppBarEffect(
         )
         coordinator.addOnLayoutChangeListener(layoutListener)
         toolbar.addOnLayoutChangeListener(layoutListener)
+        coordinator.viewTreeObserver.addOnScrollChangedListener(scrollListener)
         prepareToolbarButtons()
     }
 
     fun detach() {
+        floatingAnimator?.cancel()
+        if (coordinator.viewTreeObserver.isAlive) coordinator.viewTreeObserver.removeOnScrollChangedListener(scrollListener)
         coordinator.removeOnLayoutChangeListener(layoutListener)
         toolbar.removeOnLayoutChangeListener(layoutListener)
         coordinator.removeView(vignette)
@@ -117,44 +131,92 @@ internal class OneUi9AppBarEffect(
         prepared.clear()
     }
 
+    /** SESL 9 `AppBarLayout.onOffsetChanged`: the bar is collapsed when the offset reaches the collapsed height. */
     fun onOffset(layout: AppBarLayout, verticalOffset: Int) {
         val range = layout.totalScrollRange
-        // Not an expandable app bar: it never collapses, the effect stays off.
-        val collapsedFraction = if (range <= 0 || !layout.isEnabled) 0f else abs(verticalOffset).toFloat() / range
-        if (collapsedFraction < 0.9f && range > 0) sawExpanded = true
-        val p = if (!sawExpanded) 0f else ((collapsedFraction - 0.9f) / 0.1f).coerceIn(0f, 1f)
-        if (p == progress) return
-        progress = p
+        val collapsed = range <= 0 || abs(verticalOffset) >= range
+        if (!collapsed && hideOffset != 0f) {
+            // expanding again: the bar is no longer (partly) hidden
+            hideOffset = 0f
+            lastScroll = Int.MIN_VALUE
+            applyHide()
+        }
+    }
 
-        vignette.visibility = if (p > 0f) View.VISIBLE else View.INVISIBLE
-        vignette.alpha = p
+    private fun isCollapsed(): Boolean {
+        val range = appBar.totalScrollRange
+        return range <= 0 || abs(appBar.top) >= range
+    }
+
+    /** Scrolling the content hides (scroll up) or shows (scroll down) the collapsed bar 1:1. */
+    private fun onContentScrolled() {
+        val target = scrollable?.takeIf { it.isAttachedToWindow && it.isShown } ?: findScrollable(content)?.also {
+            scrollable = it
+            lastScroll = Int.MIN_VALUE
+        } ?: return
+        val current = scrollOffset(target)
+        if (lastScroll == Int.MIN_VALUE) {
+            lastScroll = current
+            return
+        }
+        val delta = current - lastScroll
+        lastScroll = current
+        if (delta == 0 || !isCollapsed()) return
+        val next = (hideOffset + delta).coerceIn(0f, toolbarHeight.toFloat())
+        if (next != hideOffset) {
+            hideOffset = next
+            applyHide()
+        }
+    }
+
+    private fun applyHide() {
+        val p = hideOffset / toolbarHeight
 
         // Content slides up to the very top of the screen.
-        content.translationY = -toolbarHeight * p
+        content.translationY = -hideOffset
+
+        // Vignette fades in with the hiding bar.
+        vignette.visibility = if (p > 0f) View.VISIBLE else View.INVISIBLE
+        vignette.alpha = (p * 3f).coerceAtMost(1f)
 
         // Title/subtitle: SESL keeps resetting their alpha, so fade the text colour instead.
+        val titleAlpha = (1f - p * 2f).coerceIn(0f, 1f)
         toolbar.children.filterIsInstance<TextView>().forEach { tv ->
             val original = originalTextColors.getOrPut(tv) { tv.currentTextColor }
-            tv.setTextColor(withAlpha(original, 1f - p))
+            tv.setTextColor(withAlpha(original, titleAlpha))
         }
 
+        // Floating backgrounds: shown as soon as the bar starts hiding, 150ms linear (SESL 9 ProjectionView).
+        animateFloating(if (hideOffset > 0f) 1f else 0f)
+    }
+
+    private fun animateFloating(target: Float) {
+        if (floatingAlpha == target && floatingAnimator?.isRunning != true) return
+        if (floatingAnimator?.isRunning == true && floatingAnimator?.animatedValue == target) return
+        floatingAnimator?.cancel()
+        floatingAnimator = ValueAnimator.ofFloat(floatingAlpha, target).apply {
+            duration = 150
+            interpolator = LinearInterpolator()
+            addUpdateListener {
+                floatingAlpha = it.animatedValue as Float
+                setFloatingAlpha(floatingAlpha)
+            }
+            start()
+        }
+    }
+
+    private fun setFloatingAlpha(a: Float) {
         prepareToolbarButtons()
-        // the menu capsule keeps the same distance from the right edge as the circle has from the left
-        menuView?.translationX = -sideMargin() * p
         floating.forEach { (view, drawable) ->
-            drawable.alpha = (255 * p).toInt()
-            view.elevation = floatingElevation * p
+            drawable.alpha = (255 * a).toInt()
+            view.elevation = floatingElevation * a
         }
     }
 
     /** Makes the content as tall as the screen again once it is translated up by [toolbarHeight]. */
     private fun updateContentHeight() {
-        val range = appBar.totalScrollRange
-        if (range <= 0 || !appBar.isEnabled) {
-            restoreContentHeight()
-            return
-        }
-        val collapsedHeader = appBar.height - range
+        if (appBar.height <= 0) return
+        val collapsedHeader = appBar.height - appBar.totalScrollRange.coerceAtLeast(0)
         val target = coordinator.height - collapsedHeader + toolbarHeight
         val lp = content.layoutParams ?: return
         if (target <= 0 || lp.height == target) return
@@ -185,10 +247,12 @@ internal class OneUi9AppBarEffect(
                 is ImageButton -> if (prepared.add(child)) {
                     navButton = child
                     // centre of the icon itself (the button has uneven padding), not of the view
-                    val iconArea = { RectF(child.paddingLeft.toFloat(), child.paddingTop.toFloat(),
-                        (child.width - child.paddingRight).toFloat(), (child.height - child.paddingBottom).toFloat()) }
+                    val iconArea = {
+                        RectF(child.paddingLeft.toFloat(), child.paddingTop.toFloat(),
+                            (child.width - child.paddingRight).toFloat(), (child.height - child.paddingBottom).toFloat())
+                    }
                     val f = OuiFloatingBgDrawable(floatingColor, circle = true, sizePx = size, anchor = iconArea)
-                    f.alpha = (255 * progress.coerceAtLeast(0f)).toInt()
+                    f.alpha = (255 * floatingAlpha).toInt()
                     floating[child] = f
                     child.background = LayerDrawable(arrayOf(f, OuiRecoilDrawable(recoilColor(), size, iconArea)))
                 }
@@ -197,13 +261,14 @@ internal class OneUi9AppBarEffect(
                     if (prepared.add(child)) {
                         // one capsule hugging all the menu buttons
                         val itemsArea = {
-                            var l = Float.MAX_VALUE; var r = 0f
+                            var l = Float.MAX_VALUE
+                            var r = 0f
                             child.children.forEach { c -> l = minOf(l, c.left.toFloat()); r = maxOf(r, c.right.toFloat()) }
                             if (l > r) RectF(0f, 0f, child.width.toFloat(), child.height.toFloat())
                             else RectF(l, 0f, r, child.height.toFloat())
                         }
                         val f = OuiFloatingBgDrawable(floatingColor, circle = false, sizePx = size, anchor = itemsArea)
-                        f.alpha = (255 * progress.coerceAtLeast(0f)).toInt()
+                        f.alpha = (255 * floatingAlpha).toInt()
                         floating[child] = f
                         child.background = f
                     }
@@ -213,14 +278,29 @@ internal class OneUi9AppBarEffect(
                 }
             }
         }
+        // the menu capsule keeps the same distance from the right edge as the circle has from the left
+        menuView?.translationX = -sideMargin() * floatingAlpha
     }
 
-    /** Left margin of the circle (distance of its edge from the screen edge), mirrored on the right. */
+    /** Distance of the circle's edge from the screen edge. */
     private fun sideMargin(): Float {
         val nav = navButton ?: return 0f
         val iconCenter = nav.left + nav.paddingLeft + (nav.width - nav.paddingLeft - nav.paddingRight) / 2f
         return (iconCenter - 24 * density).coerceAtLeast(0f)
     }
+
+    private fun findScrollable(root: View, depth: Int = 0): View? {
+        if (depth > 10) return null
+        if (root is RecyclerView || root is NestedScrollView || root is android.widget.ScrollView) {
+            if (root.height > 0 && (root.canScrollVertically(1) || root.canScrollVertically(-1))) return root
+        }
+        if (root is ViewGroup) {
+            for (i in 0 until root.childCount) findScrollable(root.getChildAt(i), depth + 1)?.let { return it }
+        }
+        return null
+    }
+
+    private fun scrollOffset(v: View): Int = if (v is RecyclerView) v.computeVerticalScrollOffset() else v.scrollY
 
     /** The colour behind the page, so the vignette is invisible against it. */
     private fun pageBackground(): Int {
