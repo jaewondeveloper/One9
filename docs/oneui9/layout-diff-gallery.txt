@@ -1,0 +1,447 @@
+71 layouts differ
+
+### layout/abc_activity_chooser_view_list_item (3 differences)
+  ~ /LinearLayout#list_item android:background: ?attr/selectableItemBackground -> ?selectableItemBackground
+  ~ /LinearLayout#list_item android:layout_height: ?attr/dropdownListPreferredItemHeight -> ?dropdownListPreferredItemHeight
+  ~ /LinearLayout#list_item/LinearLayout/TextView#title android:textAppearance: ?attr/textAppearanceLargePopupMenu -> ?textAppearanceLargePopupMenu
+### layout/abc_alert_dialog_button_bar_material (5 differences)
+  ~ /ScrollView#buttonPanel style: ?attr/buttonBarStyle -> ?buttonBarStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/Button#button1 style: ?attr/buttonBarPositiveButtonStyle -> ?buttonBarPositiveButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/Button#button2 style: ?attr/buttonBarNegativeButtonStyle -> ?buttonBarNegativeButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/Button#button3 style: ?attr/buttonBarNeutralButtonStyle -> ?buttonBarNeutralButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/android.widget.Space#spacer android:layout_weight: 1 -> 1.0
+### layout/abc_alert_dialog_material (5 differences)
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel android:gravity: start|left|top -> start|top
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/ImageView#scrollIndicatorDown app:backgroundTint: ?android:attr/colorForeground -> ?android:colorForeground
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/ImageView#scrollIndicatorUp app:backgroundTint: ?android:attr/colorForeground -> ?android:colorForeground
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout/TextView#message android:paddingLeft: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout/TextView#message android:paddingRight: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+### layout/abc_alert_dialog_title_material (4 differences)
+  ~ /LinearLayout#topPanel/LinearLayout#title_template android:gravity: center_vertical|start|left -> start|center
+  ~ /LinearLayout#topPanel/LinearLayout#title_template android:paddingLeft: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /LinearLayout#topPanel/LinearLayout#title_template android:paddingRight: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /LinearLayout#topPanel/LinearLayout#title_template/androidx.appcompat.widget.DialogTitle#alertTitle style: ?android:attr/windowTitleStyle -> ?android:windowTitleStyle
+### layout/design_bottom_navigation_item (14 differences)
+  - /merge/FrameLayout#navigation_bar_item_icon_container
+  - /merge/FrameLayout#navigation_bar_item_icon_container/ImageView#navigation_bar_item_icon_view
+  - /merge/FrameLayout#navigation_bar_item_icon_container/View#navigation_bar_item_active_indicator_view
+  + /merge/LinearLayout#navigation_bar_item_content_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/LinearLayout#navigation_bar_item_inner_content_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/LinearLayout#navigation_bar_item_inner_content_container/ImageView#navigation_bar_item_icon_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/View#navigation_bar_item_active_indicator_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_large_label_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_small_label_view
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_large_label_view
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_small_label_view
+### layout/design_bottom_sheet_dialog (3 differences)
+  ~ /FrameLayout#container/androidx.coordinatorlayout.widget.CoordinatorLayout#coordinator/FrameLayout#design_bottom_sheet android:layout_gravity: center_horizontal|top -> center|top
+  ~ /FrameLayout#container/androidx.coordinatorlayout.widget.CoordinatorLayout#coordinator/FrameLayout#design_bottom_sheet style: ?attr/bottomSheetStyle -> ?bottomSheetStyle
+  ~ /FrameLayout#container/androidx.coordinatorlayout.widget.CoordinatorLayout#coordinator/View#touch_outside {http://schemas.android.com/tools}ignore: UnusedAttribute -> None
+### layout/design_navigation_item (7 differences)
+  ~ /com.google.android.material.internal.NavigationMenuItemView android:foreground: ?attr/selectableItemBackground -> ?selectableItemBackground
+  ~ /com.google.android.material.internal.NavigationMenuItemView android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /com.google.android.material.internal.NavigationMenuItemView android:paddingEnd: None -> ?listPreferredItemPaddingEnd
+  ~ /com.google.android.material.internal.NavigationMenuItemView android:paddingLeft: ?attr/listPreferredItemPaddingLeft -> None
+  ~ /com.google.android.material.internal.NavigationMenuItemView android:paddingRight: ?attr/listPreferredItemPaddingRight -> None
+  ~ /com.google.android.material.internal.NavigationMenuItemView android:paddingStart: None -> ?listPreferredItemPaddingStart
+  ~ /com.google.android.material.internal.NavigationMenuItemView {http://schemas.android.com/tools}ignore: UnusedAttribute -> None
+### layout/design_navigation_item_separator (1 differences)
+  ~ /FrameLayout/View android:background: ?android:attr/listDivider -> ?android:listDivider
+### layout/design_navigation_item_subheader (7 differences)
+  ~ /TextView android:gravity: center_vertical|start -> start|center
+  ~ /TextView android:layout_height: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /TextView android:paddingEnd: None -> ?listPreferredItemPaddingEnd
+  ~ /TextView android:paddingLeft: ?attr/listPreferredItemPaddingLeft -> None
+  ~ /TextView android:paddingRight: ?attr/listPreferredItemPaddingRight -> None
+  ~ /TextView android:paddingStart: None -> ?listPreferredItemPaddingStart
+  ~ /TextView android:textAlignment: None -> viewStart
+### layout/design_navigation_menu_item (3 differences)
+  ~ /merge/CheckedTextView#design_menu_item_text android:duplicateParentState: None -> true
+  ~ /merge/CheckedTextView#design_menu_item_text android:gravity: center_vertical|start -> start|center
+  ~ /merge/CheckedTextView#design_menu_item_text android:layout_weight: 1 -> 1.0
+### layout/mtrl_alert_dialog (6 differences)
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel android:gravity: start|left|top -> start|top
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/View#scrollIndicatorDown android:background: ?attr/colorControlHighlight -> ?colorControlHighlight
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/View#scrollIndicatorUp android:background: ?attr/colorControlHighlight -> ?colorControlHighlight
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout/TextView#message android:paddingLeft: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout/TextView#message android:paddingRight: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /androidx.appcompat.widget.AlertDialogLayout#parentPanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout/TextView#message style: ?attr/materialAlertDialogBodyTextStyle -> ?materialAlertDialogBodyTextStyle
+### layout/mtrl_alert_dialog_actions (6 differences)
+  ~ /ScrollView#buttonPanel style: ?attr/buttonBarStyle -> ?buttonBarStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/Button#button1 style: ?attr/buttonBarPositiveButtonStyle -> ?buttonBarPositiveButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/Button#button2 style: ?attr/buttonBarNegativeButtonStyle -> ?buttonBarNegativeButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/Button#button3 style: ?attr/buttonBarNeutralButtonStyle -> ?buttonBarNeutralButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/android.widget.Space#spacer android:layout_weight: 1 -> 1.0
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout/android.widget.Space#spacer android:visibility: ?attr/materialAlertDialogButtonSpacerVisibility -> ?materialAlertDialogButtonSpacerVisibility
+### layout/mtrl_alert_dialog_title (4 differences)
+  ~ /LinearLayout#topPanel/LinearLayout#title_template style: ?attr/materialAlertDialogTitlePanelStyle -> ?materialAlertDialogTitlePanelStyle
+  ~ /LinearLayout#topPanel/LinearLayout#title_template/ImageView#icon style: ?attr/materialAlertDialogTitleIconStyle -> ?materialAlertDialogTitleIconStyle
+  ~ /LinearLayout#topPanel/LinearLayout#title_template/ImageView#icon {http://schemas.android.com/tools}ignore: ContentDescription -> None
+  ~ /LinearLayout#topPanel/LinearLayout#title_template/androidx.appcompat.widget.DialogTitle#alertTitle style: ?attr/materialAlertDialogTitleTextStyle -> ?materialAlertDialogTitleTextStyle
+### layout/mtrl_alert_select_dialog_item (4 differences)
+  ~ /TextView#text1 android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /TextView#text1 android:paddingLeft: ?attr/listPreferredItemPaddingLeft -> ?listPreferredItemPaddingLeft
+  ~ /TextView#text1 android:paddingRight: ?attr/listPreferredItemPaddingRight -> ?listPreferredItemPaddingRight
+  ~ /TextView#text1 style: ?attr/materialAlertDialogBodyTextStyle -> ?materialAlertDialogBodyTextStyle
+### layout/mtrl_alert_select_dialog_multichoice (6 differences)
+  ~ /CheckedTextView#text1 android:gravity: left|center_vertical -> left|center
+  ~ /CheckedTextView#text1 android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /CheckedTextView#text1 android:paddingEnd: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /CheckedTextView#text1 android:paddingRight: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /CheckedTextView#text1 app:drawableLeftCompat: ?android:attr/listChoiceIndicatorMultiple -> ?android:listChoiceIndicatorMultiple
+  ~ /CheckedTextView#text1 app:drawableStartCompat: ?android:attr/listChoiceIndicatorMultiple -> ?android:listChoiceIndicatorMultiple
+### layout/mtrl_alert_select_dialog_singlechoice (6 differences)
+  ~ /CheckedTextView#text1 android:gravity: left|center_vertical -> left|center
+  ~ /CheckedTextView#text1 android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /CheckedTextView#text1 android:paddingEnd: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /CheckedTextView#text1 android:paddingRight: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /CheckedTextView#text1 app:drawableLeftCompat: ?android:attr/listChoiceIndicatorSingle -> ?android:listChoiceIndicatorSingle
+  ~ /CheckedTextView#text1 app:drawableStartCompat: ?android:attr/listChoiceIndicatorSingle -> ?android:listChoiceIndicatorSingle
+### layout/mtrl_calendar_month_navigation (6 differences)
+  ~ /LinearLayout#month_navigation_bar/FrameLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout#month_navigation_bar/FrameLayout/com.google.android.material.button.MaterialButton#month_navigation_fragment_toggle android:accessibilityLiveRegion: None -> polite
+  ~ /LinearLayout#month_navigation_bar/FrameLayout/com.google.android.material.button.MaterialButton#month_navigation_fragment_toggle android:gravity: center_vertical|start -> start|center
+  ~ /LinearLayout#month_navigation_bar/FrameLayout/com.google.android.material.button.MaterialButton#month_navigation_fragment_toggle style: ?attr/materialCalendarYearNavigationButton -> ?materialCalendarYearNavigationButton
+  ~ /LinearLayout#month_navigation_bar/com.google.android.material.button.MaterialButton#month_navigation_next style: ?attr/materialCalendarMonthNavigationButton -> ?materialCalendarMonthNavigationButton
+  ~ /LinearLayout#month_navigation_bar/com.google.android.material.button.MaterialButton#month_navigation_previous style: ?attr/materialCalendarMonthNavigationButton -> ?materialCalendarMonthNavigationButton
+### layout/mtrl_picker_dialog (1 differences)
+  ~ /LinearLayout/LinearLayout#mtrl_calendar_main_pane/androidx.fragment.app.FragmentContainerView#mtrl_calendar_frame android:layout_weight: 1 -> 1.0
+### layout/mtrl_picker_header_dialog (6 differences)
+  ~ /merge/LinearLayout#mtrl_picker_header style: ?attr/materialCalendarHeaderLayout -> ?materialCalendarHeaderLayout
+  ~ /merge/LinearLayout#mtrl_picker_header/FrameLayout#mtrl_picker_header_title_and_selection android:focusable: true -> false
+  ~ /merge/LinearLayout#mtrl_picker_header/FrameLayout#mtrl_picker_header_title_and_selection android:focusableInTouchMode: true -> false
+  ~ /merge/LinearLayout#mtrl_picker_header/FrameLayout#mtrl_picker_header_title_and_selection android:importantForAccessibility: None -> yes
+  ~ /merge/LinearLayout#mtrl_picker_header/FrameLayout#mtrl_picker_header_title_and_selection android:layout_weight: 1 -> 1.0
+  ~ /merge/View style: ?attr/materialCalendarHeaderDivider -> ?materialCalendarHeaderDivider
+### layout/preference (9 differences)
+  ~ /LinearLayout android:background: ?android:attr/selectableItemBackground -> ?android:selectableItemBackground
+  ~ /LinearLayout android:minHeight: ?android:attr/listPreferredItemHeight -> ?android:listPreferredItemHeight
+  ~ /LinearLayout android:paddingEnd: ?android:attr/scrollbarSize -> ?android:scrollbarSize
+  ~ /LinearLayout android:paddingRight: ?android:attr/scrollbarSize -> ?android:scrollbarSize
+  ~ /LinearLayout/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout/RelativeLayout/TextView#summary android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+  ~ /LinearLayout/RelativeLayout/TextView#summary android:textColor: ?android:attr/textColorSecondary -> ?android:textColorSecondary
+  ~ /LinearLayout/RelativeLayout/TextView#title android:textAppearance: ?android:attr/textAppearanceLarge -> ?android:textAppearanceLarge
+  ~ /LinearLayout/RelativeLayout/TextView#title android:textColor: ?android:attr/textColorPrimary -> ?android:textColorPrimary
+### layout/preference_list_fragment (2 differences)
+  ~ /LinearLayout {http://schemas.android.com/tools}ignore: NewApi -> None
+  ~ /LinearLayout/FrameLayout#list_container android:layout_weight: 1 -> 1.0
+### layout/sesl_action_menu_item_layout (3 differences)
+  ~ /androidx.appcompat.view.menu.ActionMenuItemView android:textAppearance: ?attr/actionMenuTextAppearance -> ?actionMenuTextAppearance
+  ~ /androidx.appcompat.view.menu.ActionMenuItemView android:textColor: ?attr/actionMenuTextColor -> ?actionMenuTextColor
+  ~ /androidx.appcompat.view.menu.ActionMenuItemView style: ?attr/actionButtonStyle -> ?actionButtonStyle
+### layout/sesl_action_menu_layout (1 differences)
+  ~ /androidx.appcompat.widget.ActionMenuView android:divider: ?android:attr/actionBarDivider -> ?android:actionBarDivider
+### layout/sesl_action_mode_bar (2 differences)
+  ~ /androidx.appcompat.widget.ActionBarContextView android:theme: ?attr/actionBarTheme -> ?actionBarTheme
+  ~ /androidx.appcompat.widget.ActionBarContextView style: ?attr/actionModeStyle -> ?actionModeStyle
+### layout/sesl_action_mode_close_item (2 differences)
+  ~ /ImageView#action_mode_close_button android:src: ?attr/actionModeCloseDrawable -> ?actionModeCloseDrawable
+  ~ /ImageView#action_mode_close_button style: ?attr/actionModeCloseButtonStyle -> ?actionModeCloseButtonStyle
+### layout/sesl_alert_dialog (6 differences)
+  ~ /LinearLayout#parentPanel/LinearLayout#middlePanel/FrameLayout#contentPanel android:layout_weight: 1 -> 1.0
+  + /LinearLayout#parentPanel/LinearLayout#middlePanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout#scrollViewChild
+  + /LinearLayout#parentPanel/LinearLayout#middlePanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout#scrollViewChild/CheckBox#single_choice_option
+  + /LinearLayout#parentPanel/LinearLayout#middlePanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/LinearLayout#scrollViewChild/TextView#message
+  - /LinearLayout#parentPanel/LinearLayout#middlePanel/FrameLayout#contentPanel/androidx.core.widget.NestedScrollView#scrollView/TextView#message
+  ~ /LinearLayout#parentPanel/LinearLayout#middlePanel/FrameLayout#customPanel android:layout_weight: 1 -> 1.0
+### layout/sesl_alert_dialog_button_bar (16 differences)
+  ~ /ScrollView#buttonPanel android:scrollIndicators: bottom|top -> top|bottom
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout style: ?attr/buttonBarStyle -> ?buttonBarStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider1 android:alpha: None -> 0.23
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider1 android:background: ?attr/seslDialogDivderColor -> ?seslDialogDivderColor
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider1 android:layout_width: 1dp -> @dimen/sesl_dialog_button_bar_divider_width
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider1 android:tag: None -> isDivider
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider2 android:alpha: None -> 0.23
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider2 android:background: ?attr/seslDialogDivderColor -> ?seslDialogDivderColor
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider2 android:layout_width: 1dp -> @dimen/sesl_dialog_button_bar_divider_width
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/View#sem_divider2 android:tag: None -> isDivider
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/android.widget.Button#button1 android:layout_weight: 1 -> 1.0
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/android.widget.Button#button1 style: ?attr/buttonBarPositiveButtonStyle -> ?buttonBarPositiveButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/android.widget.Button#button2 android:layout_weight: 1 -> 1.0
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/android.widget.Button#button2 style: ?attr/buttonBarNegativeButtonStyle -> ?buttonBarNegativeButtonStyle
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/android.widget.Button#button3 android:layout_weight: 1 -> 1.0
+  ~ /ScrollView#buttonPanel/androidx.appcompat.widget.ButtonBarLayout#buttonBarLayout/android.widget.Button#button3 style: ?attr/buttonBarNeutralButtonStyle -> ?buttonBarNeutralButtonStyle
+### layout/sesl_alert_dialog_progress (1 differences)
+  ~ /RelativeLayout/androidx.appcompat.widget.SeslProgressBar#progress style: ?android:attr/progressBarStyleHorizontal -> ?android:progressBarStyleHorizontal
+### layout/sesl_app_bar (5 differences)
+  ~ /LinearLayout#collapsing_appbar_title_layout_parent/LinearLayout#collapsing_appbar_title_layout/TextView#collapsing_appbar_extended_subtitle android:paddingLeft: @dimen/sesl_appbar_extended_title_padding -> None
+  ~ /LinearLayout#collapsing_appbar_title_layout_parent/LinearLayout#collapsing_appbar_title_layout/TextView#collapsing_appbar_extended_subtitle android:paddingRight: @dimen/sesl_appbar_extended_title_padding -> None
+  ~ /LinearLayout#collapsing_appbar_title_layout_parent/LinearLayout#collapsing_appbar_title_layout/TextView#collapsing_appbar_extended_title android:lineSpacingMultiplier: 1 -> 1.0
+  ~ /LinearLayout#collapsing_appbar_title_layout_parent/LinearLayout#collapsing_appbar_title_layout/TextView#collapsing_appbar_extended_title android:paddingLeft: @dimen/sesl_appbar_extended_title_padding -> None
+  ~ /LinearLayout#collapsing_appbar_title_layout_parent/LinearLayout#collapsing_appbar_title_layout/TextView#collapsing_appbar_extended_title android:paddingRight: @dimen/sesl_appbar_extended_title_padding -> None
+### layout/sesl_app_bar_suggest (2 differences)
+  ~ /RelativeLayout android:layout_marginLeft: @dimen/sesl_appbar_extended_title_padding -> None
+  ~ /RelativeLayout android:layout_marginRight: @dimen/sesl_appbar_extended_title_padding -> None
+### layout/sesl_app_bar_suggest_center_layout (10 differences)
+  ~ /LinearLayout#suggest_app_bar_center_layout android:gravity: center_vertical -> center
+  ~ /LinearLayout#suggest_app_bar_center_layout android:layout_marginLeft: @dimen/sesl_appbar_viewpager_item_margin_horizontal -> None
+  ~ /LinearLayout#suggest_app_bar_center_layout android:layout_marginRight: @dimen/sesl_appbar_viewpager_item_margin_horizontal -> None
+  ~ /LinearLayout#suggest_app_bar_center_layout android:paddingTop: @dimen/sesl_appbar_viewpager_item_margin_vertical_for_light_effect -> None
+  ~ /LinearLayout#suggest_app_bar_center_layout android:paddingVertical: @dimen/sesl_appbar_viewpager_item_margin_vertical_for_light_effect -> None
+  + /LinearLayout#suggest_app_bar_center_layout/ImageView#suggest_app_bar_top_image
+  ~ /LinearLayout#suggest_app_bar_center_layout/LinearLayout#suggest_app_bar_bottom_layout android:gravity: center -> center|top
+  + /LinearLayout#suggest_app_bar_center_layout/TextView#suggest_app_bar_sub_title
+  ~ /LinearLayout#suggest_app_bar_center_layout/TextView#suggest_app_bar_title android:lineSpacingExtra: @dimen/sesl_appbar_extended_title_extra_line_space -> -2dp
+  ~ /LinearLayout#suggest_app_bar_center_layout/TextView#suggest_app_bar_title android:lineSpacingMultiplier: 1 -> 1.0
+### layout/sesl_app_bar_viewpager (11 differences)
+  - /FrameLayout
+  + /FrameLayout#app_bar_viewpager_layout_root
+  + /FrameLayout#app_bar_viewpager_layout_root/FrameLayout#app_bar_viewpager_container
+  + /FrameLayout#app_bar_viewpager_layout_root/FrameLayout#app_bar_viewpager_container/com.google.android.material.appbar.internal.MaxWidthLinearLayout#app_bar_viewpager_parent
+  + /FrameLayout#app_bar_viewpager_layout_root/FrameLayout#app_bar_viewpager_container/com.google.android.material.appbar.internal.MaxWidthLinearLayout#app_bar_viewpager_parent/LinearLayout
+  + /FrameLayout#app_bar_viewpager_layout_root/FrameLayout#app_bar_viewpager_container/com.google.android.material.appbar.internal.MaxWidthLinearLayout#app_bar_viewpager_parent/LinearLayout[2]
+  + /FrameLayout#app_bar_viewpager_layout_root/FrameLayout#app_bar_viewpager_container/com.google.android.material.appbar.internal.MaxWidthLinearLayout#app_bar_viewpager_parent/LinearLayout[2]/LinearLayout#bottom_layout
+  + /FrameLayout#app_bar_viewpager_layout_root/FrameLayout#app_bar_viewpager_container/com.google.android.material.appbar.internal.MaxWidthLinearLayout#app_bar_viewpager_parent/androidx.viewpager2.widget.ViewPager2#app_bar_viewpager
+  - /FrameLayout/FrameLayout
+  - /FrameLayout/FrameLayout/FrameLayout#bottom_layout
+  - /FrameLayout/FrameLayout/androidx.viewpager2.widget.ViewPager2#app_bar_viewpager
+### layout/sesl_bottom_navigation_item (12 differences)
+  - /merge/ImageView#navigation_bar_item_icon_view
+  + /merge/LinearLayout#navigation_bar_item_content_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/LinearLayout#navigation_bar_item_inner_content_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/LinearLayout#navigation_bar_item_inner_content_container/ImageView#navigation_bar_item_icon_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/View#navigation_bar_item_active_indicator_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_large_label_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_small_label_view
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_large_label_view
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_small_label_view
+### layout/sesl_bottom_navigation_item_text (12 differences)
+  - /merge/ImageView#navigation_bar_item_icon_view
+  + /merge/LinearLayout#navigation_bar_item_content_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/LinearLayout#navigation_bar_item_inner_content_container
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/LinearLayout#navigation_bar_item_inner_content_container/ImageView#navigation_bar_item_icon_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/FrameLayout#navigation_bar_item_icon_container/View#navigation_bar_item_active_indicator_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_large_label_view
+  + /merge/LinearLayout#navigation_bar_item_content_container/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_small_label_view
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_large_label_view
+  - /merge/com.google.android.material.internal.BaselineLayout#navigation_bar_item_labels_group/TextView#navigation_bar_item_small_label_view
+### layout/sesl_date_picker (9 differences)
+  ~ /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/ImageButton#sesl_date_picker_calendar_header_next_button android:background: ?android:attr/selectableItemBackgroundBorderless -> ?android:selectableItemBackgroundBorderless
+  - /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/LinearLayout
+  - /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/LinearLayout/LinearLayout#sesl_date_picker_calendar_header_text_spinner_layout
+  - /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/LinearLayout/LinearLayout#sesl_date_picker_calendar_header_text_spinner_layout/TextView#sesl_date_picker_calendar_header_text
+  - /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/LinearLayout/LinearLayout#sesl_date_picker_calendar_header_text_spinner_layout/View#sesl_date_picker_calendar_header_spinner
+  + /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/androidx.appcompat.widget.SeslLinearLayoutCompat
+  + /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_date_picker_calendar_header_text_spinner_layout
+  + /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_date_picker_calendar_header_text_spinner_layout/TextView#sesl_date_picker_calendar_header_text
+  + /LinearLayout#sesl_date_picker_layout/RelativeLayout#sesl_date_picker_calendar_header_layout/RelativeLayout#sesl_date_picker_calendar_header/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_date_picker_calendar_header_text_spinner_layout/View#sesl_date_picker_calendar_header_spinner
+### layout/sesl_date_picker_spinner (6 differences)
+  ~ /LinearLayout#sesl_date_picker_pickers android:layout_weight: 100 -> 100.0
+  ~ /LinearLayout#sesl_date_picker_pickers/View#sesl_date_picker_spinner_day_padding android:layout_weight: 8 -> 8.0
+  ~ /LinearLayout#sesl_date_picker_pickers/View#sesl_date_picker_spinner_year_padding android:layout_weight: 11 -> 11.0
+  ~ /LinearLayout#sesl_date_picker_pickers/androidx.picker.widget.SeslNumberPicker#sesl_date_picker_spinner_day android:layout_weight: 25 -> 25.0
+  ~ /LinearLayout#sesl_date_picker_pickers/androidx.picker.widget.SeslNumberPicker#sesl_date_picker_spinner_month android:layout_weight: 28 -> 28.0
+  ~ /LinearLayout#sesl_date_picker_pickers/androidx.picker.widget.SeslNumberPicker#sesl_date_picker_spinner_year android:layout_weight: 28 -> 28.0
+### layout/sesl_dialog_title (2 differences)
+  ~ /androidx.appcompat.widget.FitWindowsLinearLayout/TextView#title style: ?android:attr/windowTitleStyle -> ?android:windowTitleStyle
+  ~ /androidx.appcompat.widget.FitWindowsLinearLayout/include android:layout_weight: 1 -> 1.0
+### layout/sesl_layout_snackbar_suggest_include (8 differences)
+  ~ /view#snackbar_content_layout android:layout_gravity: bottom|center_horizontal -> center|bottom
+  ~ /view#snackbar_content_layout/Button#snackbar_action android:layout_gravity: end|center_vertical -> end|center
+  ~ /view#snackbar_content_layout/Button#snackbar_action android:paddingLeft: @dimen/sesl_design_snackbar_suggest_action_padding_horizontal -> None
+  ~ /view#snackbar_content_layout/Button#snackbar_action android:paddingRight: @dimen/sesl_design_snackbar_suggest_action_padding_horizontal -> None
+  ~ /view#snackbar_content_layout/TextView#snackbar_text android:layout_gravity: start|center_vertical -> start|center
+  ~ /view#snackbar_content_layout/TextView#snackbar_text android:layout_weight: 1 -> 1.0
+  ~ /view#snackbar_content_layout/TextView#snackbar_text android:textAlignment: viewStart -> center
+  ~ /view#snackbar_content_layout/TextView#snackbar_text android:textSize: @dimen/sesl_design_snackbar_suggest_text_size -> @dimen/sesl_design_snackbar_text_size
+### layout/sesl_list_menu_item_layout (5 differences)
+  ~ /androidx.appcompat.view.menu.ListMenuItemView android:minHeight: ?android:attr/listPreferredItemHeightSmall -> ?android:listPreferredItemHeightSmall
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/RelativeLayout/TextView#shortcut android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/RelativeLayout/TextView#title android:maxLines: None -> 1
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/RelativeLayout/TextView#title android:singleLine: true -> None
+### layout/sesl_list_menu_item_radio (1 differences)
+  ~ /RadioButton#radio android:button: ?android:attr/listChoiceIndicatorSingle -> ?android:listChoiceIndicatorSingle
+### layout/sesl_popup_menu_header_item_layout (1 differences)
+  ~ /FrameLayout/TextView#title android:textAppearance: ?attr/textAppearancePopupMenuHeader -> ?textAppearancePopupMenuHeader
+### layout/sesl_popup_menu_item_layout (3 differences)
+  + /androidx.appcompat.view.menu.ListMenuItemView/LinearLayout#content/ImageView#sesl_icon
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/LinearLayout#content/RelativeLayout/LinearLayout#title_parent/TextView#shortcut android:textAppearance: ?attr/textAppearanceSmallPopupMenu -> ?textAppearanceSmallPopupMenu
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/LinearLayout#content/RelativeLayout/LinearLayout#title_parent/TextView#title android:textAppearance: ?attr/textAppearanceLargePopupMenu -> ?textAppearanceLargePopupMenu
+### layout/sesl_popup_sub_menu_item_layout (2 differences)
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/androidx.appcompat.widget.SeslDropDownItemTextView#sub_menu_title android:minHeight: ?attr/dropdownListPreferredItemHeight -> ?dropdownListPreferredItemHeight
+  ~ /androidx.appcompat.view.menu.ListMenuItemView/androidx.appcompat.widget.SeslDropDownItemTextView#sub_menu_title style: ?attr/spinnerDropDownItemStyle -> ?spinnerDropDownItemStyle
+### layout/sesl_preference (10 differences)
+  ~ /LinearLayout android:background: ?attr/listChoiceBackgroundIndicator -> ?listChoiceBackgroundIndicator
+  ~ /LinearLayout android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /LinearLayout android:paddingStart: ?android:attr/listPreferredItemPaddingStart -> ?android:listPreferredItemPaddingStart
+  ~ /LinearLayout/FrameLayout#icon_frame android:gravity: start|center_vertical -> start|center
+  ~ /LinearLayout/FrameLayout#icon_frame android:minWidth: 56dp -> @dimen/sesl_list_icon_frame_width
+  ~ /LinearLayout/LinearLayout#widget_frame android:gravity: end|center_vertical -> end|center
+  ~ /LinearLayout/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout/RelativeLayout/RelativeLayout#title_frame/TextView#title android:textAppearance: ?attr/textAppearanceListItem -> ?textAppearanceListItem
+  ~ /LinearLayout/RelativeLayout/TextView#summary android:paddingTop: None -> @dimen/sesl_preference_summary_padding_top
+  ~ /LinearLayout/RelativeLayout/TextView#summary android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+### layout/sesl_preference_category (1 differences)
+  ~ /TextView#title style: ?android:attr/listSeparatorTextViewStyle -> ?android:listSeparatorTextViewStyle
+### layout/sesl_preference_category_empty (1 differences)
+  ~ /TextView#title style: ?android:attr/listSeparatorTextViewStyle -> ?android:listSeparatorTextViewStyle
+### layout/sesl_preference_dialog_edittext (2 differences)
+  ~ /ScrollView/LinearLayout#edittext_container/TextView#message android:textColor: ?android:attr/textColorSecondary -> ?android:textColorSecondary
+  ~ /ScrollView/LinearLayout#edittext_container/TextView#message style: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+### layout/sesl_preference_dialog_seekbar (4 differences)
+  ~ /LinearLayout/ImageView#icon android:paddingTop: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /LinearLayout/androidx.appcompat.widget.SeslSeekBar#seekbar android:paddingEnd: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /LinearLayout/androidx.appcompat.widget.SeslSeekBar#seekbar android:paddingStart: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+  ~ /LinearLayout/androidx.appcompat.widget.SeslSeekBar#seekbar android:paddingTop: ?attr/dialogPreferredPadding -> ?dialogPreferredPadding
+### layout/sesl_preference_dropdown (10 differences)
+  ~ /FrameLayout android:background: ?attr/listChoiceBackgroundIndicator -> ?listChoiceBackgroundIndicator
+  ~ /FrameLayout/LinearLayout android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /FrameLayout/LinearLayout android:paddingStart: ?android:attr/listPreferredItemPaddingStart -> ?android:listPreferredItemPaddingStart
+  ~ /FrameLayout/LinearLayout/FrameLayout#icon_frame android:gravity: start|center_vertical -> start|center
+  ~ /FrameLayout/LinearLayout/FrameLayout#icon_frame android:minWidth: 56dp -> @dimen/sesl_list_icon_frame_width
+  ~ /FrameLayout/LinearLayout/LinearLayout#widget_frame android:gravity: end|center_vertical -> end|center
+  ~ /FrameLayout/LinearLayout/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /FrameLayout/LinearLayout/RelativeLayout/RelativeLayout#title_frame/TextView#title android:textAppearance: ?attr/textAppearanceListItem -> ?textAppearanceListItem
+  ~ /FrameLayout/LinearLayout/RelativeLayout/TextView#summary android:paddingTop: None -> @dimen/sesl_preference_summary_padding_top
+  ~ /FrameLayout/LinearLayout/RelativeLayout/TextView#summary android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+### layout/sesl_preference_recyclerview (1 differences)
+  ~ /androidx.recyclerview.widget.RecyclerView#recycler_view android:background: ?android:attr/colorBackground -> None
+### layout/sesl_preference_switch (11 differences)
+  ~ /LinearLayout#switchid android:background: ?attr/listChoiceBackgroundIndicator -> ?listChoiceBackgroundIndicator
+  ~ /LinearLayout#switchid android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /LinearLayout#switchid android:paddingStart: ?android:attr/listPreferredItemPaddingStart -> ?android:listPreferredItemPaddingStart
+  ~ /LinearLayout#switchid/LinearLayout#widget_frame android:gravity: end|center_vertical -> end|center
+  ~ /LinearLayout#switchid/LinearLayout/FrameLayout#icon_frame android:gravity: start|center_vertical -> None
+  ~ /LinearLayout#switchid/LinearLayout/FrameLayout#icon_frame android:minWidth: 56dp -> @dimen/sesl_list_icon_frame_width
+  ~ /LinearLayout#switchid/LinearLayout/LinearLayout#widget_frame android:gravity: end|center_vertical -> end|center
+  ~ /LinearLayout#switchid/LinearLayout/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout#switchid/LinearLayout/RelativeLayout/RelativeLayout#title_frame/TextView#title android:textAppearance: ?attr/textAppearanceListItem -> ?textAppearanceListItem
+  ~ /LinearLayout#switchid/LinearLayout/RelativeLayout/TextView#summary android:paddingTop: None -> @dimen/sesl_preference_summary_padding_top
+  ~ /LinearLayout#switchid/LinearLayout/RelativeLayout/TextView#summary android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+### layout/sesl_preference_switch_screen (16 differences)
+  ~ /LinearLayout android:background: ?attr/listChoiceBackgroundIndicator -> ?listChoiceBackgroundIndicator
+  ~ /LinearLayout android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /LinearLayout android:paddingStart: ?android:attr/listPreferredItemPaddingStart -> ?android:listPreferredItemPaddingStart
+  ~ /LinearLayout/LinearLayout android:minHeight: ?attr/listPreferredItemHeightSmall -> ?listPreferredItemHeightSmall
+  ~ /LinearLayout/LinearLayout#widget_frame android:gravity: end|center_vertical -> end|center
+  ~ /LinearLayout/LinearLayout#widget_frame/LinearLayout/View#switch_divider_large android:background: ?attr/switchDividerColor -> ?switchDividerColor
+  ~ /LinearLayout/LinearLayout#widget_frame/LinearLayout/androidx.appcompat.widget.SwitchCompat#switch_widget android:paddingEnd: ?android:attr/listPreferredItemPaddingEnd -> ?android:listPreferredItemPaddingEnd
+  + /LinearLayout/LinearLayout/FrameLayout#icon_frame
+  + /LinearLayout/LinearLayout/FrameLayout#icon_frame/androidx.preference.internal.PreferenceImageView#icon
+  - /LinearLayout/LinearLayout/LinearLayout#icon_frame
+  - /LinearLayout/LinearLayout/LinearLayout#icon_frame/androidx.preference.internal.PreferenceImageView#icon
+  ~ /LinearLayout/LinearLayout/LinearLayout#widget_frame android:gravity: end|center_vertical -> end|center
+  ~ /LinearLayout/LinearLayout/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout/LinearLayout/RelativeLayout/RelativeLayout#title_frame/TextView#title android:textAppearance: ?attr/textAppearanceListItem -> ?textAppearanceListItem
+  ~ /LinearLayout/LinearLayout/RelativeLayout/TextView#summary android:paddingTop: None -> @dimen/sesl_preference_summary_padding_top
+  ~ /LinearLayout/LinearLayout/RelativeLayout/TextView#summary android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+### layout/sesl_preference_widget_checkbox (1 differences)
+  ~ /CheckBox#checkbox style: ?attr/checkboxStyle -> ?checkboxStyle
+### layout/sesl_preference_widget_seekbar (9 differences)
+  ~ /LinearLayout android:minHeight: ?attr/listPreferredItemHeight -> ?listPreferredItemHeight
+  ~ /LinearLayout android:paddingEnd: ?android:attr/listPreferredItemPaddingEnd -> ?android:listPreferredItemPaddingEnd
+  ~ /LinearLayout android:paddingStart: ?android:attr/listPreferredItemPaddingStart -> ?android:listPreferredItemPaddingStart
+  ~ /LinearLayout/LinearLayout/androidx.preference.internal.PreferenceImageView#icon app:maxHeight: None -> @dimen/sesl_preference_item_icon_size
+  ~ /LinearLayout/LinearLayout/androidx.preference.internal.PreferenceImageView#icon app:maxWidth: None -> @dimen/sesl_preference_item_icon_size
+  ~ /LinearLayout/RelativeLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout/RelativeLayout/TextView#summary android:paddingTop: None -> @dimen/sesl_preference_summary_padding_top
+  ~ /LinearLayout/RelativeLayout/TextView#summary android:textAppearance: ?android:attr/textAppearanceSmall -> ?android:textAppearanceSmall
+  ~ /LinearLayout/RelativeLayout/TextView#title android:textAppearance: ?attr/textAppearanceListItem -> ?textAppearanceListItem
+### layout/sesl_progress_dialog (1 differences)
+  ~ /FrameLayout/LinearLayout#body/android.support.v7.widget.SeslProgressBar#progress style: ?android:attr/progressBarStyle -> ?android:progressBarStyle
+### layout/sesl_screen_content_include (2 differences)
+  ~ /merge/androidx.appcompat.widget.ContentFrameLayout#action_bar_activity_content android:foreground: ?android:attr/windowContentOverlay -> ?android:windowContentOverlay
+  ~ /merge/androidx.appcompat.widget.ContentFrameLayout#action_bar_activity_content android:foregroundGravity: top|fill_horizontal -> fill_horizontal|top
+### layout/sesl_screen_toolbar (4 differences)
+  ~ /androidx.appcompat.widget.ActionBarOverlayLayout#decor_content_parent/androidx.appcompat.widget.ActionBarContainer#action_bar_container style: ?attr/actionBarStyle -> ?actionBarStyle
+  ~ /androidx.appcompat.widget.ActionBarOverlayLayout#decor_content_parent/androidx.appcompat.widget.ActionBarContainer#action_bar_container/androidx.appcompat.widget.ActionBarContextView#action_context_bar android:theme: ?attr/actionBarTheme -> ?actionBarTheme
+  ~ /androidx.appcompat.widget.ActionBarOverlayLayout#decor_content_parent/androidx.appcompat.widget.ActionBarContainer#action_bar_container/androidx.appcompat.widget.ActionBarContextView#action_context_bar style: ?attr/actionModeStyle -> ?actionModeStyle
+  ~ /androidx.appcompat.widget.ActionBarOverlayLayout#decor_content_parent/androidx.appcompat.widget.ActionBarContainer#action_bar_container/androidx.appcompat.widget.Toolbar#action_bar style: ?attr/actionBarStyle -> ?actionBarStyle
+### layout/sesl_search_dropdown_item_icons_2line (4 differences)
+  ~ /LinearLayout/ImageView#edit_query android:background: ?attr/selectableItemBackground -> ?selectableItemBackground
+  ~ /LinearLayout/LinearLayout android:layout_weight: 1 -> 1.0
+  ~ /LinearLayout/LinearLayout/TextView#text1 android:textAppearance: ?attr/textAppearanceSearchResultTitle -> ?textAppearanceSearchResultTitle
+  ~ /LinearLayout/LinearLayout/TextView#text2 android:textAppearance: ?attr/textAppearanceSearchResultSubtitle -> ?textAppearanceSearchResultSubtitle
+### layout/sesl_search_view (24 differences)
+  ~ /LinearLayout#search_bar/LinearLayout#search_edit_frame android:clipChildren: None -> false
+  ~ /LinearLayout#search_bar/LinearLayout#search_edit_frame android:clipToPadding: None -> false
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/ImageView#search_back_btn
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/ImageView#search_close_btn
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/ImageView#search_go_btn
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/ImageView#search_mag_icon
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/ImageView#search_more_btn
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/ImageView#search_voice_btn
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/LinearLayout#submit_area
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/Space
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/LinearLayout#search_plate/view#search_src_text
+  + /LinearLayout#search_bar/LinearLayout#search_edit_frame/FrameLayout#search_plate_frame/View#search_plate_stroke_overlay
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/ImageView#search_back_btn
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/ImageView#search_close_btn
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/ImageView#search_go_btn
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/ImageView#search_mag_icon
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/ImageView#search_more_btn
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/ImageView#search_voice_btn
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/LinearLayout#submit_area
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/Space
+  - /LinearLayout#search_bar/LinearLayout#search_edit_frame/LinearLayout#search_plate/view#search_src_text
+### layout/sesl_select_dialog (1 differences)
+  ~ /view#select_dialog_listview android:divider: ?android:attr/listDividerAlertDialog -> ?android:listDividerAlertDialog
+### layout/sesl_select_dialog_multichoice (2 differences)
+  + /CheckedTextView#text1
+  - /androidx.appcompat.widget.AppCompatSeslCheckedTextView#text1
+### layout/sesl_select_dialog_singlechoice (2 differences)
+  + /CheckedTextView#text1
+  - /androidx.appcompat.widget.AppCompatSeslCheckedTextView#text1
+### layout/sesl_spinning_datepicker_time_picker_spinner (3 differences)
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout/TextView#sesl_timepicker_divider android:layout_weight: 2 -> 2.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_datetimepicker_padding_left android:layout_weight: 6 -> 6.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_ampm_picker_margin android:layout_weight: 0 -> 0.0
+### layout/sesl_spinning_datepicker_time_picker_spinner_multipane (9 differences)
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout android:layout_weight: 26 -> 26.0
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout/TextView#sesl_timepicker_divider android:layout_weight: 2 -> 2.0
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout/androidx.picker.widget.SeslNumberPicker#sesl_timepicker_hour android:layout_weight: 12 -> 12.0
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout/androidx.picker.widget.SeslNumberPicker#sesl_timepicker_minute android:layout_weight: 12 -> 12.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_datetimepicker_padding_left android:layout_weight: 6 -> 6.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_datetimepicker_padding_right android:layout_weight: 0 -> 0.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_ampm_picker_margin android:layout_weight: 0 -> 0.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_padding_right android:layout_weight: 12 -> 12.0
+  ~ /LinearLayout#sesl_timepicker_layout/androidx.picker.widget.SeslNumberPicker#sesl_timepicker_ampm android:layout_weight: 18 -> 18.0
+### layout/sesl_spinning_datepicker_time_picker_spinner_phone (3 differences)
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout/TextView#sesl_timepicker_divider android:layout_weight: 2 -> 2.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_datetimepicker_padding_left android:layout_weight: 6 -> 6.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_ampm_picker_margin android:layout_weight: 0 -> 0.0
+### layout/sesl_switch_preference_screen_widget_divider (2 differences)
+  ~ /LinearLayout/View#switch_divider_normal android:background: ?attr/switchDividerColor -> ?switchDividerColor
+  ~ /LinearLayout/androidx.appcompat.widget.SwitchCompat#switch_widget android:paddingStart: 9dp -> 13dp
+### layout/sesl_switchbar (9 differences)
+  - /merge/LinearLayout#sesl_switchbar_container
+  - /merge/LinearLayout#sesl_switchbar_container/TextView#sesl_switchbar_text
+  - /merge/LinearLayout#sesl_switchbar_container/androidx.appcompat.widget.SeslProgressBar#sesl_switchbar_progress
+  - /merge/LinearLayout#sesl_switchbar_container/androidx.appcompat.widget.SeslToggleSwitch#sesl_switchbar_switch
+  + /merge/androidx.appcompat.widget.SeslLinearLayoutCompat
+  + /merge/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_switchbar_container
+  + /merge/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_switchbar_container/TextView#sesl_switchbar_text
+  + /merge/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_switchbar_container/androidx.appcompat.widget.SeslProgressBar#sesl_switchbar_progress
+  + /merge/androidx.appcompat.widget.SeslLinearLayoutCompat/LinearLayout#sesl_switchbar_container/androidx.appcompat.widget.SeslToggleSwitch#sesl_switchbar_switch
+### layout/sesl_tabs_main_tab_layout (4 differences)
+  ~ /androidx.constraintlayout.widget.ConstraintLayout/TextView#title android:paddingLeft: @dimen/sesl_tablayout_title_hightlight_padding_horizontal -> None
+  ~ /androidx.constraintlayout.widget.ConstraintLayout/TextView#title android:paddingRight: @dimen/sesl_tablayout_title_hightlight_padding_horizontal -> None
+  ~ /androidx.constraintlayout.widget.ConstraintLayout/View#main_tab_touch_background android:layout_height: 48dp -> 0dp
+  ~ /androidx.constraintlayout.widget.ConstraintLayout/View#main_tab_touch_background android:layout_width: 1dp -> 0dp
+### layout/sesl_tabs_sub_tab_layout (1 differences)
+  ~ /androidx.constraintlayout.widget.ConstraintLayout/com.google.android.material.tabs.SeslTabRoundRectIndicator#indicator android:visible: None -> false
+### layout/sesl_time_picker_spinner (8 differences)
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout#sesl_timepicker_hour_minute_layout android:layout_weight: 2700 -> 2700.0
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout#sesl_timepicker_hour_minute_layout/TextView#sesl_timepicker_divider android:layout_weight: 180 -> 180.0
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout#sesl_timepicker_hour_minute_layout/androidx.picker.widget.SeslNumberPicker#sesl_timepicker_hour android:layout_weight: 1260 -> 1260.0
+  ~ /LinearLayout#sesl_timepicker_layout/LinearLayout#sesl_timepicker_hour_minute_layout/androidx.picker.widget.SeslNumberPicker#sesl_timepicker_minute android:layout_weight: 1260 -> 1260.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_ampm_picker_margin android:layout_weight: 0 -> 0.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_padding_left android:layout_weight: 270 -> 270.0
+  ~ /LinearLayout#sesl_timepicker_layout/View#sesl_timepicker_padding_right android:layout_weight: 270 -> 270.0
+  ~ /LinearLayout#sesl_timepicker_layout/androidx.picker.widget.SeslNumberPicker#sesl_timepicker_ampm android:layout_weight: 1260 -> 1260.0
+### layout/sesl_tooltip (1 differences)
+  ~ /LinearLayout/TextView#message android:textColor: ?attr/tooltipForegroundColor -> ?tooltipForegroundColor
