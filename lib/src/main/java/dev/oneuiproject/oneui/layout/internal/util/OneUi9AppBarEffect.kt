@@ -1,9 +1,11 @@
 package dev.oneuiproject.oneui.layout.internal.util
 
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.InsetDrawable
+import android.graphics.drawable.LayerDrawable
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
@@ -17,77 +19,114 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import com.google.android.material.appbar.AppBarLayout
 import dev.oneuiproject.oneui.design.R
+import dev.oneuiproject.oneui.widget.internal.OuiRecoilDrawable
 import kotlin.math.abs
 
 /**
- * One UI 9 collapsed app bar behaviour. Only active on screens whose app bar can actually collapse
- * (expandable app bar); on every other screen nothing is changed.
+ * One UI 9 app bar behaviour.
  *
- * Once the app bar is fully collapsed (the user has scrolled):
+ * Always:
+ *  - the toolbar buttons show the One UI 9 press feedback (round recoil background).
+ *
+ * On screens whose app bar can collapse, once it has been seen expanded and is then collapsed
+ * by scrolling:
  *  - the title/subtitle in the bar disappears,
+ *  - the content moves up to the very top of the screen, under the (transparent) bar,
  *  - a vignette in the page background colour fades the content out at the top edge,
- *  - the navigation button and the menu get floating round backgrounds.
+ *  - the navigation button and the menu keep a floating round background.
  */
 internal class OneUi9AppBarEffect(
     private val appBar: AppBarLayout,
     private val toolbar: Toolbar,
     private val coordinator: CoordinatorLayout,
-    @Suppress("unused") private val content: View
+    private val content: View
 ) {
     private val ctx = appBar.context
     private val res = ctx.resources
     private val density = res.displayMetrics.density
     private val vignette = View(ctx)
     private var progress = -1f
-    // The effect only applies after the bar has been seen expanded: a screen that starts collapsed
-    // (short content) must look like it always did.
+    // Only after the bar was seen expanded: a screen that starts collapsed must look as before.
     private var sawExpanded = false
     private val floatingElevation = res.getDimension(R.dimen.oui_des_floating_navigate_up_elevation)
+    private val toolbarHeight: Int
 
-    private val navBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_navigate_up_bg)
-    private val menuBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_toolbar_bg)
-    private val wrappers = HashMap<View, Drawable>()
+    private val floating = HashMap<View, Drawable>()
+    private val prepared = HashSet<View>()
     private val originalTextColors = HashMap<TextView, Int>()
+    private var originalContentHeight: Int? = null
+    private var collapsingBackground: Drawable? = null
+    private var collapsing: View? = null
+
+    private val layoutListener = View.OnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+        updateContentHeight()
+        prepareToolbarButtons()
+    }
+
+    init {
+        val tv = TypedValue()
+        toolbarHeight = if (ctx.theme.resolveAttribute(androidx.appcompat.R.attr.actionBarSize, tv, true))
+            TypedValue.complexToDimensionPixelSize(tv.data, res.displayMetrics)
+        else (56 * density).toInt()
+    }
 
     fun attach() {
-        val fadeHeight = (28 * density).toInt()
+        // The bar must not paint over the content that slides under it.
+        collapsing = appBar.findViewById(R.id.toolbarlayout_collapsing_toolbar)
+        collapsingBackground = collapsing?.background
+        collapsing?.background = null
+        appBar.background = null
+        appBar.translationZ = density * 2f
+
+        val bg = pageBackground()
         vignette.apply {
             alpha = 0f
             visibility = View.INVISIBLE
             isClickable = false
             isFocusable = false
             importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+            translationZ = density
             background = GradientDrawable(
                 GradientDrawable.Orientation.TOP_BOTTOM,
-                intArrayOf(pageBackground(), withAlpha(pageBackground(), 0.6f), Color.TRANSPARENT)
+                intArrayOf(bg, withAlpha(bg, 0.85f), withAlpha(bg, 0.5f), Color.TRANSPARENT)
             )
         }
         coordinator.addView(
             vignette,
-            CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, fadeHeight).apply {
+            CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, toolbarHeight + (16 * density).toInt()).apply {
                 gravity = Gravity.TOP
             }
         )
+        coordinator.addOnLayoutChangeListener(layoutListener)
+        toolbar.addOnLayoutChangeListener(layoutListener)
+        prepareToolbarButtons()
     }
 
     fun detach() {
+        coordinator.removeOnLayoutChangeListener(layoutListener)
+        toolbar.removeOnLayoutChangeListener(layoutListener)
         coordinator.removeView(vignette)
-        wrappers.clear()
+        collapsing?.background = collapsingBackground
+        restoreContentHeight()
+        content.translationY = 0f
+        floating.clear()
+        prepared.clear()
     }
 
     fun onOffset(layout: AppBarLayout, verticalOffset: Int) {
         val range = layout.totalScrollRange
-        // Not an expandable app bar: never collapses, so the effect must stay off.
+        // Not an expandable app bar: it never collapses, the effect stays off.
         val collapsedFraction = if (range <= 0 || !layout.isEnabled) 0f else abs(verticalOffset).toFloat() / range
         if (collapsedFraction < 0.9f && range > 0) sawExpanded = true
         val p = if (!sawExpanded) 0f else ((collapsedFraction - 0.9f) / 0.1f).coerceIn(0f, 1f)
         if (p == progress) return
         progress = p
 
-        // Vignette sits right below the bar and fades the content out under it.
         vignette.visibility = if (p > 0f) View.VISIBLE else View.INVISIBLE
         vignette.alpha = p
-        vignette.translationY = appBar.bottom.toFloat()
+
+        // Content slides up to the very top of the screen.
+        content.translationY = -toolbarHeight * p
 
         // Title/subtitle: SESL keeps resetting their alpha, so fade the text colour instead.
         toolbar.children.filterIsInstance<TextView>().forEach { tv ->
@@ -95,33 +134,94 @@ internal class OneUi9AppBarEffect(
             tv.setTextColor(withAlpha(original, 1f - p))
         }
 
-        // Floating round backgrounds for the navigation button and the menu.
+        prepareToolbarButtons()
+        floating.forEach { (view, drawable) ->
+            drawable.alpha = (255 * p).toInt()
+            view.elevation = floatingElevation * p
+        }
+    }
+
+    /** Makes the content as tall as the screen again once it is translated up by [toolbarHeight]. */
+    private fun updateContentHeight() {
+        val range = appBar.totalScrollRange
+        if (range <= 0 || !appBar.isEnabled) {
+            restoreContentHeight()
+            return
+        }
+        val collapsedHeader = appBar.height - range
+        val target = coordinator.height - collapsedHeader + toolbarHeight
+        val lp = content.layoutParams ?: return
+        if (target <= 0 || lp.height == target) return
+        if (originalContentHeight == null) originalContentHeight = lp.height
+        lp.height = target
+        content.layoutParams = lp
+    }
+
+    private fun restoreContentHeight() {
+        val original = originalContentHeight ?: return
+        content.layoutParams?.let {
+            if (it.height != original) {
+                it.height = original
+                content.layoutParams = it
+            }
+        }
+        originalContentHeight = null
+    }
+
+    private fun recoilColor() = ContextCompat.getColor(ctx, R.color.oui_des_btn_ripple_color)
+
+    private fun inset(d: Drawable, horizontalDp: Float, verticalDp: Float): Drawable =
+        InsetDrawable(d, (horizontalDp * density).toInt(), (verticalDp * density).toInt(),
+            (horizontalDp * density).toInt(), (verticalDp * density).toInt())
+
+    /** Press feedback on the navigation button and every menu item, floating bg on the buttons. */
+    private fun prepareToolbarButtons() {
         toolbar.children.forEach { child ->
             when (child) {
-                is ImageButton -> applyFloating(child, navBg, inset(child, 4f, 4f), p)
-                is ActionMenuView -> applyFloating(child, menuBg, inset(child, 0f, 4f), p)
+                is ImageButton -> if (prepared.add(child)) {
+                    val floatingBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_navigate_up_bg)?.mutate()
+                    val layers = ArrayList<Drawable>()
+                    if (floatingBg != null) {
+                        val f = inset(floatingBg, 4f, 4f).also { it.alpha = (255 * progress.coerceAtLeast(0f)).toInt() }
+                        floating[child] = f
+                        layers.add(f)
+                    }
+                    layers.add(inset(OuiRecoilDrawable(recoilColor()), 4f, 4f))
+                    child.background = LayerDrawable(layers.toTypedArray())
+                }
+                is ActionMenuView -> {
+                    if (prepared.add(child)) {
+                        val floatingBg = ContextCompat.getDrawable(ctx, R.drawable.oui_des_floating_toolbar_bg)?.mutate()
+                        if (floatingBg != null) {
+                            val f = inset(floatingBg, 0f, 4f).also { it.alpha = (255 * progress.coerceAtLeast(0f)).toInt() }
+                            floating[child] = f
+                            child.background = f
+                        }
+                    }
+                    child.children.forEach { item ->
+                        if (prepared.add(item)) {
+                            item.background = inset(OuiRecoilDrawable(recoilColor()), 0f, 4f)
+                        }
+                    }
+                }
             }
         }
     }
 
-    private fun inset(v: View, horizontalDp: Float, verticalDp: Float) =
-        intArrayOf((horizontalDp * density).toInt(), (verticalDp * density).toInt())
-
-    private fun applyFloating(view: View, bg: Drawable?, inset: IntArray, p: Float) {
-        if (bg == null) return
-        val wrapper = wrappers.getOrPut(view) {
-            InsetDrawable(bg.constantState?.newDrawable()?.mutate() ?: bg, inset[0], inset[1], inset[0], inset[1])
-                .also { view.background = it }
-        }
-        wrapper.alpha = (255 * p).toInt()
-        view.elevation = floatingElevation * p
-    }
-
+    /** The colour behind the page, so the vignette is invisible against it. */
     private fun pageBackground(): Int {
         val tv = TypedValue()
-        return if (ctx.theme.resolveAttribute(android.R.attr.colorBackground, tv, true)) {
-            if (tv.resourceId != 0) ContextCompat.getColor(ctx, tv.resourceId) else tv.data
-        } else Color.WHITE
+        if (ctx.theme.resolveAttribute(android.R.attr.windowBackground, tv, true)) {
+            if (tv.type in TypedValue.TYPE_FIRST_COLOR_INT..TypedValue.TYPE_LAST_COLOR_INT) return tv.data
+            if (tv.resourceId != 0) {
+                runCatching { return ContextCompat.getColor(ctx, tv.resourceId) }
+                (ContextCompat.getDrawable(ctx, tv.resourceId) as? ColorDrawable)?.let { return it.color }
+            }
+        }
+        if (ctx.theme.resolveAttribute(android.R.attr.colorBackground, tv, true)) {
+            return if (tv.resourceId != 0) ContextCompat.getColor(ctx, tv.resourceId) else tv.data
+        }
+        return Color.WHITE
     }
 
     private fun withAlpha(color: Int, a: Float) =

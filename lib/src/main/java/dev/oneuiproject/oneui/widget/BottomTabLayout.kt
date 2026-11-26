@@ -177,8 +177,9 @@ class BottomTabLayout(
 
     init {
         isFocusable = false
-        tabMode = MODE_SCROLLABLE
-        tabGravity = GRAVITY_START
+        // One UI 9 floating tab bar: equal width tabs that always fit inside the screen.
+        tabMode = MODE_FIXED
+        tabGravity = GRAVITY_FILL
         context.withStyledAttributes(attrs, R.styleable.BottomTabLayout, 0, 0) {
             minSideMargin = getDimension(R.styleable.BottomTabLayout_minSideMargin, 0f)
             configureTabDimen()
@@ -245,22 +246,7 @@ class BottomTabLayout(
                 marginEnd = sideMargin
             }
         }
-
-        if (containerWidth == 0 || previousContainerWidth == containerWidth) return
-        previousContainerWidth = containerWidth
-        val availableForTabPaddings = containerWidth - tabTextWidthsList.sum() - (sideMargin * 2)
-        val tabPadding = (availableForTabPaddings/(tabCount * 2)).coerceAtLeast(defaultTabPadding)
-
-        tabViewGroup?.let {
-            for (i in 0 until tabCount) {
-                val tabWidth =  (tabPadding * 2f + tabTextWidthsList[i]).toInt()
-                it.getChildAt(i)?.apply {
-                    minimumWidth = tabWidth
-                    (this as? ViewGroup)?.getChildAt(0)?.minimumWidth = tabWidth
-                }
-            }
-        }
-        post(requestLayoutRunnable)
+        // Tab widths are not touched anymore: MODE_FIXED + GRAVITY_FILL splits the bar equally.
     }
 
     /**
@@ -866,9 +852,11 @@ class BottomTabLayout(
             duration = 350
             interpolator = PathInterpolator(0.22f, 0.25f, 0f, 1f)
             addUpdateListener {
+                // re-read the target each frame so the capsule lands exactly on the selected tab
+                val (tl, tr) = oui9TargetBounds() ?: (l to r)
                 val f = it.animatedFraction
-                oui9Left = startL + (l - startL) * f
-                oui9Right = startR + (r - startR) * f
+                oui9Left = startL + (tl - startL) * f
+                oui9Right = startR + (tr - startR) * f
                 invalidate()
             }
             start()
