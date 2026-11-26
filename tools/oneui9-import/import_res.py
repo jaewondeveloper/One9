@@ -14,6 +14,14 @@ QUAL_OK = re.compile(r'^(night-)?(v\d+)?$|^night$')
 def split_dir(d):
     t, _, q = d.partition('-')
     return t, q
+def normq(q):
+    # minSdk is 24: version qualifiers <= v24 are redundant and would collide with the unqualified dir
+    out = []
+    for part in [x for x in q.split('-') if x]:
+        m = re.fullmatch(r'v(\d+)', part)
+        if m and int(m.group(1)) <= 24: continue
+        out.append(part)
+    return '-'.join(out)
 def qual_ok(q):
     return q == '' or bool(re.fullmatch(r'(night)?(-?v\d+)?', q))
 
@@ -269,12 +277,15 @@ for (t, n) in sorted(cand):
     quals = app_files[(t, n)]
     base = quals.get('') or next(iter(quals.values()))
     targets = {}
-    for q in quals: targets[q] = quals[q]
+    for q in sorted(quals, key=lambda x: (x != '', x)):
+        targets.setdefault(normq(q), quals[q])
+    has_night = any('night' in q.split('-') for q in quals)
     for q in s8_files.get((t, n), set()):
-        if qual_ok(q) and q not in targets: targets[q] = base
-        elif not qual_ok(q) and q not in targets:
-            # SESL8 has a density/size specific variant that would win; mirror our base into it
-            targets[q] = base
+        if 'night' in q.split('-'):
+            if not has_night: continue   # never copy day content into night
+            targets.setdefault(normq(q), next(v for k, v in quals.items() if 'night' in k.split('-')))
+        else:
+            targets.setdefault(normq(q), base)
     for q, src in targets.items():
         d = os.path.join(LIB, t + (f'-{q}' if q else ''))
         os.makedirs(d, exist_ok=True)
