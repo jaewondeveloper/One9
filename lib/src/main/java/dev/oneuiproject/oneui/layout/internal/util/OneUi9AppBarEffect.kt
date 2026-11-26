@@ -283,7 +283,10 @@ internal class OneUi9AppBarEffect(
                         val itemsArea = {
                             var l = Float.MAX_VALUE
                             var r = 0f
-                            child.children.forEach { c -> l = minOf(l, c.left.toFloat()); r = maxOf(r, c.right.toFloat()) }
+                            child.children.filter { it.visibility != View.GONE }.forEach { c ->
+                                l = minOf(l, c.left + c.translationX)
+                                r = maxOf(r, c.right + c.translationX)
+                            }
                             if (l > r) RectF(0f, 0f, child.width.toFloat(), child.height.toFloat())
                             else RectF(l, 0f, r, child.height.toFloat())
                         }
@@ -292,8 +295,12 @@ internal class OneUi9AppBarEffect(
                         floating[child] = f
                         child.background = f
                     }
-                    child.children.forEach { item ->
+                    var index = 0
+                    child.children.filter { it.visibility != View.GONE }.forEach { item ->
                         if (prepared.add(item)) item.background = OuiRecoilDrawable(recoilColor(), size)
+                        // several buttons: each one overlaps the previous one slightly, the capsule covers them all
+                        item.translationX = -OVERLAP_DP * density * index
+                        index++
                     }
                 }
             }
@@ -309,10 +316,10 @@ internal class OneUi9AppBarEffect(
     private fun menuShift(): Float {
         val nav = navButton ?: return 0f
         val menu = menuView as? ViewGroup ?: return 0f
-        val last = menu.children.lastOrNull() ?: return 0f
+        val last = menu.children.lastOrNull { it.visibility != View.GONE } ?: return 0f
         if (toolbar.width == 0 || last.width == 0) return 0f
         val leftDistance = nav.left + nav.paddingLeft + (nav.width - nav.paddingLeft - nav.paddingRight) / 2f
-        val rightDistance = toolbar.width - (menu.left + last.left + last.width / 2f)
+        val rightDistance = toolbar.width - (menu.left + last.left + last.translationX + last.width / 2f)
         return (leftDistance - rightDistance).coerceAtLeast(0f)
     }
 
@@ -347,4 +354,9 @@ internal class OneUi9AppBarEffect(
 
     private fun withAlpha(color: Int, a: Float) =
         Color.argb((Color.alpha(color) * a).toInt(), Color.red(color), Color.green(color), Color.blue(color))
+
+    private companion object {
+        /** Slight overlap of neighbouring menu buttons (dp). */
+        const val OVERLAP_DP = 6f
+    }
 }
