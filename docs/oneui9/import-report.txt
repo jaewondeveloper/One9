@@ -1,4 +1,4 @@
-imported files: 21, values: 259, styles: 0
+imported files: 33, values: 263, styles: 0
 
 ## FILES
 anim/sesl_bottom_menu_popup_enter [changed]
@@ -22,8 +22,21 @@ anim/sesl_recoil_pressed [changed]
 anim/sesl_recoil_released [changed]
 anim/sesl_shrink_fade_out_from_bottom [changed]
 interpolator/sesl_elastic_50_menu_popup [changed]
+layout/sesl_preference [changed]
+layout/sesl_preference_category [changed]
+layout/sesl_preference_category_empty [changed]
+layout/sesl_preference_dialog_edittext [changed]
+layout/sesl_preference_dialog_seekbar [changed]
+layout/sesl_preference_dropdown [changed]
+layout/sesl_preference_recyclerview [changed]
+layout/sesl_preference_switch [changed]
+layout/sesl_preference_switch_screen [changed]
+layout/sesl_preference_widget_checkbox [changed]
+layout/sesl_preference_widget_seekbar [changed]
+layout/sesl_preference_widget_switch [changed]
 
 ## DROPPED (reason)
+layout/sesl_preference_caption: attr seslListCaptionTextViewStyle
 
 ## STYLES
 

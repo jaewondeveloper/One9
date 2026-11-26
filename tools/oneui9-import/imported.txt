@@ -23,3 +23,15 @@ anim/sesl_recoil_pressed.xml
 anim/sesl_recoil_released.xml
 anim/sesl_shrink_fade_out_from_bottom.xml
 interpolator/sesl_elastic_50_menu_popup.xml
+layout/sesl_preference.xml
+layout/sesl_preference_category.xml
+layout/sesl_preference_category_empty.xml
+layout/sesl_preference_dialog_edittext.xml
+layout/sesl_preference_dialog_seekbar.xml
+layout/sesl_preference_dropdown.xml
+layout/sesl_preference_recyclerview.xml
+layout/sesl_preference_switch.xml
+layout/sesl_preference_switch_screen.xml
+layout/sesl_preference_widget_checkbox.xml
+layout/sesl_preference_widget_seekbar.xml
+layout/sesl_preference_widget_switch.xml

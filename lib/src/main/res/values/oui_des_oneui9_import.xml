@@ -247,4 +247,8 @@
     <color name="sesl_text5_light">@color/basic_token_gray_50</color>
     <color name="sesl_text_input_layout_hint_text_color">#8c8c8c</color>
     <color name="sesl_tick_mark_seekbar_level">@color/basic_token_sys_surface_container_higher_light</color>
+    <dimen name="sesl_list_icon_frame_width">44.0dp</dimen>
+    <dimen name="sesl_menu_popup_scale_anim_pivot_x">100.0%</dimen>
+    <dimen name="sesl_menu_popup_scale_anim_pivot_y">100.0%</dimen>
+    <dimen name="sesl_preference_summary_padding_top">1.0dp</dimen>
 </resources>
