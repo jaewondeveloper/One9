@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One UI 9 additions. Values observed in Samsung Notes / Samsung Internet, see docs/oneui9. -->
+<resources>
+    <!-- Floating navigate-up button -->
+    <color name="oui_des_floating_navigate_up_bg_color">#fffcfcfc</color>
+    <color name="oui_des_floating_navigate_up_icon_color">@color/oui_des_sys_on_surface_container_highest</color>
+    <dimen name="oui_des_floating_navigate_up_size">48dp</dimen>
+    <dimen name="oui_des_floating_navigate_up_margin_top">4dp</dimen>
+    <dimen name="oui_des_floating_navigate_up_margin_start">12dp</dimen>
+    <dimen name="oui_des_floating_navigate_up_elevation">8dp</dimen>
+
+    <!-- Floating (capsule) tab bar -->
+    <color name="oui_des_floating_tab_bg_color">#fffcfcff</color>
+    <color name="oui_des_floating_tab_selected_bg_color">#1a000000</color>
+    <color name="oui_des_floating_tab_text_selected_color">@color/oui_des_sys_on_surface_container_highest</color>
+    <color name="oui_des_floating_tab_text_default_color">@color/oui_des_sys_on_surface_container_high</color>
+    <dimen name="oui_des_floating_tab_height">56dp</dimen>
+    <dimen name="oui_des_floating_tab_max_width">430dp</dimen>
+    <dimen name="oui_des_floating_tab_inner_padding">4dp</dimen>
+    <dimen name="oui_des_floating_tab_icon_size">24dp</dimen>
+    <dimen name="oui_des_floating_tab_text_size">10sp</dimen>
+    <dimen name="oui_des_floating_tab_elevation">4dp</dimen>
+    <item name="oui_des_floating_tab_bg_alpha" format="float" type="dimen">0.96</item>
+
+    <!-- Buttons -->
+    <dimen name="oui_des_button_corner_radius">18dp</dimen>
+    <dimen name="oui_des_button_small_corner_radius">16dp</dimen>
+    <dimen name="oui_des_button_min_height">36dp</dimen>
+    <dimen name="oui_des_button_text_size">15sp</dimen>
+    <dimen name="oui_des_button_padding_horizontal">16dp</dimen>
+
+    <!-- Top scroll fade -->
+    <dimen name="oui_des_top_fade_height">96dp</dimen>
+
+    <!-- Elevation scale -->
+    <dimen name="oui_des_elevation_sm">2dp</dimen>
+    <dimen name="oui_des_elevation_md">4dp</dimen>
+    <dimen name="oui_des_elevation_lg">8dp</dimen>
+    <dimen name="oui_des_elevation_xl">16dp</dimen>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="oui_des_floating_navigate_up_bg_color">#ff2e2e2e</color>
+    <color name="oui_des_floating_tab_bg_color">#ff3a3a3d</color>
+    <color name="oui_des_floating_tab_selected_bg_color">#1affffff</color>
+</resources>
