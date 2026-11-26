@@ -52,6 +52,7 @@ internal class OneUi9AppBarEffect(
     private val res = ctx.resources
     private val density = res.displayMetrics.density
     private val vignette = View(ctx)
+    private val bottomVignette = View(ctx)
     private val floatingElevation = res.getDimension(R.dimen.oui_des_floating_navigate_up_elevation)
     private val toolbarHeight: Int
 
@@ -72,7 +73,7 @@ internal class OneUi9AppBarEffect(
     private var menuView: View? = null
 
     private val layoutListener = View.OnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
-        updateContentHeight()
+        if (originalContentHeight != null) updateContentHeight()
         prepareToolbarButtons()
     }
 
@@ -113,6 +114,22 @@ internal class OneUi9AppBarEffect(
             }
         )
         coordinator.addOnLayoutChangeListener(layoutListener)
+        bottomVignette.apply {
+            isClickable = false
+            isFocusable = false
+            importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILITY_NO
+            translationZ = density
+            background = GradientDrawable(
+                GradientDrawable.Orientation.BOTTOM_TOP,
+                intArrayOf(bg, withAlpha(bg, 0.85f), withAlpha(bg, 0.45f), Color.TRANSPARENT)
+            )
+        }
+        coordinator.addView(
+            bottomVignette,
+            CoordinatorLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (28 * density).toInt()).apply {
+                gravity = Gravity.BOTTOM
+            }
+        )
         toolbar.addOnLayoutChangeListener(layoutListener)
         coordinator.viewTreeObserver.addOnScrollChangedListener(scrollListener)
         prepareToolbarButtons()
@@ -124,6 +141,7 @@ internal class OneUi9AppBarEffect(
         coordinator.removeOnLayoutChangeListener(layoutListener)
         toolbar.removeOnLayoutChangeListener(layoutListener)
         coordinator.removeView(vignette)
+        coordinator.removeView(bottomVignette)
         collapsing?.background = collapsingBackground
         restoreContentHeight()
         content.translationY = 0f
@@ -172,7 +190,9 @@ internal class OneUi9AppBarEffect(
     private fun applyHide() {
         val p = hideOffset / toolbarHeight
 
-        // Content slides up to the very top of the screen.
+        // Content slides up to the very top of the screen; it is only made taller while the bar is hiding,
+        // so that at rest the end of the list keeps its normal bottom edge.
+        if (hideOffset > 0f) updateContentHeight() else restoreContentHeight()
         content.translationY = -hideOffset
 
         // Vignette fades in with the hiding bar.
@@ -278,15 +298,22 @@ internal class OneUi9AppBarEffect(
                 }
             }
         }
-        // the menu capsule keeps the same distance from the right edge as the circle has from the left
-        menuView?.translationX = -sideMargin() * floatingAlpha
+        // the menu keeps the same distance from the right edge as the navigation icon has from the left
+        menuView?.translationX = -menuShift()
     }
 
-    /** Distance of the circle's edge from the screen edge. */
-    private fun sideMargin(): Float {
+    /**
+     * How far the menu has to move left so that the centre of its last icon has the same distance from
+     * the right edge as the navigation icon has from the left edge.
+     */
+    private fun menuShift(): Float {
         val nav = navButton ?: return 0f
-        val iconCenter = nav.left + nav.paddingLeft + (nav.width - nav.paddingLeft - nav.paddingRight) / 2f
-        return (iconCenter - 24 * density).coerceAtLeast(0f)
+        val menu = menuView as? ViewGroup ?: return 0f
+        val last = menu.children.lastOrNull() ?: return 0f
+        if (toolbar.width == 0 || last.width == 0) return 0f
+        val leftDistance = nav.left + nav.paddingLeft + (nav.width - nav.paddingLeft - nav.paddingRight) / 2f
+        val rightDistance = toolbar.width - (menu.left + last.left + last.width / 2f)
+        return (leftDistance - rightDistance).coerceAtLeast(0f)
     }
 
     private fun findScrollable(root: View, depth: Int = 0): View? {
