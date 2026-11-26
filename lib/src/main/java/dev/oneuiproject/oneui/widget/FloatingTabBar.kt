@@ -21,7 +21,8 @@ import androidx.core.graphics.drawable.DrawableCompat
 import dev.oneuiproject.oneui.design.R
 
 /**
- * A One UI 9 style floating segment tab bar: a capsule container (56dp high, max 430dp wide)
+ * A One UI 9 style floating segment tab bar (as in Samsung Gallery): a capsule container
+ * (56dp high, shrink-wrapped to its items, max 430dp wide)
  * with a capsule shaped highlight behind the selected item.
  *
  * ```kotlin
@@ -86,6 +87,14 @@ class FloatingTabBar @JvmOverloads constructor(
         itemViews.forEach { removeView(it) }
         itemViews.clear()
         val iconSize = res.getDimensionPixelSize(R.dimen.oui_des_floating_tab_icon_size)
+        val side = res.getDimensionPixelSize(R.dimen.oui_des_floating_tab_item_side_margin)
+        val minWidth = res.getDimensionPixelSize(
+            when (newItems.size) {
+                1 -> R.dimen.oui_des_floating_tab_item_min_width_count_1
+                2 -> R.dimen.oui_des_floating_tab_item_min_width_count_2
+                else -> R.dimen.oui_des_floating_tab_item_min_width_count_over_3
+            }
+        )
         newItems.forEachIndexed { index, item ->
             val cell = LinearLayout(context).apply {
                 orientation = LinearLayout.VERTICAL
@@ -93,6 +102,8 @@ class FloatingTabBar @JvmOverloads constructor(
                 isClickable = true
                 isFocusable = true
                 contentDescription = item.label
+                minimumWidth = minWidth
+                setPadding(side, 0, side, 0)
                 setOnClickListener { select(index, true, notify = true) }
             }
             val icon = ImageView(context).apply {
@@ -105,7 +116,7 @@ class FloatingTabBar @JvmOverloads constructor(
             }
             cell.addView(icon, LinearLayout.LayoutParams(iconSize, iconSize))
             cell.addView(label, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT))
-            addView(cell, LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f))
+            addView(cell, LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT))
             itemViews.add(cell)
         }
         selectedIndex = -1

@@ -92,10 +92,10 @@
 
     <dev.oneuiproject.oneui.widget.FloatingTabBar
         android:id="@+id/oneui9_tab_bar"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="@dimen/oui_des_floating_tab_container_padding_bottom" />
 </FrameLayout>

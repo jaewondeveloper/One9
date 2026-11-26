@@ -18,6 +18,12 @@
     <dimen name="oui_des_floating_tab_max_width">430dp</dimen>
     <dimen name="oui_des_floating_tab_inner_padding">4dp</dimen>
     <dimen name="oui_des_floating_tab_icon_size">24dp</dimen>
+    <dimen name="oui_des_floating_tab_item_side_margin">8dp</dimen>
+    <dimen name="oui_des_floating_tab_item_min_width_count_1">120dp</dimen>
+    <dimen name="oui_des_floating_tab_item_min_width_count_2">86dp</dimen>
+    <dimen name="oui_des_floating_tab_item_min_width_count_over_3">64dp</dimen>
+    <dimen name="oui_des_floating_tab_container_padding_horizontal">10dp</dimen>
+    <dimen name="oui_des_floating_tab_container_padding_bottom">8dp</dimen>
     <dimen name="oui_des_floating_tab_text_size">10sp</dimen>
     <dimen name="oui_des_floating_tab_elevation">4dp</dimen>
     <item name="oui_des_floating_tab_bg_alpha" format="float" type="dimen">0.96</item>
