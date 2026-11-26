@@ -186,6 +186,7 @@ class BottomTabLayout(
                 inflateMenu((getResourceId(R.styleable.BottomTabLayout_menu, 0)))
             }
         }
+        minSideMargin = maxOf(minSideMargin, 10f * context.resources.displayMetrics.density)
         addOnTabSelectedListener(this)
         applyOneUi9Style()
     }
@@ -794,6 +795,12 @@ class BottomTabLayout(
 
     private fun applyOneUi9Style() {
         setWillNotDraw(false)
+        post {
+            (layoutParams as? MarginLayoutParams)?.let {
+                val bottom = (8 * oui9Density).toInt()
+                if (it.bottomMargin < bottom) { it.bottomMargin = bottom; layoutParams = it }
+            }
+        }
         setSelectedTabIndicatorColor(Color.TRANSPARENT)
         setSelectedTabIndicatorHeight(0)
 

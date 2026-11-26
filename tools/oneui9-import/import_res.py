@@ -131,7 +131,8 @@ EXCLUDE = re.compile(r'(^sesl_(switch|toggle))|Switch|Toggle|[Pp]rogress')
 # ---------- candidate files
 cand = {}  # (type,name) -> path of base content
 for (t, n), quals in app_files.items():
-    if EXCLUDE.search(n): continue
+    if t not in ('anim', 'interpolator'): continue   # widget drawables/selectors from SESL 9 break SESL 8 widgets (buttons, seekbars)
+    if EXCLUDE.search(n) or not n.startswith('sesl_'): continue   # library-version noise (mtrl_/abc_/design_...) is not One UI design
     base = quals.get('') or next(iter(quals.values()))
     in8 = (t, n) in s8_files
     if in8:
@@ -225,7 +226,7 @@ for key in cand:
 want = {}
 for (tag, nm, q), e in app_elems.items():
     if q not in ('', 'night'): continue
-    if tag == 'style': continue
+    if tag != 'color': continue   # dimens/ints change widget geometry; only the palette is taken
     if nm in lib_names.get(tag, set()) or EXCLUDE.search(nm): continue
     in8 = (tag, nm, q) in s8_values or nm in s8_names.get(tag, set())
     sesl_like = nm.startswith(('sesl_', 'basic_token_'))
@@ -297,7 +298,7 @@ for (tag, nm, q), e in app_elems.items():
     if tag != 'style' or q != '': continue
     if nm in lib_names.get('style', set()) or EXCLUDE.search(nm): continue
     in8 = nm in s8_names.get('style', set())
-    if not (nm.startswith(('Widget.', 'TextAppearance.', 'Base.', 'Theme', 'ThemeOverlay.', 'Sesl', 'sesl')) or in8): continue
+    continue   # styles are not imported
     parent = e.get('parent')
     if parent and not parent.startswith('@android:'):
         pn = parent.replace('@style/', '').replace('@', '')
