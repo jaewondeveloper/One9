@@ -18,18 +18,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/oneui9_dest"
-        android:name="dev.oneuiproject.oneuiexample.ui.main.fragments.oneui9.OneUi9Fragment"
-        android:label="OneUI design"
-        tools:layout="@layout/fragment_oneui9">
-
-        <argument
-            android:name="toolbarLayoutSubtitle"
-            android:defaultValue="OneUI 9"
-            app:argType="string" />
-    </fragment>
-
-    <fragment
         android:id="@+id/seekbar_dest"
         android:name="dev.oneuiproject.oneuiexample.ui.main.fragments.seekbar.SeekBarFragment"
         android:label="OneUI design"

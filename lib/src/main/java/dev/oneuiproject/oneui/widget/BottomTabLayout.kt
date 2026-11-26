@@ -2,6 +2,19 @@
 
 package dev.oneuiproject.oneui.widget
 
+import android.animation.ValueAnimator
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Outline
+import android.graphics.Paint
+import android.graphics.RectF
+import android.graphics.drawable.GradientDrawable
+import android.graphics.drawable.InsetDrawable
+import android.view.MotionEvent
+import android.view.ViewOutlineProvider
+import android.view.animation.PathInterpolator
+import androidx.core.content.ContextCompat
+import dev.oneuiproject.oneui.widget.internal.OuiRecoilDrawable
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
@@ -106,6 +119,20 @@ class BottomTabLayout(
     }
 
     private var transientState = TRANSIENT_NONE
+
+    // --- One UI 9 floating capsule style ---
+    private val oui9Res = context.resources
+    private val oui9Density = oui9Res.displayMetrics.density
+    private val oui9IndicatorPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = ContextCompat.getColor(context, R.color.oui_des_floating_tab_selected_bg_color)
+    }
+    private val oui9Rect = RectF()
+    private var oui9Left = 0f
+    private var oui9Right = 0f
+    private var oui9HasIndicator = false
+    private var oui9IndicatorAnimator: ValueAnimator? = null
+    private var oui9Scale = 1f
+    private var oui9ScaleAnimator: ValueAnimator? = null
     private var previousContainerWidth = -1
 
     private var gridMenuDialog: GridMenuDialog? = null
@@ -160,6 +187,7 @@ class BottomTabLayout(
             }
         }
         addOnTabSelectedListener(this)
+        applyOneUi9Style()
     }
 
     private fun configureTabDimen() {
@@ -337,6 +365,7 @@ class BottomTabLayout(
             }
         }
         recalculateTextWidths = true
+        applyTabRecoil()
     }
 
     private fun addTabForMenu(menuItem: MenuItemImpl) {
@@ -670,6 +699,7 @@ class BottomTabLayout(
     }
 
     override fun onTabSelected(tab: Tab) {
+        moveOneUi9Indicator(animate = oui9HasIndicator)
         if (tab.id != -1) selectedItemId = tab.id
         itemClickedListener?.apply {
             bottomTabLayoutMenu.findItem(tab.id)?.let {
@@ -760,6 +790,128 @@ class BottomTabLayout(
 
     @Deprecated("This does nothing in BottomTabLayout",
         level = DeprecationLevel.HIDDEN)
+    // ------------------------------------------------------------------------------------------
+    // One UI 9 floating capsule style (container, press feedback, sliding selected capsule)
+    // ------------------------------------------------------------------------------------------
+
+    private fun applyOneUi9Style() {
+        setWillNotDraw(false)
+        setSelectedTabIndicatorColor(Color.TRANSPARENT)
+        setSelectedTabIndicatorHeight(0)
+
+        val alpha = android.util.TypedValue().also {
+            oui9Res.getValue(R.dimen.oui_des_floating_tab_bg_alpha, it, true)
+        }.float
+        background = GradientDrawable().apply {
+            shape = GradientDrawable.RECTANGLE
+            cornerRadius = 999f * oui9Density
+            setColor(ContextCompat.getColor(context, R.color.oui_des_floating_tab_bg_color))
+            this.alpha = (alpha * 255).toInt()
+        }
+        elevation = oui9Res.getDimension(R.dimen.oui_des_floating_tab_elevation)
+        outlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View, outline: Outline) {
+                outline.setRoundRect(0, 0, view.width, view.height, view.height / 2f)
+                outline.alpha = 0.96f
+            }
+        }
+
+        val selected = ContextCompat.getColor(context, R.color.oui_des_floating_tab_text_selected_color)
+        val default = ContextCompat.getColor(context, R.color.oui_des_floating_tab_text_default_color)
+        setTabTextColors(default, selected)
+        tabIconTint = android.content.res.ColorStateList(
+            arrayOf(intArrayOf(android.R.attr.state_selected), intArrayOf()),
+            intArrayOf(selected, default)
+        )
+    }
+
+    /** Capsule press feedback on every tab (100ms in / 350ms out). */
+    private fun applyTabRecoil() {
+        val group = tabViewGroup ?: return
+        val inner = (oui9Density * 4f).toInt()
+        val rippleColor = ContextCompat.getColor(context, R.color.oui_des_sys_tone_on_tone)
+        for (i in 0 until group.childCount) {
+            group.getChildAt(i).background = InsetDrawable(OuiRecoilDrawable(rippleColor), 0, inner, 0, inner)
+        }
+        post { moveOneUi9Indicator(animate = false) }
+    }
+
+    private fun oui9TargetBounds(): Pair<Float, Float>? {
+        val group = tabViewGroup ?: return null
+        val pos = selectedTabPosition
+        if (pos < 0) return null
+        val v = group.getChildAt(pos) ?: return null
+        if (v.width == 0) return null
+        return (group.left + v.left).toFloat() to (group.left + v.right).toFloat()
+    }
+
+    private fun moveOneUi9Indicator(animate: Boolean) {
+        val (l, r) = oui9TargetBounds() ?: return
+        oui9IndicatorAnimator?.cancel()
+        if (!animate || !oui9HasIndicator) {
+            oui9Left = l
+            oui9Right = r
+            oui9HasIndicator = true
+            invalidate()
+            return
+        }
+        val startL = oui9Left
+        val startR = oui9Right
+        oui9IndicatorAnimator = ValueAnimator.ofFloat(0f, 1f).apply {
+            duration = 350
+            interpolator = PathInterpolator(0.22f, 0.25f, 0f, 1f)
+            addUpdateListener {
+                val f = it.animatedFraction
+                oui9Left = startL + (l - startL) * f
+                oui9Right = startR + (r - startR) * f
+                invalidate()
+            }
+            start()
+        }
+    }
+
+    private fun animateOneUi9Scale(target: Float, durationMs: Long) {
+        oui9ScaleAnimator?.cancel()
+        oui9ScaleAnimator = ValueAnimator.ofFloat(oui9Scale, target).apply {
+            duration = durationMs
+            interpolator = PathInterpolator(0.2f, 0.25f, 0f, 1f)
+            addUpdateListener {
+                oui9Scale = it.animatedValue as Float
+                invalidate()
+            }
+            start()
+        }
+    }
+
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        super.onLayout(changed, left, top, right, bottom)
+        if (oui9IndicatorAnimator?.isRunning != true) moveOneUi9Indicator(animate = false)
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        if (!oui9HasIndicator) return
+        val inner = oui9Density * 4f
+        oui9Rect.set(oui9Left, inner, oui9Right, height - inner)
+        val radius = oui9Rect.height() / 2f
+        canvas.save()
+        canvas.translate(-scrollX.toFloat(), 0f)
+        canvas.scale(oui9Scale, oui9Scale, oui9Rect.centerX(), oui9Rect.centerY())
+        canvas.drawRoundRect(oui9Rect, radius, radius, oui9IndicatorPaint)
+        canvas.restore()
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+        when (ev.actionMasked) {
+            MotionEvent.ACTION_DOWN -> {
+                val x = ev.x + scrollX
+                if (oui9HasIndicator && x in oui9Left..oui9Right) animateOneUi9Scale(0.95f, 250)
+            }
+            MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> animateOneUi9Scale(1f, 350)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
     override fun seslSetSubTabStyle() {
         //No op
     }

@@ -65,6 +65,7 @@ import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.appbar.AppBarLayout
+import dev.oneuiproject.oneui.layout.internal.util.OneUi9AppBarEffect
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.model.AppBarModel
 import com.google.android.material.appbar.model.view.AppBarView
@@ -367,6 +368,7 @@ open class ToolbarLayout @JvmOverloads constructor(
     private var bottomOffsetListeners: MutableList<WeakReference<(bottomOffset: Float) -> Unit>>? = null
     private var appBarOffsetListeners: MutableList<WeakReference<(bottomOffset: Float) -> Unit>>? = null
     private var appBarOffsetListener = AppBarOffsetListener()
+    private var oneUi9AppBarEffect: OneUi9AppBarEffect? = null
 
     private var layoutRes: Int = 0
 
@@ -708,6 +710,10 @@ open class ToolbarLayout @JvmOverloads constructor(
         updateOnBackCallbackState()
         appBarLayout.addOnOffsetChangedListener(appBarOffsetListener)
         footerParent.addOnLayoutChangeListener(footerLayoutListener)
+        if (oneUi9AppBarEffect == null) {
+            oneUi9AppBarEffect = OneUi9AppBarEffect(appBarLayout, _mainToolbar, adpCoordinatorLayout, mainContainerParent)
+                .also { it.attach() }
+        }
     }
 
     override fun onDetachedFromWindow() {
@@ -715,6 +721,8 @@ open class ToolbarLayout @JvmOverloads constructor(
         ViewCompat.setWindowInsetsAnimationCallback(this, null)
         appBarLayout.removeOnOffsetChangedListener(appBarOffsetListener)
         footerParent.removeOnLayoutChangeListener(footerLayoutListener)
+        oneUi9AppBarEffect?.detach()
+        oneUi9AppBarEffect = null
         backCallbackUpdaterJob?.cancel()
         isTouching = false
     }
@@ -2093,6 +2101,7 @@ open class ToolbarLayout @JvmOverloads constructor(
     private inner class AppBarOffsetListener : AppBarLayout.OnOffsetChangedListener {
         override fun onOffsetChanged(layout: AppBarLayout, verticalOffset: Int) {
             scrollDelta = verticalOffset + layout.totalScrollRange
+            oneUi9AppBarEffect?.onOffset(layout, verticalOffset)
             dispatchBottomOffsetChanged()
             dispatchAppBarOffsetChanged( layout.totalScrollRange.toFloat().let{ if (it == 0f) 0f else 1f + verticalOffset / it} )
 
